@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arras Servers Status</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Ubuntu', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            color: #f8fafc;
+        }
+        h5 {
+            color: #38bdf8;
+            margin: 15px 0 8px 0;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .meta-info {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .card {
+            background-color: #1e293b;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+        }
+        .card-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: #94a3b8;
+            margin-bottom: 5px;
+        }
+        .card-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        /* Interactive Controls Layout */
+        .control-panel {
+            background-color: #1e293b;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #334155;
+        }
+        .search-bar-container {
+            margin-bottom: 15px;
+        }
+        #searchInput {
+            width: 100%;
+            max-width: 400px;
+            padding: 8px 12px;
+            font-size: 0.9rem;
+            background-color: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 6px;
+            color: #f8fafc;
+        }
+        #searchInput:focus {
+            border-color: #38bdf8;
+            outline: none;
+        }
+        .filter-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        .filter-group {
+            flex: 1;
+            min-width: 250px;
+        }
+        .btn-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .filter-btn {
+            background-color: #0f172a;
+            border: 1px solid #334155;
+            color: #94a3b8;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-family: inherit;
+            transition: all 0.2s ease;
+        }
+        .filter-btn:hover {
+            background-color: #1e293b;
+            color: #f8fafc;
+            border-color: #475569;
+        }
+        .filter-btn.active {
+            background-color: #38bdf8;
+            color: #0f172a;
+            border-color: #38bdf8;
+            font-weight: 600;
+        }
+        .checkbox-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #334155;
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+        }
+
+        /* Table Styling */
+        .table-wrapper {
+            overflow-x: auto;
+            background-color: #1e293b;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            width: 100%;
+            margin-bottom: 25px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.9rem;
+            table-layout: auto;
+        }
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #334155;
+            white-space: nowrap;
+        }
+        th {
+            background-color: #0f172a;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+        tr:hover {
+            background-color: #24334d;
+        }
+        .server-link {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .server-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Status & MSPT Performance Badges */
+        .badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+        .badge-online { background-color: #065f46; color: #34d399; }
+        .badge-offline { background-color: #991b1b; color: #f87171; }
+        
+        .mspt-good { color: #34d399; }
+        .mspt-mid { color: #f59e0b; }
+        .mspt-bad { color: #f87171; }
+
+        .error-msg {
+            color: #f87171;
+            background-color: #7f1d1d;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            display: none;
+        }
+        .server-type {
+            color: #e2e8f0;
+        }
+
+        /* Chart Canvas Area */
+        #canvas-container {
+            background-color: #1e293b;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            margin-bottom: 25px;
+            display: none;
+        }
+        #canvas-title {
+            font-size: 0.9rem;
+            color: #38bdf8;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        canvas {
+            background-color: #0f172a;
+            border-radius: 6px;
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #64748b;
+            padding: 20px 0;
+            border-top: 1px solid #334155;
+        }
+        footer a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Arras Status</h1>
+        <div class="meta-info" id="update-timer">Connecting to streaming server data...</div>
+
+        <div id="error-banner" class="error-msg"></div>
+
+        <div class="stats-grid">
+            <div class="card">
+                <div class="card-title">Active Clients</div>
+                <div id="stat-clients" class="card-value">0</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Servers Online</div>
+                <div id="stat-online" class="card-value" style="color: #34d399;">0</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Servers Offline</div>
+                <div id="stat-offline" class="card-value" style="color: #f87171;">0</div>
+            </div>
+        </div>
+
+        <div class="control-panel">
+            <div class="search-bar-container">
+                <input type="text" id="searchInput" placeholder="Search by server name..." />
+            </div>
+
+            <div class="filter-row">
+                <div class="filter-group">
+                    <h5>Gamemode</h5>
+                    <div class="btn-container" id="mode-filters">
+                        <button class="filter-btn active" data-mode="all">All</button>
+                        <button class="filter-btn" data-mode="ffa">FFA</button>
+                        <button class="filter-btn" data-mode="maze">Maze</button>
+                        <button class="filter-btn" data-mode="siege">Siege</button>
+                        <button class="filter-btn" data-mode="old dreadnoughts">Old Dreadnoughts</button>
+                        <button class="filter-btn" data-mode="growth">Growth</button>
+                        <button class="filter-btn" data-mode="arms race">Arms Race</button>
+                        <button class="filter-btn" data-mode="2tdm">2TDM</button>
+                        <button class="filter-btn" data-mode="4tdm">4TDM</button>
+                        <button class="filter-btn" data-mode="sandbox">Sandbox</button>
+                        <button class="filter-btn" data-mode="privated server">Private</button>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h5>Region</h5>
+                    <div class="btn-container" id="region-filters">
+                        <button class="filter-btn active" data-region="all">All</button>
+                        <button class="filter-btn" data-region="us central">US Central</button>
+                        <button class="filter-btn" data-region="us west">US West</button>
+                        <button class="filter-btn" data-region="europe">Europe</button>
+                        <button class="filter-btn" data-region="asia">Asia</button>
+                        <button class="filter-btn" data-region="oceania">Oceania</button>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h5>Sort By</h5>
+                    <div class="btn-container" id="sorting-filters">
+                        <button class="filter-btn active" data-sorting="clients">Highest Players</button>
+                        <button class="filter-btn" data-sorting="uptime">Highest Uptime</button>
+                        <button class="filter-btn" data-sorting="mspt">Highest MSPT</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkbox-row">
+                <label class="checkbox-container">
+                    <input type="checkbox" id="hide-hidden"> Hide Hidden Nodes
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" id="hide-offline"> Hide Offline Nodes
+                </label>
+            </div>
+        </div>
+
+        <div id="canvas-container">
+            <div id="canvas-title">Player History Tracker (Last 3 Hours)</div>
+            <canvas id="player-count-canvas" width="600" height="180"></canvas>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Node Name</th>
+                        <th>Game Mode</th>
+                        <th>Status</th>
+                        <th>Players</th>
+                        <th>MSPT</th>
+                        <th>Uptime</th>
+                        <th>Region</th>
+                        <th>Port Map</th>
+                        <th>Host Code</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <tr>
+                        <td colspan="9" style="text-align: center; color: #94a3b8;">Waiting for initial live sync loop...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            some code from https://trappercloser.github.io/Arras-Server-Thingy/ by Trapper & Testing
+        </p>
+    </footer>
+
+    <script>
+        // Combined Network API Endpoints
+        const API_URL = 'https://qrp6ujau11f36bnm-c.uvwx.xyz:8443/2222/status';
+        const LOGS_URL = () => "https://verify-dev.glitch.me/api/server-data/array?timestamp=" + new Date(Date.now() - 10800e3).toISOString();
+
+        // Regional Identifier Matrix
+        const regionsMatrix = {
+            c: "US Central",
+            w: "US West",
+            o: "Oceania",
+            a: "Asia",
+            e: "Europe",
+        };
+
+        // Static Game Mode Dictionary Setup
+        const gameModesConfig = [
+            { key: "ac", label: "Arms Race Clanwars" },
+            { key: "af", label: "Arms Race FFA" },
+            { key: "am", label: "Arms Race Maze" },
+            { key: "am2", label: "Arms Race Maze 2TDM" },
+            { key: "am2d", label: "Arms Race Maze 2TDM Duos" },
+            { key: "am2c", label: "Arms Race Maze 2TDM CTF" },
+            { key: "am3", label: "Arms Race Maze 3TDM" },
+            { key: "am3d", label: "Arms Race Maze 3TDM Duos" },
+            { key: "am4", label: "Arms Race Maze 4TDM" },
+            { key: "am4d", label: "Arms Race Maze 4TDM Duos" },
+            { key: "amf", label: "Arms Race Maze FFA" },
+            { key: "ams", label: "Arms Race Maze Squads" },
+            { key: "a2", label: "Arms Race 2TDM" },
+            { key: "a3", label: "Arms Race 3TDM" },
+            { key: "a4", label: "Arms Race 4TDM" },
+            { key: "ao2", label: "Arms Race Open 2TDM" },
+            { key: "ao3", label: "Arms Race Open 3TDM" },
+            { key: "ao4", label: "Arms Race Open 4TDM" },
+            { key: "aom", label: "Arms Race Open Maze" },
+            { key: "aom2", label: "Arms Race Open Maze 2TDM" },
+            { key: "aom4", label: "Arms Race Open Maze 4TDM" },
+            { key: "aom2t", label: "Arms Race Open Maze 2 Teams Tag" },
+            { key: "aom3t", label: "Arms Race Open Maze 3 Teams Tag" },
+            { key: "aom4t", label: "Arms Race Open Maze 4 Teams Tag" },
+            { key: "aom4e", label: "Arms Race Open Maze 4 Teams Elimination" },
+            { key: "apm4", label: "Arms Race Portal Maze 4TDM" },
+            { key: "as", label: "Arms Race Squads" },
+            { key: "ag", label: "Arms Race Growth" },
+            { key: "ap", label: "Arms Race Portal" },
+            { key: "amd", label: "Armsrace Maze Duos"},
+            { key: "acropolis", label: "Assault Acropolis" },
+            { key: "booster", label: "Assault Booster" },
+            { key: "branches", label: "Assault Branches" },
+            { key: "bunker", label: "Assault Bunker" },
+            { key: "line", label: "Assault Line" },
+            { key: "stronghold", label: "Assault Stronghold" },
+            { key: "trenches", label: "Assault Trenches" },
+            { key: "w34betas4test", label: "Beta Sandbox Test" },
+            { key: "blackout", label: "Blackout (Event)" },
+            { key: "c", label: "Clan Wars" },
+            { key: "ctf", label: "Capture the Flag" },
+            { key: "d", label: "Domination" },
+            { key: "e0z", label: "Sandbox Redirect" },
+            { key: "eye", label: "Assault Eye" },
+            { key: "f", label: "FFA" },
+            { key: "forge", label: "Forge" },
+            { key: "g", label: "Growth" },
+            { key: "g2d", label: "Growth 2TDM Domination" },
+            { key: "g4d", label: "Growth 4TDM Domination" },
+            { key: "g2", label: "Growth 2TDM" },
+            { key: "gad", label: "Growth Arms Race Duos" },
+            { key: "gam2", label: "Growth Arms Race 2TDM Maze" },
+            { key: "gam3", label: "Growth Arms Race 3TDM Maze" },
+            { key: "gam4", label: "Growth Arms Race 4TDM Maze" },
+            { key: "gamd", label: "Growth Arms Race Maze Duos" },
+            { key: "gao2", label: "Growth Arms Race Open 2TDM" },
+            { key: "gao3", label: "Growth Arms Race Open 3TDM" },
+            { key: "gao4", label: "Growth Arms Race Open 4TDM" },
+            { key: "gom2", label: "Growth Open Maze 2TDM" },
+            { key: "gom3", label: "Growth Open Maze 3TDM" },
+            { key: "gom4", label: "Growth Open Maze 4TDM" },
+            { key: "ga", label: "Growth Arms Race" },
+            { key: "gac", label: "Growth Arms Race Clanwars" },
+            { key: "ga2", label: "Growth Arms Race 2TDM" },
+            { key: "ga3", label: "Growth Arms Race 3TDM" },
+            { key: "ga4", label: "Growth Arms Race 4TDM" },
+            { key: "ga2b", label: "Growth Arms Race 2TDM Soccer" },
+            { key: "gf", label: "Growth FFA" },
+            { key: "gamf", label: "Growth Armsrace Maze FFA" },
+            { key: "gmd", label: "Growth Maze Duos" },
+            { key: "gm2", label: "Growth Maze 2TDM" },
+            { key: "gm3", label: "Growth Maze 3TDM" },
+            { key: "gm4", label: "Growth Maze 4TDM" },
+            { key: "gm2d", label: "Growth Maze 2TDM Domination" },
+            { key: "gm3d", label: "Growth Maze 3TDM Domination" },
+            { key: "gm4d", label: "Growth Maze 4TDM Domination" },
+            { key: "go2", label: "Growth Open 2TDM" },
+            { key: "go3", label: "Growth Open 3TDM" },
+            { key: "go4", label: "Growth Open 4TDM" },
+            { key: "grf", label: "Growth Rock FFA" },
+            { key: "gs", label: "Growth Squads" },
+            { key: "gz", label: "Growth Sandbox" },
+            { key: "gae5spacemf", label: "Growth Armsrace Space Maze FFA" },
+            { key: "halloween", label: "Halloween (Event)" },
+            { key: "labyrinth", label: "Labyrinth" },
+            { key: "limbo", label: "Limbo" },
+            { key: "magicm2", label: "Magic Maze 2TDM" },
+            { key: "magicm3", label: "Magic Maze 3TDM" },
+            { key: "magicm4", label: "Magic Maze 4TDM" },
+            { key: "magicmf", label: "Magic Maze FFA" },
+            { key: "magicmd", label: "Magic Maze Duos" },
+            { key: "magicms", label: "Magic Maze Squads " },
+            { key: "magicmc", label: "Magic Maze Clanwars " },
+            { key: "manhuntg", label: "Manhunt" },
+            { key: "manhuntmf", label: "Manhunt Maze FFA" },
+            { key: "marchmadness", label: "March Madness (Event)" },
+            { key: "m2", label: "Maze 2TDM" },
+            { key: "m2c", label: "Maze 2TDM Capture The Flag" },
+            { key: "m2d", label: "Maze 2TDM Domination" },
+            { key: "m4", label: "Maze 4TDM" },
+            { key: "m4d", label: "Maze 4TDM Domination" },
+            { key: "md", label: "Maze Duos" },
+            { key: "mf", label: "Maze FFA" },
+            { key: "mo3", label: "Maze Open 3TDM" },
+            { key: "mo3d", label: "Maze Open 3TDM Domination" },
+            { key: "ms", label: "Maze Squads" },
+            { key: "classicmf", label: "Classic Maze" },
+            { key: "classicf", label: "Classic FFA" },
+            { key: "classic2", label: "Classic 2TDM" },
+            { key: "classic3", label: "Classic 3TDM" },
+            { key: "classic4", label: "Classic 4TDM" },
+            { key: "yins4yang", label: "YinYang" },
+            { key: "test", label: "Testing" },
+            { key: "nexus", label: "Nexus" },
+            { key: "o2", label: "Open 2TDM" },
+            { key: "o3", label: "Open 3TDM" },
+            { key: "o4", label: "Open 4TDM"},
+            { key: "om3", label: "Open Maze 3TDM" },
+            { key: "om3t", label: "Open Maze 3TDM Tag" },
+            { key: "om4", label: "Open Maze 4TDM" },
+            { key: "om4t", label: "Open Maze 4TDM Tag" },
+            { key: "outbreak", label: "Outbreak" },
+            { key: "outbreakmf", label: "Outbreak Maze FFA" },
+            { key: "outbreakms", label: "Outbreak Maze Squads" },
+            { key: "overgrowthd", label: "Overgrowth Domination" },
+            { key: "overgrowth", label: "Overgrowth" },
+            { key: "overgrowth2", label: "Overgrowth 2TDM" },
+            { key: "overgrowth3", label: "Overgrowth 3TDM" },
+            { key: "overgrowth4", label: "Overgrowth 4TDM" },
+            { key: "overgrowtho2", label: "Overgrowth Open 2TDM" },
+            { key: "overgrowtho3", label: "Overgrowth Open 3TDM" },
+            { key: "overgrowtho4", label: "Overgrowth Open 4TDM" },
+            { key: "overgrowthc", label: "Overgrowth Clanwars" },
+            { key: "overgrowthf", label: "Overgrowth FFA" },
+            { key: "p4", label: "Portal 4TDM" },
+            { key: "pumpkinpatch", label: "Pumpkin Patch (Event)" },
+            { key: "rf", label: "Rock FFA" },
+            { key: "space2", label: "Space 2TDM" },
+            { key: "space3", label: "Space 3TDM" },
+            { key: "space4", label: "Space 4TDM" },
+            { key: "spacemf", label: "Space Maze FFA" },
+            { key: "spacem2", label: "Space Maze 2TDM" },
+            { key: "spacem3", label: "Space Maze 3TDM" },
+            { key: "spacem4", label: "Space Maze 4TDM" },
+            { key: "spacemc", label: "Space Maze Clanwars" },
+            { key: "spacems", label: "Space Maze Squads" },
+            { key: "spaceo2", label: "Space Open 2TDM" },
+            { key: "spaceo3", label: "Space Open 3TDM" },
+            { key: "spaceo4", label: "Space Open 4TDM" },
+            { key: "s", label: "Squads" },
+            { key: "t", label: "Tag" },
+            { key: "tar", label: "Tartarus" },
+            { key: "z", label: "Sandbox" },
+            { key: "2", label: "2TDM" },
+            { key: "2b", label: "2 Teams Soccer" },
+            { key: "2d", label: "2TDM Domination" },
+            { key: "2m", label: "Mothership 2TDM" },
+            { key: "3d", label: "3TDM Domination" },
+            { key: "g3", label: "Growth 3TDM" },
+            { key: "4", label: "4TDM" },
+            { key: "4m", label: "Mothership 4TDM" },
+            { key: "4d", label: "4TDM Domination" },
+            { key: "g4", label: "4TDM Growth" },
+            { key: "4g", label: "4TDM Grudge Ball" },
+            { key: "bastion", label: "Siege Bastion" },
+            { key: "blitz", label: "Siege Blitz" },
+            { key: "citadel", label: "Siege Citadel" },
+            { key: "fortress", label: "Siege Fortress" },
+            { key: "mothership", label: "Mothership" },
+            { key: "skinwalkers", label: "Skinwalkers" },
+            { key: "w33olds5forge", label: "Old Forge" },
+            { key: "w33olds9labyrinth", label: "Old Labyrinth" },
+            { key: "w33oldscdreadnoughts", label: "Old Dreadnoughts" },
+            { key: "w33oldscdreadnoughts2", label: "Old Dreadnoughts 2TDM" },
+            { key: "w33oldscdreadnoughts4", label: "Old Dreadnoughts 4TDM" },
+            { key: "w33oldscdreadnoughtso3", label: "Old Dreadnoughts Open 3TDM" },
+            { key: "w33oldscdreadnoughtso4", label: "Old Dreadnoughts Open 4TDM" },
+            { key: "%", label: "Privated Server"},
+        ];
+
+        // Sort modes contextually by descending string length to match largest patterns first
+        const sortedGameModes = [...gameModesConfig].sort((a, b) => b.key.length - a.key.length);
+
+        // Core Layout DOM References
+        const tableBody = document.getElementById('table-body');
+        const updateTimer = document.getElementById('update-timer');
+        const errorBanner = document.getElementById('error-banner');
+        
+        const hideHiddenCheck = document.getElementById('hide-hidden');
+        const hideOfflineCheck = document.getElementById('hide-offline');
+        const searchInput = document.getElementById('searchInput');
+
+        const statClients = document.getElementById('stat-clients');
+        const statOnline = document.getElementById('stat-online');
+        const statOffline = document.getElementById('stat-offline');
+
+        const canvas = document.getElementById("player-count-canvas");
+        const canvasContext = canvas.getContext("2d");
+        const canvasContainer = document.getElementById("canvas-container");
+
+        // Runtime State Filters
+        let activeRegionFilter = "all";
+        let activeModeFilter = "all";
+        let currentSortingMetric = "clients";
+        let cachedStatusData = {};
+        let structuralLogsPayload = null;
+
+        // Specialized Token Mode Parser
+        function extractGameModeFromCode(code = "", name = "") {
+            const lowerName = name.toLowerCase();
+            if (lowerName === "#eux") return "Limbo";
+            if (lowerName.length === 3) return "Sandbox";
+
+            if (!code || typeof code !== "string") return "Unknown";
+            const lower = code.toLowerCase();
+
+            for (const mode of sortedGameModes) {
+                if (lower === mode.key.toLowerCase()) return mode.label;
+            }
+
+            const tokens = lower.split(/[^a-z0-9]+/i);
+            for (const token of tokens) {
+                for (const mode of sortedGameModes) {
+                    if (token === mode.key.toLowerCase()) return mode.label;
+                }
+            }
+
+            for (const mode of sortedGameModes) {
+                const regex = new RegExp(`(?:^|[^a-z0-9])${mode.key.toLowerCase()}(?:[^a-z0-9]|$)`);
+                if (regex.test(lower)) return mode.label;
+            }
+
+            // Fallback Algorithmic parsing rules
+            const modifierMap = { g: "Growth", a: "Arms Race", p: "Portal", o: "Open", m: "Maze" };
+            const teamMap = { f: "FFA", d: "Duos", s: "Squads", c: "Clan Wars", 1: "1TDM", 2: "2TDM", 3: "3TDM", 4: "4TDM" };
+            const winMap = { d: "Domination", m: "Mothership", a: "Assault", s: "Siege", t: "Tag", p: "Pandemic", b: "Soccer", g: "Grudge Ball", e: "Elimination", c: "Capture the Flag", z: "Sandbox" };
+
+            const chars = lower.replace(/[^a-z0-9]/gi, "").split("");
+            const mods = [];
+            let team = null, win = null;
+
+            for (const char of chars) {
+                if (!team && teamMap[char]) team = teamMap[char];
+                else if (!win && winMap[char]) win = winMap[char];
+                else if (modifierMap[char] && !mods.includes(modifierMap[char])) mods.push(modifierMap[char]);
+            }
+
+            const dynamicLabel = [...mods, team, win].filter(Boolean).join(" ");
+            const fallbackMatch = sortedGameModes.find((m) => lower.includes(m.key.toLowerCase()));
+            if (fallbackMatch) return fallbackMatch.label;
+
+            let resultMode = dynamicLabel || "Unknown";
+            if (["#wv", "#cv", "#ev", "#av"].includes(name)) {
+                resultMode += " (shiny)";
+            }
+            return resultMode;
+        }
+
+        // Analytical Time Conversion Format
+        function formatUptime(seconds) {
+            if (!seconds) return '0s';
+            if (seconds < 3600) return `${Math.floor(seconds / 60)}m ${Math.floor(seconds % 60)}s`;
+            return `${Math.floor(seconds / 3600)}h ${Math.floor(seconds / 60) % 60}m`;
+        }
+
+        function getMsptClass(mspt) {
+            if (mspt >= 30) return "mspt-bad";
+            if (mspt >= 15) return "mspt-mid";
+            return "mspt-good";
+        }
+
+        // Byte Logs array conversion mapper
+        function transformArrayToLogsJson(array) {
+            let processedLogs = [];
+            let dataCopy = [...array];
+            while (dataCopy.length > 0) {
+                const jsonPoint = {
+                    timestamp: dataCopy.shift(),
+                    serverCount: dataCopy.shift(),
+                };
+                for (let index = 0; index < jsonPoint.serverCount; index++) {
+                    const name = dataCopy.shift();
+                    const clients = dataCopy.shift();
+                    const mspt = dataCopy.shift();
+                    const uptime = dataCopy.shift();
+
+                    jsonPoint[name] = { name, clients, mspt, uptime };
+                }
+                processedLogs.push(jsonPoint);
+            }
+            return processedLogs;
+        }
+
+        // Primary Core Synchronization Loop
+        async function updateDashboardData() {
+            try {
+                const response = await fetch(API_URL);
+                if (!response.ok) throw new Error(`HTTP network error returned status ${response.status}`);
+                
+                const data = await response.json();
+                if (!data || !data.status) throw new Error("Invalid structure payload configuration.");
+                
+                cachedStatusData = data.status;
+                errorBanner.style.display = 'none';
+
+                // Synchronize Log Analytics History
+                try {
+                    const logsResponse = await fetch(LOGS_URL());
+                    if (logsResponse.ok) {
+                        const rawLogsArray = await logsResponse.json();
+                        structuralLogsPayload = transformArrayToLogsJson(rawLogsArray);
+                    }
+                } catch (err) {
+                    console.warn("Analytics server logs payload error bypass:", err);
+                }
+
+                renderInterface();
+            } catch (err) {
+                errorBanner.textContent = `Feed Connection Interrupted: ${err.message}. Check CORS header constraints safely.`;
+                errorBanner.style.display = 'block';
+            }
+            updateTimer.textContent = `Last synchronized: ${new Date().toLocaleTimeString()}`;
+        }
+
+        // Rendering Core Engine Implementation
+        function renderInterface() {
+            let htmlBuffer = '';
+            let globalClientsCount = 0;
+            let onlineNodesCount = 0;
+            let offlineNodesCount = 0;
+            let singleVisibleServerTarget = null;
+            let matchingFilterTotalCount = 0;
+
+            const searchQueryString = searchInput.value.toLowerCase();
+
+            // Transform state object properties to array structure
+            const activeNodesList = Object.keys(cachedStatusData).map(key => {
+                return { key, ...cachedStatusData[key] };
+            });
+
+            // Handle Node Calculations Matrix
+            activeNodesList.forEach(node => {
+                if (node.online) {
+                    onlineNodesCount++;
+                    globalClientsCount += (node.clients || 0);
+                } else {
+                    offlineNodesCount++;
+                }
+            });
+
+            // Perform active dataset metric sorting actions
+            activeNodesList.sort((a, b) => {
+                const metricA = a[currentSortingMetric] !== undefined ? a[currentSortingMetric] : 0;
+                const metricB = b[currentSortingMetric] !== undefined ? b[currentSortingMetric] : 0;
+                return metricB - metricA;
+            });
+
+            // Dom Node generation pipeline
+            activeNodesList.forEach(node => {
+                if (hideHiddenCheck.checked && node.hidden) return;
+                if (hideOfflineCheck.checked && !node.online) return;
+
+                const displayName = node.name || node.key;
+                const evaluatedRegionCode = displayName?.[0] || "";
+                const regionName = regionsMatrix[evaluatedRegionCode] || "Unknown";
+
+                const combinedContextString = [node.mode, node.code].filter(Boolean).join(" ");
+                const cleanGamemodeText = extractGameModeFromCode(combinedContextString, displayName);
+
+                // Filter evaluation criteria logic
+                const searchMatches = displayName.toLowerCase().includes(searchQueryString);
+                const regionMatches = activeRegionFilter === "all" || regionName.toLowerCase() === activeRegionFilter;
+                const gamemodeMatches = activeModeFilter === "all" || cleanGamemodeText.toLowerCase().includes(activeModeFilter);
+
+                if (!searchMatches || !regionMatches || !gamemodeMatches) return;
+
+                matchingFilterTotalCount++;
+                if (singleVisibleServerTarget === null) {
+                    singleVisibleServerTarget = displayName;
+                } else {
+                    singleVisibleServerTarget = false; 
+                }
+
+                const displayUptime = node.online ? formatUptime(node.uptime) : '-';
+                const statusBadgeStyle = node.online ? 'badge-online' : 'badge-offline';
+                const currentMsptValue = node.online && node.mspt !== undefined ? node.mspt.toFixed(1) + 'ms' : '-';
+                const performanceColorTextClass = node.online ? getMsptClass(node.mspt || 0) : '';
+                const routingPortMap = node.host && node.host.split ? node.host.split("/")[1] : "?";
+                const displayHostCode = node.code || '-';
+
+                htmlBuffer += `
+                    <tr>
+                        <td><strong><a class="server-link" href="https://arras.io/#${displayName}">#${displayName}</a></strong></td>
+                        <td class="server-type">${cleanGamemodeText}</td>
+                        <td><span class="badge ${statusBadgeStyle}">${node.online ? 'ONLINE' : 'OFFLINE'}</span></td>
+                        <td><strong>${node.clients !== undefined ? node.clients : '-'}</strong></td>
+                        <td class="${performanceColorTextClass}">${currentMsptValue}</td>
+                        <td>${displayUptime}</td>
+                        <td style="color: #94a3b8;">${regionName}</td>
+                        <td style="color: #64748b; font-family: monospace;">${routingPortMap}</td>
+                        <td style="color: #94a3b8; font-family: monospace;">${displayHostCode}</td>
+                    </tr>
+                `;
+            });
+
+            // Interface Stat Card synchronization updates
+            statClients.textContent = globalClientsCount;
+            statOnline.textContent = onlineNodesCount;
+            statOffline.textContent = offlineNodesCount;
+
+            tableBody.innerHTML = htmlBuffer || `<tr><td colspan=\"9\" style=\"text-align: center; color: #94a3b8;\">No tracked server nodes match established filtering metrics.</td></tr>`;
+
+            // Canvas analytical visualization visibility switcher
+            if (singleVisibleServerTarget && structuralLogsPayload) {
+                canvasContainer.style.display = "block";
+                renderLogsToCanvas(singleVisibleServerTarget);
+            } else {
+                canvasContainer.style.display = "none";
+            }
+        }
+
+        // Analytical Historical Node Graph Processing Engine
+        function renderLogsToCanvas(serverIdentifierName) {
+            if (!structuralLogsPayload) return;
+
+            canvasContext.clearRect(0, 0, canvas.width, canvas.height);
+            canvasContext.strokeStyle = "#334155";
+            canvasContext.fillStyle = "#64748b";
+            canvasContext.lineWidth = 0.5;
+            canvasContext.textAlign = "right";
+            canvasContext.textBaseline = "top";
+            canvasContext.font = "9px Ubuntu, sans-serif";
+
+            // Draw historical vertical grid intervals
+            const lastThirtyMinutesOffset = Date.now() % 1800000;
+            for (let offset = lastThirtyMinutesOffset; offset < 10800000; offset += 1800000) {
+                const timestampVal = new Date(Date.now() - offset);
+                const computedX = (canvas.width * (10800e3 - offset)) / 10800e3;
+
+                canvasContext.beginPath();
+                canvasContext.moveTo(computedX, 0);
+                canvasContext.lineTo(computedX, canvas.height);
+                canvasContext.stroke();
+
+                canvasContext.fillText(
+                    timestampVal.toLocaleTimeString({}, { hour: "numeric", minute: "2-digit" }),
+                    computedX - 4,
+                    4
+                );
+            }
+
+            // Draw user volume horizontal constraints marker
+            for (let dynamicPlayers = 5; dynamicPlayers < 70; dynamicPlayers += 10) {
+                const computedY = canvas.height - 2.5 * dynamicPlayers;
+
+                canvasContext.beginPath();
+                canvasContext.moveTo(0, computedY);
+                canvasContext.lineTo(canvas.width, computedY);
+                canvasContext.stroke();
+
+                canvasContext.fillText(dynamicPlayers, canvas.width - 4, computedY + 2);
+            }
+
+            // Trace data mapping lines onto layout grid path
+            canvasContext.strokeStyle = "#38bdf8";
+            canvasContext.fillStyle = "rgba(56, 189, 248, 0.08)";
+            canvasContext.lineWidth = 1.5;
+            canvasContext.beginPath();
+
+            let initialX = null, initialY = null;
+            let finalYPosition = 0;
+
+            structuralLogsPayload.forEach((logMetricsPoint) => {
+                const timeDifference = Date.now() - new Date(logMetricsPoint.timestamp).getTime();
+                const computedX = (canvas.width * (10800e3 - timeDifference)) / 10800e3;
+                const computedY = canvas.height - 2.5 * (logMetricsPoint[serverIdentifierName]?.clients || 0);
+
+                canvasContext.lineTo(computedX, computedY);
+
+                if (initialX === null) {
+                    initialX = computedX;
+                    initialY = computedY;
+                }
+                finalYPosition = computedY;
+            });
+
+            // Enclose the data area layout path vectors for structural coloring fill loops
+            canvasContext.lineTo(-50, finalYPosition);
+            canvasContext.lineTo(-50, canvas.height + 50);
+            canvasContext.lineTo(canvas.width + 50, canvas.height + 50);
+            canvasContext.lineTo(canvas.width + 50, initialY);
+            canvasContext.lineTo(initialX, initialY);
+
+            canvasContext.fill();
+            canvasContext.stroke();
+        }
+
+        // Initialize Operational Selection Event Handlers
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Gamemode Selection Filter Pipeline
+            document.querySelectorAll("#mode-filters .filter-btn").forEach(button => {
+                button.addEventListener("click", () => {
+                    document.querySelectorAll("#mode-filters .filter-btn").forEach(btn => btn.classList.remove("active"));
+                    button.classList.add("active");
+                    activeModeFilter = button.dataset.mode;
+                    renderInterface();
+                });
+            });
+
+            // Regional Selection Routing Handler
+            document.querySelectorAll("#region-filters .filter-btn").forEach(button => {
+                button.addEventListener("click", () => {
+                    document.querySelectorAll("#region-filters .filter-btn").forEach(btn => btn.classList.remove("active"));
+                    button.classList.add("active");
+                    activeRegionFilter = button.dataset.region;
+                    renderInterface();
+                });
+            });
+
+            // Sorting Metrics Rule Modifier
+            document.querySelectorAll("#sorting-filters .filter-btn").forEach(button => {
+                button.addEventListener("click", () => {
+                    document.querySelectorAll("#sorting-filters .filter-btn").forEach(btn => btn.classList.remove("active"));
+                    button.classList.add("active");
+                    currentSortingMetric = button.dataset.sorting;
+                    renderInterface();
+                });
+            });
+
+            // View Constraints Toggles
+            hideHiddenCheck.addEventListener('change', renderInterface);
+            hideOfflineCheck.addEventListener('change', renderInterface);
+            searchInput.addEventListener('input', renderInterface);
+
+            // Establish Automated Background Fetch Timing Engine Loops
+            updateDashboardData();
+            setInterval(updateDashboardData, 1200);
+        });
+    </script>
+</body>
+</html>
