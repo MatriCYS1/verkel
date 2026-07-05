@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Message Log</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .message-list {
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 200px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            background: #fff;
+        }
+        .message-item {
+            padding: 5px;
+            border-bottom: 1px solid #eee;
+        }
+        .input-group {
+            display: flex;
+            gap: 10px;
+        }
+        input[type="text"] {
+            flex: 1;
+            padding: 8px;
+        }
+        button {
+            padding: 8px 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Application Message History</h2>
+    <div id="messageList" class="message-list"></div>
+    
+    <div class="input-group">
+        <input type="text" id="messageInput" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script>
+    // Load existing messages from standard browser storage on initialization
+    window.onload = function() {
+        displayMessages();
+    };
+
+    function getMessages() {
+        const messages = localStorage.getItem('app_messages');
+        return messages ? JSON.parse(messages) : [];
+    }
+
+    function displayMessages() {
+        const messageList = document.getElementById('messageList');
+        messageList.innerHTML = ''; // Clear current display
+        
+        const messages = getMessages();
+        messages.forEach(msg => {
+            const div = document.createElement('div');
+            div.className = 'message-item';
+            // Use textContent to ensure text is treated as data, preventing XSS injection
+            div.textContent = `[${msg.timestamp}] ${msg.text}`;
+            messageList.appendChild(div);
+        });
+        
+        // Auto-scroll to the bottom of the log
+        messageList.scrollTop = messageList.scrollHeight;
+    }
+
+    function sendMessage() {
+        const input = document.getElementById('messageInput');
+        const text = input.value.trim();
+        
+        if (text === '') return;
+
+        const messages = getMessages();
+        const newMessage = {
+            text: text,
+            timestamp: new Date().toLocaleTimeString()
+        };
+        
+        messages.push(newMessage);
+        localStorage.setItem('app_messages', JSON.stringify(messages));
+        
+        input.value = ''; // Clear input field
+        displayMessages(); // Refresh UI
+    }
+</script>
+
+</body>
+</html>

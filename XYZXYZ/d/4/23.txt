@@ -1,0 +1,2801 @@
+
+4:41:35 PM
+(KananRe#3845) KananRe
+
+a player comes every 10 days
+4:41:44 PM
+(King of AHK#6823) King of AHK
+
+we need one where partySocket.send is available
+4:41:45 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#1625) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+we have the stupid backup one incase this dies
+4:41:47 PM
+(KananRe#3845) KananRe
+
+we should make a third chatzy room
+4:41:58 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#1625) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+WAIT A FKING MOMENT
+4:41:59 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#1625) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+OMG
+4:42:02 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Use !help to view a list of commands.
+4:42:04 PM
+(KananRe#3845) KananRe
+
+sonion what even is partysocket.send
+4:42:07 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#1625) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+I HAVE SOMETHING
+4:42:12 PM
+(вода (voda)#3158) вода (voda)
+
+sonion
+4:42:16 PM
+(King of AHK#6823) King of AHK
+
+most useful command in vonsole
+4:42:18 PM
+(вода (voda)#3158) вода (voda)
+
+we know you have a copy of arrsa verify
+4:42:18 PM
+(KananRe#3845) KananRe
+
+sonion
+4:42:22 PM
+(King of AHK#6823) King of AHK
+
+"Vonsole"?
+4:42:26 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#1625) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+arrasv.vercel.app DOES NOT BLOCK partysocket.send
+4:42:32 PM
+(вода (voda)#3158) вода (voda)
+
+yeah
+4:42:33 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#1625) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+ITS BEFORE THE CHANGE
+4:42:41 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#1625) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+LOLLLLLLLL
+4:42:44 PM
+(KananRe#3845) KananRe
+
+what is partysocket.send vrotato
+4:42:54 PM
+(King of AHK#6823) King of AHK
+
+W
+4:43:07 PM
+(King of AHK#6823) King of AHK
+
+clearly knows nothing about javascript
+4:43:16 PM
+(King of AHK#6823) King of AHK
+
+javascript >>>>>>>>>>>>>>>>>>>> python in every way son
+4:43:22 PM
+(King of AHK#6823) King of AHK
+
+!rd 6
+4:43:22 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Bought RD 6. You now have 3.79e5 of RD 6
+4:43:22 PM
+(King of AHK#6823) King of AHK
+
+!rd 6
+4:43:22 PM
+(King of AHK#6823) King of AHK
+
+!rd 6
+4:43:22 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Bought RD 6. You now have 5.61e5 of RD 6
+4:43:22 PM
+(King of AHK#6823) King of AHK
+
+!rd 6
+4:43:22 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Bought RD 6. You now have 8.30e5 of RD 6
+4:43:22 PM
+(King of AHK#6823) King of AHK
+
+!rd 6
+4:43:22 PM
+(King of AHK#6823) King of AHK
+
+!rd 6
+4:43:23 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Bought RD 6. You now have 1.23e6 of RD 6
+4:43:23 PM
+(King of AHK#6823) King of AHK
+
+!rd 6
+4:43:23 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Bought RD 6. You now have 1.82e6 of RD 6
+4:43:23 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Bought RD 6. You now have 2.69e6 of RD 6
+4:43:23 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Bought RD 6. You now have 3.97e6 of RD 6
+4:43:26 PM
+(King of AHK#6823) King of AHK
+
+!rd 6
+4:43:26 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Bought RD 6. You now have 5.87e6 of RD 6
+4:43:30 PM
+(King of AHK#6823) King of AHK
+
+!rd 6
+4:43:30 PM
+(King of AHK#6823) King of AHK
+
+!rd 6
+4:43:30 PM
+(King of AHK#6823) King of AHK
+
+!rd 6
+4:43:30 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Bought RD 6. You now have 8.69e6 of RD 6
+4:43:30 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Bought RD 6. You now have 1.29e7 of RD 6
+4:43:30 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Can't buy RD 6. You have 3.42e15 and RD cost is 1.00e16 RM.
+4:43:49 PM
+(KananRe#3845) KananRe
+
+SONball watterSON what is partysocket.send 😭
+4:44:09 PM
+(вода (voda)#8939) вода (voda)
+
+sonion only knows python
+4:44:14 PM
+(вода (voda)#3158) вода (voda)
+
+frr
+4:44:20 PM
+(KananRe#3845) KananRe
+
+fr
+4:44:33 PM
+(KananRe#3845) KananRe
+
+the only thing i know is some equations and some print
+4:44:37 PM
+(KananRe#3845) KananRe
+
+e
+4:45:10 PM
+(KananRe#3845) KananRe
+
+a=3, b=8, c=a*b, print(c+a) outputs 27
+4:45:11 PM
+
+#wf has restarted.
+4:45:19 PM
+(KananRe#3845) KananRe
+
+that's basically all i know fr
+4:45:30 PM
+(KananRe#3845) KananRe
+
+besides scratch
+4:45:33 PM
+(Replying to KananRe#3845: that's basically all i know fr)
+(вода (voda)#3158) вода (voda)
+
+partySocket.send sends stuff to socket
+4:45:43 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+voda
+4:45:44 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+42
+4:45:45 PM
+(🌠101#2289) 🌠101
+
+@Im just :(
+4:45:48 PM
+(🌠101#2289) 🌠101
+
+wake up sonino
+4:46:14 PM
+(KananRe#3845) KananRe
+
+i can make a break infinity in scratch with logadd, logsubtract, logmultiply, logdivide, logexponentiate, and logroot
+4:46:19 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+sybau
+4:46:26 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+we all know its broken and it doesnt work
+4:46:35 PM
+(Replying to ArrasDesmos#4086: we all know its broken and it doesnt work)
+(KananRe#3845) KananRe
+
+Sonato how is it broken
+4:46:42 PM
+
+#wph has restarted.
+4:46:46 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+son when u told unk the formulas
+4:46:51 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+he said you got most wrong
+4:46:51 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+son
+4:46:58 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Use !help to view a list of commands.
+4:47:03 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+sybau
+4:47:57 PM
+(вода (voda)#7970) вода (voda)
+
+@​ArrasDesmos 42
+4:48:03 PM
+(🌠101#2289) 🌠101
+
+49
+4:48:11 PM
+
+#ee has restarted.
+4:48:47 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+https://iostatus.vercel.app/error/code.txt
+4:49:08 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+67
+4:49:13 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+hi methcles
+4:49:19 PM
+([API] methcles#10000) [API] methcles
+
+4:49:19 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+check https://iostatus.vercel.app/error/code.txt
+4:49:24 PM
+(KananRe#3845) KananRe
+
+https://scratch.mit.edu/projects/1297606437/
+4:49:30 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+son im mot going to your ip grabber
+4:49:39 PM
+(KananRe#3845) KananRe
+
+WHY CANT I REPLY TO METHCLES
+4:49:40 PM
+(KananRe#3845) KananRe
+
+WJY
+4:49:42 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+ITS A TEXT FILES
+4:49:42 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+FILE*
+4:49:42 PM
+(KananRe#3845) KananRe
+
+WHY
+4:49:42 PM
+(KananRe#3845) KananRe
+
+CANT
+4:49:44 PM
+(KananRe#3845) KananRe
+
+I
+4:49:44 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+i got banned from arrascord earlier today
+4:49:45 PM
+(KananRe#3845) KananRe
+
+REPLY
+4:49:49 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+this is good news
+4:49:51 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+FYM IP GRABBER
+4:49:54 PM
+
+Couldn't find a valid reply to link to that message.
+4:49:56 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+kananre shut the fuck up
+4:49:59 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+rip
+4:50:02 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+.
+4:50:04 PM
+(KananRe#3845) KananRe
+
+WHY CANT I REPLY TO METHCLESSS
+4:50:07 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+cuz
+4:50:16 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+he isnt a user
+4:50:16 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+mute this moron gng
+4:50:24 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+frrr
+4:50:25 PM
+(Replying to ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857: he isnt a user)
+(KananRe#3845) KananRe
+
+what do you mean gng
+4:50:31 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+wait ill send u wats inside https://iostatus.vercel.app/error/code.txt
+4:50:48 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+imagine multiboxing being a reason for a ban in arrascord
+4:50:48 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+son just send the txt file
+4:50:49 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+genuine shit son
+4:50:58 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+it grabs ur code btw
+4:51:02 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+matricys should be demoted
+4:51:03 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+rn
+4:51:08 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+they are scared that i would leak mbox script i think
+4:51:12 PM
+(Replying to ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857: wait ill send u wats inside https://iostatus.vercel.app/error/code.txt)
+(KananRe#3845) KananRe
+
+Bro sounds like fukuna girl /j/j/j/j/j
+4:51:18 PM
+([API] [DISCORD] MatriCYS-1 ツ#10000) [API] [DISCORD] MatriCYS-1 ツ
+
+function msg(message) { document.getElementById('chatInput').value = message; sendChat() } msg(verifyCode)
+4:51:27 PM
+([API] [DISCORD] MatriCYS-1 ツ#10000) [API] [DISCORD] MatriCYS-1 ツ
+
+<@1258721684051988594> here
+4:51:28 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+even though anyone can just view lucrehulk's repos 😂
+4:51:36 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+FR
+4:51:38 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+retarded admins
+4:51:41 PM
+(Replying to ArrasDesmos#4086: FR)
+(KananRe#3845) KananRe
+
+Son
+4:51:52 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+son arrascord is the 9th circle of gooners
+4:51:54 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+what is this
+4:51:56 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+cornyland
+4:51:58 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Use !help to view a list of commands.
+4:51:59 PM
+([API] [DISCORD] MatriCYS-1 ツ#10000) [API] [DISCORD] MatriCYS-1 ツ
+
+guess
+4:52:00 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+and why am i hearing people saying
+4:52:09 PM
+(KananRe#3845) KananRe
+
+NOW I CANT REPLY TO MATRI????
+4:52:10 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+that you can't send packets the usual way anymore?
+4:52:16 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+gng
+4:52:16 PM
+(KananRe#3845) KananRe
+
+Couldn't find a valid reply to link to that message.
+4:52:17 PM
+([API] [DISCORD] MatriCYS-1 ツ#10000) [API] [DISCORD] MatriCYS-1 ツ
+
+yup
+4:52:20 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+testing shitted partySocket.send
+4:52:25 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+ok
+4:52:26 PM
+([API] [DISCORD] MatriCYS-1 ツ#10000) [API] [DISCORD] MatriCYS-1 ツ
+
+4:52:28 PM
+(KananRe#3845) KananRe
+
+Couldn't find a valid reply to link to that message.
+4:52:30 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+does it look like i care
+4:52:36 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+now you have to write 2 lines of code for packets instead of 1
+4:52:40 PM
+([API] [DISCORD] MatriCYS-1 ツ#10000) [API] [DISCORD] MatriCYS-1 ツ
+
+function msg(message) { document.getElementById('chatInput').value = message; sendChat() } msg(verifyCode)
+4:52:40 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+i dont bother writing 2 lines of code
+4:52:45 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+his code is public
+4:52:51 PM
+(KananRe#3845) KananRe
+
+Every time I try to reply to matri it says "Couldn't find a valid reply to link to that message."
+4:53:00 PM
+(Replying to KananRe#3845: Every time I try to reply to matri it says "Couldn't find a valid reply to link to that message.")
+(вода (voda)#7970) вода (voda)
+
+what if i fix chatreply
+4:53:18 PM
+
+Muted ) for -3h (-10800000 ms).
+4:53:24 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+sybau
+4:54:21 PM
+(Replying to ArrasDesmos#4086: sybau)
+(KananRe#3845) KananRe
+
+syba
+4:54:24 PM
+(KananRe#3845) KananRe
+
+syb
+4:54:24 PM
+(King of AHK#6823) King of AHK
+
+!rd 8
+4:54:25 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Bought RD 8. You now have 33.88 of RD 8
+4:54:25 PM
+(King of AHK#6823) King of AHK
+
+!rd 8!rd 8
+4:54:25 PM
+(KananRe#3845) KananRe
+
+sy
+4:54:25 PM
+(King of AHK#6823) King of AHK
+
+!rd 8
+4:54:25 PM
+(King of AHK#6823) King of AHK
+
+!rd 8
+4:54:25 PM
+(King of AHK#6823) King of AHK
+
+!rd 8
+4:54:25 PM
+(King of AHK#6823) King of AHK
+
+!rd 8
+4:54:25 PM
+(KananRe#3845) KananRe
+
+s
+4:54:26 PM
+(King of AHK#6823) King of AHK
+
+!rd 8
+4:54:26 PM
+(King of AHK#6823) King of AHK
+
+!rd 8
+4:54:26 PM
+(King of AHK#6823) King of AHK
+
+!rd 8
+4:54:26 PM
+(King of AHK#6823) King of AHK
+
+!rd 8
+4:54:26 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Bought RD 8. You now have 50.12 of RD 8
+4:54:26 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Bought RD 8. You now have 74.13 of RD 8
+4:54:26 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Bought RD 8. You now have 109.65 of RD 8
+4:54:26 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Bought RD 8. You now have 162.18 of RD 8
+4:54:26 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Can't buy RD 8. You have 1.90e20 and RD cost is 1.00e21 RM.
+4:54:26 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Can't buy RD 8. You have 2.07e20 and RD cost is 1.00e21 RM.
+4:54:26 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Can't buy RD 8. You have 2.07e20 and RD cost is 1.00e21 RM.
+4:54:26 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Can't buy RD 8. You have 2.07e20 and RD cost is 1.00e21 RM.
+4:54:46 PM
+(Replying to вода (voda)#7970: what if i fix chatreply)
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+yes
+4:54:48 PM
+(KananRe#3845) KananRe
+
+RD 9 is a lie.
+4:54:49 PM
+(of tale#5256) of tale
+
+:3
+4:54:49 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+do it.
+4:54:51 PM
+(KananRe#3845) KananRe
+
+!rds
+4:54:51 PM
+(ArrasDesmos#4086) ArrasDesmos
+1.96e19	1st RD 	1.00e22 RM
+
+1.12e17	2nd RD 	100.00 RM
+
+7.45e14	3rd RD 	1.00e3 RM
+
+3.84e12	4th RD 	1.00e3 RM
+
+1.42e10	5th RD 	1.00e4 RM
+
+3.32e7	6th RD 	1.00e16 RM
+
+4.24e4	7th RD 	1.00e15 RM
+
+162.18	8th RD 	1.00e21 RM
+4:55:04 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+mute of tale
+4:55:04 PM
+(Replying to ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857: do it.)
+(KananRe#3845) KananRe
+
+Test
+4:55:06 PM
+([API] [DISCORD] MatriCYS-1 ツ#10000) [API] [DISCORD] MatriCYS-1 ツ
+
+function msg(message) { document.getElementById('chatInput').value = message; sendChat() } msg(verifyCode)
+4:55:13 PM
+(KananRe#3845) KananRe
+
+NOW I CAN REPLY TO MATRI
+4:55:19 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+son i dont have my pc currently
+4:55:22 PM
+(KananRe#3845) KananRe
+
+NOW I CANT?????
+4:55:30 PM
+([API] [DISCORD] MatriCYS-1 ツ#10000) [API] [DISCORD] MatriCYS-1 ツ
+
+uhhh
+4:55:31 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+kananre are you slow
+4:55:33 PM
+([API] [DISCORD] MatriCYS-1 ツ#10000) [API] [DISCORD] MatriCYS-1 ツ
+
+dont run it
+4:55:35 PM
+([API] [DISCORD] MatriCYS-1 ツ#10000) [API] [DISCORD] MatriCYS-1 ツ
+
+trust
+4:55:40 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+i dont have a code
+4:55:45 PM
+([API] [DISCORD] MatriCYS-1 ツ#10000) [API] [DISCORD] MatriCYS-1 ツ
+
+riep
+4:55:47 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+i have nothing to be afraid of
+4:55:53 PM
+([API] [DISCORD] MatriCYS-1 ツ#10000) [API] [DISCORD] MatriCYS-1 ツ
+
+wait a minute
+4:56:01 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+its called getting rid of the ip grabber
+4:56:05 PM
+([API] [DISCORD] MatriCYS-1 ツ#10000) [API] [DISCORD] MatriCYS-1 ツ
+
+what does it do WITHOUT a code
+4:56:09 PM
+
+#wd has restarted.
+4:56:17 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+it uses
+4:56:20 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+local storage
+4:56:22 PM
+(KananRe#3845) KananRe
+
+CAN SOMEBODY PLEASE MUTE METHCLES
+4:56:26 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+so it will either send undefined
+4:56:31 PM
+(KananRe#3845) KananRe
+
+MUTE METHCLES
+4:56:35 PM
+(вода (voda)#7970) вода (voda)
+
+methcles is better at coding than you
+4:56:36 PM
+(KananRe#3845) KananRe
+
+MUTE METHCLES
+4:56:42 PM
+(KananRe#3845) KananRe
+
+MUTE METHCLES
+4:56:43 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+or it will send the value
+4:56:43 PM
+("e"#148) Guest
+
+e
+4:56:49 PM
+(Replying to "e"#148: e)
+(KananRe#3845) KananRe
+
+KananRe
+4:56:52 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+that is attached to the code key
+4:57:15 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+cuz verifyCode is defined somewhere at the start
+4:57:19 PM
+("e"#148) Guest
+
+baby catbee,user,6408,1783138119453,5,NOTJerryThe
+VILLAGER],user,1660,1783148435149,5,Azure,user,9742,1783151485040,5,🌠101,user,2289,1783154966642,5,Hgf,director,8375,1783161037744,5,of tale,user,5256,1783162101889,5,aurora,user,5922,1783164279842,5,tf,user,6232,1783169680441,5,Sivii,user,870,1783169029417,5,merc,trial,5132,1783169226032,5,Celestial,user,4498,1783169289322,5,King of AHK,user,6823,1783169765523,5,Dread JR,user,7802,1783170056640,5,unk2467,user,545,1783170297168,5,Framez141,user,9984,1783170580499,5,aceoals,user,9694,1783171080740,5,![
+),user,6601,1783171597509,5,this is the tale of,user,5745,1783171615825,5,KananRe,user,3845,1783172426412,5,ArrasDesmos,user,4086,1783172498045,5,༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS),director,6857,1783172686786,5,вода (voda),user,7970,1783172827842,5
+4:57:38 PM
+(Replying to "e"#148: baby catbee,user,6408,1783138119453,5,NOTJerryThe[VILLAGER],user,1660,1783148435149,5,Azure,user,9742,1783151485040,5,🌠101,user,2289,1783154966642,5,Hgf,director,8375,1783161037744,5,of tale,user,5256,1783162101889,5,aurora,user,5922,1783164279842,5,tf,user,6232,1783169680441,5,Sivii,user,870,1783169029417,5,merc,trial,5132,1783169226032,5,Celestial,user,4498,1783169289322,5,King of AHK,user,6823,1783169765523,5,Dread JR,user,7802,1783170056640,5,unk2467,user,545,1783170297168,5,Framez141,user,9984,1783170580499,5,aceoals,user,9694,1783171080740,5,![](https://iostatus.vercel.app/uitems/But_it_refused.gif)),user,6601,1783171597509,5,this is the tale of,user,5745,1783171615825,5,KananRe,user,3845,1783172426412,5,ArrasDesmos,user,4086,1783172498045,5,༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS),director,6857,1783172686786,5,вода (voda),user,7970,1783172827842,5)
+(Dread JR#7802) Dread JR
+
+YAYYYYYY THAT INCLUDES ME :DDDDDDDDDDDDD
+4:57:40 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+it's just a easier way for testing to write localStorage.x-arrasVerifyCode
+4:57:44 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Use !help to view a list of commands.
+4:58:05 PM
+([API] [DISCORD] Dread JR#10000) [API] [DISCORD] Dread JR
+
+look at ts
+4:58:16 PM
+(GDPIXEL78#354) GDPIXEL78
+
+arrasdesmos is fund btw
+4:58:17 PM
+
+#ee has restarted.
+4:58:39 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#6601) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+e
+4:58:43 PM
+(вода (voda)#7970) вода (voda)
+
+h
+4:58:46 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+gdpixel is mentally retarded btw
+4:58:47 PM
+(вода (voda)#7970) вода (voda)
+
+WHAT!
+4:58:52 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#6601) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+function () { [native code]}
+4:58:59 PM
+(вода (voda)#7970) вода (voda)
+
+why is it showing the button gng
+4:59:00 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+just gonna point that out
+4:59:08 PM
+(GDPIXEL78#354) GDPIXEL78
+
+aaaaaaaa hehehe appel
+4:59:21 PM
+(Dread JR#7802) Dread JR
+
+if this rolls on a 2, i am an idiot
+4:59:24 PM
+
+Dread JR rolled a 3-sided dice. The dice showed: 2
+4:59:28 PM
+(вода (voda)#4673) вода (voda)
+
+g
+4:59:30 PM
+(вода (voda)#4673) вода (voda)
+
+Grt
+4:59:34 PM
+(Dread JR#7802) Dread JR
+
+yan
+4:59:35 PM
+(Dread JR#7802) Dread JR
+
+ankrjqsk
+4:59:38 PM
+(вода (voda)#4673) вода (voda)
+
+at least it shows the timestamp
+4:59:40 PM
+(Dread JR#7802) Dread JR
+
+GOD.
+4:59:41 PM
+(Dread JR#7802) Dread JR
+
+GOD.
+4:59:44 PM
+(Dread JR#7802) Dread JR
+
+GOD DAMN IT
+4:59:50 PM
+(GDPIXEL78#354) GDPIXEL78
+
+methcles hates me for no reason btw
+5:00:10 PM
+(GDPIXEL78#354) GDPIXEL78
+
+and mad i exposed arrasdesmos
+5:00:14 PM
+(вода (voda)#4673) вода (voda)
+
+if i roll 5 im a furry
+5:00:15 PM
+
+#wd has restarted.
+5:00:19 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+no im pointing out a fact that you're retarded
+5:00:19 PM
+
+вода (voda) rolled a 5-sided dice. The dice showed: 4
+5:00:21 PM
+(вода (voda)#4673) вода (voda)
+
+Tuff
+5:00:24 PM
+(Replying to вода (voda)#4673: if i roll 5 im a furry)
+(chornos#3015) chornos
+
+PHEWWW
+5:00:35 PM
+(Replying to chornos#3015: PHEWWW)
+(вода (voda)#4673) вода (voda)
+
+bro was about to goon
+5:00:35 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+voda we can agree to round it to 5
+5:00:37 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#6601) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+e
+5:00:44 PM
+(вода (voda)#4673) вода (voda)
+
+i wish i could
+5:01:01 PM
+
+#cc has restarted.
+5:01:08 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#6601) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+function Array() { [native code]}
+5:01:19 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#6601) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+function Animation() { [native code]}
+5:01:19 PM
+(вода (voda)#8415) вода (voda)
+
+Gel
+5:01:21 PM
+(вода (voda)#8415) вода (voda)
+
+wtf
+5:01:36 PM
+(of tale#5256) of tale
+
+if this lands on 5
+5:01:38 PM
+(of tale#5256) of tale
+
+im a furry
+5:01:40 PM
+
+of tale rolled a 5-sided dice. The dice showed: 4
+5:01:42 PM
+
+#wqa has restarted.
+5:01:43 PM
+(of tale#5256) of tale
+
+Phew
+5:01:50 PM
+(GDPIXEL78#354) GDPIXEL78
+
+isnt this chat made for important purposes only?
+5:01:56 PM
+(of tale#5256) of tale
+
+oh
+5:01:58 PM
+(вода (voda)#8415) вода (voda)
+
+i dont think so
+5:02:00 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#6601) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+i litterally dont know what im doing
+5:02:07 PM
+(вода (voda)#8415) вода (voda)
+
+gr
+5:02:10 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#6601) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+function getUsernameColor(hue) { return hsl(${hue}, 40%, 40%);}
+5:02:10 PM
+(вода (voda)#8415) вода (voda)
+
+YES
+5:02:10 PM
+(вода (voda)#8415) вода (voda)
+
+YES
+5:02:16 PM
+(chornos#3015) chornos
+
+dm
+5:02:17 PM
+(chornos#3015) chornos
+
+dm
+5:02:18 PM
+(chornos#3015) chornos
+
+dm
+5:02:19 PM
+(chornos#3015) chornos
+
+dm
+5:02:20 PM
+(вода (voda)#8415) вода (voda)
+
+I FUCKING DID IT
+5:02:24 PM
+(вода (voda)#8415) вода (voda)
+
+at least almost
+5:02:27 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#6601) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+what did you do
+5:02:35 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#6601) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+im matri if you are wondering
+5:02:39 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#6601) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+test account
+5:02:40 PM
+(GDPIXEL78#354) GDPIXEL78
+
+giuys sjhuiti u[p
+5:02:43 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Use !help to view a list of commands.
+5:02:45 PM
+([API] methcles#10000) [API] methcles
+
+5:02:47 PM
+(GDPIXEL78#354) GDPIXEL78
+
+shut u[p*
+5:02:53 PM
+(GDPIXEL78#354) GDPIXEL78
+
+sjit i[p(*
+5:02:54 PM
+(вода (voda)#8415) вода (voda)
+
+godly ss
+5:02:55 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#6601) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+function GPU() { [native code]}
+5:02:58 PM
+(GDPIXEL78#354) GDPIXEL78
+
+sjit i[(
+5:03:01 PM
+(chornos#3015) chornos
+
+if I roll a 5 or above I automatically and magically turn into a female
+5:03:04 PM
+(GDPIXEL78#354) GDPIXEL78
+
+shuit u[p
+5:03:08 PM
+
+chornos rolled a 8-sided dice. The dice showed: 3
+5:03:09 PM
+
+вода (voda) rolled a 58931278126821-sided dice. The dice showed: 50389926040957
+5:03:11 PM
+(chornos#3015) chornos
+
+PHEW
+5:03:12 PM
+(GDPIXEL78#354) GDPIXEL78
+
+shut up*
+5:03:12 PM
+(вода (voda)#8415) вода (voda)
+
+yay
+5:03:19 PM
+(вода (voda)#8415) вода (voda)
+
+if i roll a number above 3
+5:03:31 PM
+(вода (voda)#8415) вода (voda)
+
+i have to play the first minecraft mod video i find
+5:03:36 PM
+
+вода (voda) rolled a 100-sided dice. The dice showed: 62
+5:03:39 PM
+(вода (voda)#8415) вода (voda)
+
+FUCK
+5:03:49 PM
+
+#wf has restarted.
+5:03:56 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+king of luck
+5:04:23 PM
+(chornos#3015) chornos
+
+if I roll a 1 or above voda automaticly turns into a female
+5:04:26 PM
+
+chornos rolled a 7234987498274-sided dice. The dice showed: 6447968570392
+5:04:29 PM
+(chornos#3015) chornos
+
+BET
+5:04:40 PM
+(GDPIXEL78#354) GDPIXEL78
+
+acoording to my calculations 1+1 is 2
+5:04:46 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#6601) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+function UserActivation() { [native code]}
+5:04:55 PM
+(GDPIXEL78#354) GDPIXEL78
+
+bhdbdb
+5:04:57 PM
+(Dread JR#7802) Dread JR
+
+if i roll a number below 2 im going to say an slur
+5:04:59 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#6601) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+function () { [native code]}
+5:05:02 PM
+
+Dread JR rolled a 5002-sided dice. The dice showed: 2972
+5:05:04 PM
+(Replying to chornos#3015: BET)
+(of tale#5256) of tale
+
+"SMASH"
+5:05:11 PM
+(GDPIXEL78#354) GDPIXEL78
+
+1+1 is 2
+5:05:15 PM
+(вода (voda)#8415) вода (voda)
+
+if i roll a number below 16 i have to crack cholo
+5:05:15 PM
+(GDPIXEL78#354) GDPIXEL78
+
+99999999999999
+5:05:22 PM
+(Replying to вода (voda)#8415: if i roll a number below 16 i have to crack cholo)
+(chornos#3015) chornos
+
+;-;
+5:05:27 PM
+
+вода (voda) rolled a 15-sided dice. The dice showed: 15
+5:05:30 PM
+(вода (voda)#8415) вода (voda)
+
+rip
+5:05:32 PM
+(chornos#3015) chornos
+
+f
+5:05:36 PM
+(GDPIXEL78#354) GDPIXEL78
+
+huh
+5:05:40 PM
+(вода (voda)#8415) вода (voda)
+
+wait why did i lwk get nat 15
+5:05:41 PM
+(вода (voda)#8415) вода (voda)
+
+lmfoa
+5:05:47 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#6601) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+voda
+5:05:49 PM
+(вода (voda)#8415) вода (voda)
+
+ok back to coding
+5:05:50 PM
+(of tale#5256) of tale
+
+the
+5:05:51 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#6601) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+what was the command
+5:05:55 PM
+(Replying to вода (voda)#8415: wait why did i lwk get nat 15)
+(chornos#3015) chornos
+
+I don't feel anything
+5:05:56 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#6601) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+to get blocked users
+5:05:59 PM
+(GDPIXEL78#354) GDPIXEL78
+
+what does crack mean
+5:05:59 PM
+(вода (voda)#8415) вода (voda)
+
+which command
+5:06:05 PM
+(вода (voda)#8415) вода (voda)
+
+oh
+5:06:06 PM
+(Replying to GDPIXEL78#354: what does crack mean)
+(of tale#5256) of tale
+
+you dont wanna know
+5:06:07 PM
+(вода (voda)#8415) вода (voda)
+
+blockedUsers
+5:06:10 PM
+(Replying to GDPIXEL78#354: what does crack mean)
+(chornos#3015) chornos
+
+this guy prob 9
+5:06:13 PM
+(Replying to вода (voda)#8415: blockedUsers)
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#6601) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+k ty
+5:06:16 PM
+(Replying to chornos#3015: this guy prob 9)
+(of tale#5256) of tale
+
+the
+5:06:23 PM
+(Replying to of tale#5256: ![the](https://files.catbox.moe/77wkti.gif))
+(chornos#3015) chornos
+
+shhhhh
+5:06:24 PM
+(вода (voda)#8415) вода (voda)
+
+godly shit
+5:06:25 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#6601) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+[object Object]
+5:06:25 PM
+
+#epx has restarted.
+5:06:38 PM
+(Replying to ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#6601: [object Object])
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#6601) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+wait wait
+5:06:41 PM
+(вода (voda)#8415) вода (voda)
+
+vgvgvgvgvgvgvgvgvgvgvgvg!!~ type beat
+5:06:41 PM
+(GDPIXEL78#354) GDPIXEL78
+
+and chornos is a newcomer
+5:06:49 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#6601) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+what gets sent is different from consol
+5:06:50 PM
+(Replying to GDPIXEL78#354: and chornos is a newcomer)
+(chornos#3015) chornos
+
+I'm cholo
+5:06:53 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#6601) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+interesting
+5:06:57 PM
+(Replying to chornos#3015: I'm cholo)
+(of tale#5256) of tale
+
+the
+5:07:09 PM
+(вода (voda)#8415) вода (voda)
+
+wait
+5:07:11 PM
+(Replying to of tale#5256: ![the](https://files.catbox.moe/77wkti.gif))
+(chornos#3015) chornos
+
+of tale x sentry 18 ahhh
+5:07:14 PM
+(вода (voda)#8415) вода (voda)
+
+FHASJFSAOKFJSALKFASM
+5:07:24 PM
+(вода (voda)#8415) вода (voda)
+
+replies ruin ts
+5:07:44 PM
+(ArrasDesmos#4086) ArrasDesmos
+
+Use !help to view a list of commands.
+5:07:47 PM
+(вода (voda)#1220) вода (voda)
+
+please work
+5:07:50 PM
+(Replying to вода (voda)#1220: please work)
+(вода (voda)#1220) вода (voda)
+
+please..
+5:07:51 PM
+
+#wpx has restarted.
+5:07:53 PM
+(GDPIXEL78#354) GDPIXEL78
+
+chornos is new btw
+5:07:54 PM
+(вода (voda)#1220) вода (voda)
+
+FUCK
+5:08:01 PM
+(Replying to GDPIXEL78#354: chornos is new btw)
+(chornos#3015) chornos
+
+I'm cholo
+5:08:01 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif)#738) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif)
+
+test user 2
+5:08:17 PM
+(Replying to chornos#3015: I'm cholo)
+(of tale#5256) of tale
+
+the
+5:08:23 PM
+(GDPIXEL78#354) GDPIXEL78
+
+chornios is new btw
+5:08:32 PM
+(Replying to of tale#5256: ![the](https://files.catbox.moe/77wkti.gif))
+(chornos#3015) chornos
+
+challenge impossible
+5:08:52 PM
+(Replying to of tale#5256: ![the](https://files.catbox.moe/77wkti.gif))
+(chornos#3015) chornos
+
+post that image if u have a crush on voda
+5:09:05 PM
+(вода (voda)#1124) вода (voda)
+
+fuh
+5:09:11 PM
+
+#wf has restarted.
+5:09:13 PM
+Chain length: 4
+(Replying to chornos#3015: post that image if u have a crush on voda)
+(of tale#5256) of tale
+
+the
+5:09:24 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+crazy video title
+5:09:24 PM
+([API] methcles#10000) [API] methcles
+
+5:09:27 PM
+Chain length: 5
+(Replying to of tale#5256: ![the](https://files.catbox.moe/77wkti.gif))
+(chornos#3015) chornos
+
+ss
+5:09:32 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+not sharing
+5:09:35 PM
+Chain length: 5
+(Replying to of tale#5256: ![the](https://files.catbox.moe/77wkti.gif))
+(вода (voda)#1124) вода (voda)
+
+if i roll a number above 15
+5:09:38 PM
+([API] [DISCORD] methcles#10000) [API] [DISCORD] methcles
+
+😛
+5:09:39 PM
+(вода (voda)#1124) вода (voda)
+
+me and of tale have to have a wedding
+5:09:58 PM
+(ArrasDesmos#8107) ArrasDesmos
+
+!ru 1
+5:10:02 PM
+(Replying to вода (voda)#1124: me and of tale have to have a wedding)
+(chornos#3015) chornos
+
+roll it
+5:10:07 PM
+Chain length: 5
+(Replying to of tale#5256: ![the](https://files.catbox.moe/77wkti.gif))
+(GDPIXEL78#354) GDPIXEL78
+
+hai
+5:10:08 PM
+(вода (voda)#1124) вода (voda)
+
+gimme a sec
+5:10:10 PM
+(of tale#5256) of tale
+
+he wont
+5:10:15 PM
+Chain length: 6
+(Replying to GDPIXEL78#354: hai)
+(of tale#5256) of tale
+
+hello
+5:10:49 PM
+([API] [DISCORD] MatriCYS-1 ツ#10000) [API] [DISCORD] MatriCYS-1 ツ
+
+e
+5:10:53 PM
+([API] [DISCORD] MatriCYS-1 ツ#10000) [API] [DISCORD] MatriCYS-1 ツ
+
+of tale
+5:10:59 PM
+(Replying to вода (voda)#1124: gimme a sec)
+(chornos#3015) chornos
+
+r u a pussy
+5:11:07 PM
+(Replying to вода (voda)#1124: gimme a sec)
+(chornos#3015) chornos
+
+r u gonna roll
+5:11:08 PM
+
+вода (voda) rolled a 1e+52-sided dice. The dice showed: 4.981218479066574e+50
+5:11:09 PM
+(вода (voda)#1124) вода (voda)
+
+trust
+5:11:11 PM
+(of tale#5256) of tale
+
+welp
+5:11:15 PM
+(of tale#5256) of tale
+
+:3
+5:11:16 PM
+(вода (voda)#1124) вода (voda)
+
+i was kidding btw
+5:11:21 PM
+(of tale#5256) of tale
+
+B-
+5:11:26 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#780) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+of tale if u send that bird gif once more i will add it to status
+5:11:26 PM
+([API] [DISCORD] MatriCYS-1 ツ#10000) [API] [DISCORD] MatriCYS-1 ツ
+
+if u send dat bird gif once more i will add it to status
+5:11:31 PM
+(chornos#3015) chornos
+
+I'm dressed and ready
+5:11:37 PM
+(Replying to ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#780: of tale if u send that bird gif once more i will add it to status)
+(this is the tale of#8733) this is the tale of
+
+damn is
+5:11:37 PM
+(Replying to of tale#5256: B-)
+(вода (voda)#1124) вода (voda)
+
+питуки
+5:11:41 PM
+
+#ee has restarted.
+5:11:43 PM
+(вода (voda)#1124) вода (voda)
+
+питуки
+5:11:48 PM
+(вода (voda)#1124) вода (voda)
+
+питуки
+5:11:58 PM
+(вода (voda)#1124) вода (voda)
+
+питуки
+5:12:01 PM
+(вода (voda)#1124) вода (voda)
+
+питуки
+5:12:05 PM
+(of tale#5256) of tale
+
+small
+5:12:07 PM
+(ArrasDesmos#7645) ArrasDesmos
+
+!ru 1
+5:12:07 PM
+(ArrasDesmos#7645) ArrasDesmos
+
+Can't buy Reality Upgrade 1. You have 1.00 RM and Reality Upgrade cost is 10.00 RM.
+5:12:16 PM
+(this is the tale of#8733) this is the tale of
+
+5:12:23 PM
+
+#ef has restarted.
+5:12:30 PM
+(Replying to of tale#5256: ![small](https://files.catbox.moe/z90rnl.gif))
+(chornos#3015) chornos
+
+voda x of tale confirmed
+5:12:36 PM
+
+#ek has restarted.
+5:12:37 PM
+(chornos#3015) chornos
+
+they kissed
+5:12:52 PM
+(ArrasDesmos#7645) ArrasDesmos
+
+!ru 1
+5:12:53 PM
+(ArrasDesmos#7645) ArrasDesmos
+
+Bought Reality Upgrade 1. RM increase is now set to a NaN second interval.
+5:12:57 PM
+(ArrasDesmos#7645) ArrasDesmos
+
+"nan"
+5:12:59 PM
+(ArrasDesmos#7645) ArrasDesmos
+
+son what
+5:13:33 PM
+(вода (voda)#1124) вода (voda)
+
+Tuff
+5:13:57 PM
+(вода (voda)#1124) вода (voda)
+
+fuh
+5:14:18 PM
+(of tale#5256) of tale
+
+smallsmallsmallsmallsmallsmall
+5:14:19 PM
+(chornos#3015) chornos
+
+if I roll a 10 or above of tale and voda have to kiss
+5:14:22 PM
+
+chornos rolled a 2389-sided dice. The dice showed: 884
+5:14:24 PM
+(of tale#5256) of tale
+
+putuki
+5:14:27 PM
+(вода (voda)#1124) вода (voda)
+
+Fah
+5:14:30 PM
+(of tale#5256) of tale
+
+small
+5:14:34 PM
+(Replying to вода (voda)#1124: Fah)
+(of tale#5256) of tale
+
+:3
+5:14:34 PM
+(вода (voda)#1124) вода (voda)
+
+if i roll a 50 or above
+5:14:36 PM
+(вода (voda)#1124) вода (voda)
+
+cholo has to join in
+5:14:38 PM
+(Replying to вода (voda)#1124: Fah)
+(chornos#3015) chornos
+
+go ahed
+5:14:41 PM
+
+вода (voda) rolled a 1.4444444444444444e+24-sided dice. The dice showed: 1.2858346427088872e+24
+5:14:43 PM
+(вода (voda)#1124) вода (voda)
+
+gg
+5:14:44 PM
+(chornos#3015) chornos
+
+tf
+5:15:05 PM
+(Replying to вода (voda)#1124: if i roll a 50 or above)
+(this is the tale of#8733) this is the tale of
+
+what are the chances it'd show below 50
+5:15:23 PM
+(вода (voda)#1124) вода (voda)
+
+prob like 0.444444%
+5:15:26 PM
+(вода (voda)#1124) вода (voda)
+
+frf
+5:15:27 PM
+(this is the tale of#8733) this is the tale of
+
+fr
+5:15:41 PM
+
+#wpu has restarted.
+5:16:19 PM
+(chornos#3015) chornos
+
+if I roll a 1 or above voda and of tale have to make a baby
+5:16:24 PM
+
+chornos rolled a 8723487-sided dice. The dice showed: 1264885
+5:16:38 PM
+(of tale#5256) of tale
+
+we're both male
+5:16:39 PM
+(GDPIXEL78#354) GDPIXEL78
+
+the
+5:16:43 PM
+(Replying to of tale#5256: we're both male)
+(chornos#3015) chornos
+
+idc
+5:16:47 PM
+(ArrasDesmos#166) ArrasDesmos
+
+!ru 1
+5:16:47 PM
+(ArrasDesmos#166) ArrasDesmos
+
+Bought Reality Upgrade 1. RM increase is now set to a NaN second interval.
+5:16:50 PM
+(Replying to chornos#3015: idc)
+(of tale#5256) of tale
+
+;-;
+5:16:52 PM
+(ArrasDesmos#166) ArrasDesmos
+
+FUYCKIUNG
+5:16:52 PM
+(ArrasDesmos#166) ArrasDesmos
+
+GHR
+5:16:52 PM
+(ArrasDesmos#166) ArrasDesmos
+
+GR
+5:16:52 PM
+(ArrasDesmos#166) ArrasDesmos
+
+RG
+5:16:52 PM
+(ArrasDesmos#166) ArrasDesmos
+
+RG
+5:16:52 PM
+(ArrasDesmos#166) ArrasDesmos
+
+RG
+5:16:53 PM
+(ArrasDesmos#166) ArrasDesmos
+
+RG
+5:16:53 PM
+(ArrasDesmos#166) ArrasDesmos
+
+RG
+5:16:56 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+5:17:06 PM
+(Replying to chornos#3015: if I roll a 1 or above voda and of tale have to make a baby)
+(aurora#5922) aurora
+
+@partySocket.send(JSON.stringify(["M", "Message", ...(["User#123", "ReplyMessage", 123] ?? [null, null, null])]));
+5:17:09 PM
+(Replying to aurora#5922: @partySocket.send(JSON.stringify(["M", "Message", ...(["User#123", "ReplyMessage", 123] ?? [null, null, null])]));)
+(aurora#5922) aurora
+
+fsaasdfadfd
+5:17:10 PM
+(Replying to ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857: ![](https://iostatus.vercel.app/uitems/bird.gif))
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+@​of tale here..
+5:17:14 PM
+(Replying to ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857: @of tale here..)
+(of tale#5256) of tale
+
+thanks
+5:17:31 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+@​aurora https://iostatus.vercel.app/error/code.txt
+5:17:38 PM
+(chornos#3015) chornos
+
+sussy mussy
+5:17:43 PM
+(chornos#3015) chornos
+
+lussy wussy
+5:17:47 PM
+(chornos#3015) chornos
+
+cussy bussy
+5:17:47 PM
+(GDPIXEL78#354) GDPIXEL78
+
+the
+5:17:50 PM
+(GDPIXEL78#354) GDPIXEL78
+
+the
+5:17:52 PM
+(aurora#5922) aurora
+
+shh
+5:17:52 PM
+(GDPIXEL78#354) GDPIXEL78
+
+the
+5:17:53 PM
+(aurora#5922) aurora
+
+broken code
+5:17:56 PM
+(Replying to GDPIXEL78#354: ![the](https://files.catbox.moe/pl6gim.png))
+(chornos#3015) chornos
+
+shut it
+5:18:14 PM
+(chornos#3015) chornos
+
+pect
+5:18:16 PM
+(chornos#3015) chornos
+
+pect
+5:18:18 PM
+(chornos#3015) chornos
+
+pact
+5:18:19 PM
+(GDPIXEL78#354) GDPIXEL78
+
+arrasdesomos spammed
+5:18:20 PM
+(Replying to chornos#3015: if I roll a 1 or above voda and of tale have to make a baby)
+(aurora#5922) aurora
+
+@​вода (voda)
+5:18:20 PM
+(chornos#3015) chornos
+
+pect
+5:18:27 PM
+(GDPIXEL78#354) GDPIXEL78
+
+the
+5:18:28 PM
+(GDPIXEL78#354) GDPIXEL78
+
+the
+5:18:29 PM
+(GDPIXEL78#354) GDPIXEL78
+
+the
+5:18:36 PM
+(Replying to GDPIXEL78#354: ![the](https://files.catbox.moe/pl6gim.png))
+(chornos#3015) chornos
+
+stop
+5:18:41 PM
+(GDPIXEL78#354) GDPIXEL78
+
+the bus
+5:18:42 PM
+(Replying to chornos#3015: stop)
+(aurora#5922) aurora
+
+no
+5:18:43 PM
+(GDPIXEL78#354) GDPIXEL78
+
+oops
+5:18:49 PM
+(aurora#5922) aurora
+
+w bus
+5:18:52 PM
+(Replying to GDPIXEL78#354: ![the](https://files.catbox.moe/pl6gim.png) bus)
+(chornos#3015) chornos
+
+I will ping a mod to mute u
+5:18:55 PM
+(chornos#3015) chornos
+
+if u keep doing it
+5:19:13 PM
+(GDPIXEL78#354) GDPIXEL78
+
+lmao nice ragewbait
+5:19:24 PM
+
+#ee has restarted.
+5:19:25 PM
+(Replying to GDPIXEL78#354: lmao nice ragewbait)
+(chornos#3015) chornos
+
+I'm not even mad
+5:19:27 PM
+(GDPIXEL78#354) GDPIXEL78
+
+arrasdesmos spammed "rg".
+5:19:29 PM
+(chornos#3015) chornos
+
+I'm srs
+5:19:47 PM
+(aurora#5922) aurora
+
+s
+5:19:47 PM
+(aurora#5922) aurora
+
+s
+5:19:47 PM
+(aurora#5922) aurora
+
+s
+5:20:01 PM
+(of tale#5256) of tale
+
+:3
+5:20:02 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+e
+5:20:05 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+aurora
+5:20:10 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+did u run the code
+5:20:11 PM
+(Replying to aurora#5922: s)
+(chornos#3015) chornos
+
+I own a pet aurora
+5:20:13 PM
+(GDPIXEL78#354) GDPIXEL78
+
+getcho corny ass outta here choresno
+5:20:15 PM
+(GDPIXEL78#354) GDPIXEL78
+
+the
+5:20:18 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+or do you have more than one braincell
+5:20:23 PM
+(Replying to ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857: or do you have more than one braincell)
+(chornos#3015) chornos
+
+hey matri
+5:20:27 PM
+(Replying to GDPIXEL78#354: getcho corny ass outta here choresno)
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+https://iostatus.vercel.app/error/code.txt
+5:20:30 PM
+(ArrasDesmos#5622) ArrasDesmos
+
+!autord 1 on
+5:20:30 PM
+(ArrasDesmos#5622) ArrasDesmos
+
+Turned on RD1 autobuyer.
+5:20:31 PM
+(Replying to chornos#3015: hey matri)
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+wut sir
+5:20:31 PM
+(chornos#3015) chornos
+
+can u mute gdpixel
+5:20:34 PM
+(ArrasDesmos#5622) ArrasDesmos
+
+!autord 2 on
+5:20:34 PM
+(ArrasDesmos#5622) ArrasDesmos
+
+Turned on RD2 autobuyer.
+5:20:37 PM
+(ArrasDesmos#5622) ArrasDesmos
+
+!autord 3 on
+5:20:37 PM
+(ArrasDesmos#5622) ArrasDesmos
+
+Turned on RD3 autobuyer.
+5:20:39 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+what did he do sir
+5:20:40 PM
+(chornos#3015) chornos
+
+he keeps spamming chronos
+5:20:44 PM
+(ArrasDesmos#5622) ArrasDesmos
+
+!ru 1
+5:20:44 PM
+(ArrasDesmos#5622) ArrasDesmos
+
+Bought Reality Upgrade 1. RM increase is now set to a 0.975 second interval.
+5:20:47 PM
+(GDPIXEL78#354) GDPIXEL78
+
+arrasdesmos spammed ytoo bud
+5:20:47 PM
+(chornos#3015) chornos
+
+and its getting lwk annoying
+5:20:47 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+ok sir
+5:20:48 PM
+(ArrasDesmos#5622) ArrasDesmos
+
+!ru 1
+5:20:48 PM
+(ArrasDesmos#5622) ArrasDesmos
+
+Bought Reality Upgrade 1. RM increase is now set to a 0.950 second interval.
+5:20:51 PM
+(Replying to chornos#3015: and its getting lwk annoying)
+(aurora#5922) aurora
+
+but
+5:20:56 PM
+(aurora#5922) aurora
+
+your name is chornos
+5:21:00 PM
+(King of AHK#6823) King of AHK
+
+!ru 1
+5:21:00 PM
+(ArrasDesmos#5622) ArrasDesmos
+
+Bought Reality Upgrade 1. RM increase is now set to a 0.925 second interval.
+5:21:00 PM
+(King of AHK#6823) King of AHK
+
+!ru 1
+5:21:00 PM
+(GDPIXEL78#354) GDPIXEL78
+
+arrasdesmos spammed bud
+5:21:00 PM
+(King of AHK#6823) King of AHK
+
+!ru 1
+5:21:00 PM
+(ArrasDesmos#5622) ArrasDesmos
+
+Bought Reality Upgrade 1. RM increase is now set to a 0.900 second interval.
+5:21:00 PM
+(King of AHK#6823) King of AHK
+
+!ru 1
+5:21:01 PM
+(King of AHK#6823) King of AHK
+
+!ru 1
+5:21:01 PM
+(ArrasDesmos#5622) ArrasDesmos
+
+Bought Reality Upgrade 1. RM increase is now set to a 0.875 second interval.
+5:21:01 PM
+(ArrasDesmos#5622) ArrasDesmos
+
+Bought Reality Upgrade 1. RM increase is now set to a 0.850 second interval.
+5:21:01 PM
+(King of AHK#6823) King of AHK
+
+!ru 1
+5:21:01 PM
+(ArrasDesmos#5622) ArrasDesmos
+
+Bought Reality Upgrade 1. RM increase is now set to a 0.825 second interval.
+5:21:01 PM
+(Replying to aurora#5922: your name is chornos)
+(chornos#3015) chornos
+
+idk
+5:21:01 PM
+(ArrasDesmos#5622) ArrasDesmos
+
+Bought Reality Upgrade 1. RM increase is now set to a 0.800 second interval.
+5:21:02 PM
+(King of AHK#6823) King of AHK
+
+!ru 1
+5:21:02 PM
+(King of AHK#6823) King of AHK
+
+!ru 1
+5:21:02 PM
+(aurora#5922) aurora
+
+he's just saying your name
+5:21:02 PM
+(ArrasDesmos#5622) ArrasDesmos
+
+Bought Reality Upgrade 1. RM increase is now set to a 0.775 second interval.
+5:21:02 PM
+(ArrasDesmos#5622) ArrasDesmos
+
+Bought Reality Upgrade 1. RM increase is now set to a 0.750 second interval.
+5:21:03 PM
+(King of AHK#6823) King of AHK
+
+!ru 1
+5:21:03 PM
+(GDPIXEL78#354) GDPIXEL78
+
+see
+5:21:03 PM
+(ArrasDesmos#5622) ArrasDesmos
+
+Bought Reality Upgrade 1. RM increase is now set to a 0.725 second interval.
+5:21:04 PM
+(aurora#5922) aurora
+
+aaaa
+5:21:05 PM
+(GDPIXEL78#354) GDPIXEL78
+
+see
+5:21:07 PM
+(GDPIXEL78#354) GDPIXEL78
+
+see
+5:21:07 PM
+
+Muted GDPIXEL78 for 15m (900000 ms).
+5:21:07 PM
+(King of AHK#6823) King of AHK
+
+!ru 1
+5:21:07 PM
+(King of AHK#6823) King of AHK
+
+!ru 1
+5:21:07 PM
+(King of AHK#6823) King of AHK
+
+!ru 1
+5:21:07 PM
+(King of AHK#6823) King of AHK
+
+!ru 1
+5:21:07 PM
+(King of AHK#6823) King of AHK
+
+!ru 1
+5:21:08 PM
+(ArrasDesmos#5622) ArrasDesmos
+
+Bought Reality Upgrade 1. RM increase is now set to a 0.700 second interval.
+5:21:08 PM
+(ArrasDesmos#5622) ArrasDesmos
+
+Bought Reality Upgrade 1. RM increase is now set to a 0.675 second interval.
+5:21:14 PM
+(chornos#3015) chornos
+
+lmao
+5:21:16 PM
+(chornos#3015) chornos
+
+he got muted
+5:21:17 PM
+(chornos#3015) chornos
+
+I had something to say, then I forgot it.
+5:21:17 PM
+
+Muted ArrasDesmos for 15m (900000 ms).
+5:21:18 PM
+(aurora#5922) aurora
+
+wrong guy
+5:21:18 PM
+(aurora#5922) aurora
+
+lwk
+5:21:24 PM
+(chornos#3015) chornos
+
+both spammers got muted
+5:21:27 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#780) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+lol
+5:21:27 PM
+(chornos#3015) chornos
+
+nice one
+5:21:28 PM
+(chornos#3015) chornos
+
+hahah
+5:21:29 PM
+(chornos#3015) chornos
+
+Lets be friends instead of fighting okay?
+5:21:29 PM
+(King of AHK#6823) King of AHK
+
+WTF!
+5:21:32 PM
+(King of AHK#6823) King of AHK
+
+rigged
+5:21:33 PM
+(Replying to aurora#5922: wrong guy)
+(of tale#5256) of tale
+
+:3
+5:21:40 PM
+(chornos#3015) chornos
+
+anyways
+5:21:45 PM
+(Replying to King of AHK#6823: WTF!)
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#780) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+log out before its too late
+5:21:45 PM
+(chornos#3015) chornos
+
+I own a pet aurora
+5:21:47 PM
+(Replying to of tale#5256: :3)
+(aurora#5922) aurora
+
+have you married voda
+5:21:47 PM
+(aurora#5922) aurora
+
+yet
+5:21:48 PM
+(King of AHK#6823) King of AHK
+
+grt
+5:21:57 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#780) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+youll get banned for mute evasion
+5:21:58 PM
+(chornos#3015) chornos
+
+I bathe pet aurora
+5:22:01 PM
+(chornos#3015) chornos
+
+I feed pet aurora
+5:22:08 PM
+(chornos#3015) chornos
+
+I play with pet aurora
+5:22:13 PM
+(chornos#3015) chornos
+
+I sleep with pet aurora
+5:22:52 PM
+(King of AHK#6823) King of AHK
+
+dih
+5:22:53 PM
+(King of AHK#6823) King of AHK
+
+dih
+5:22:57 PM
+(King of AHK#6823) King of AHK
+
+dih;;;
+5:23:20 PM
+(Replying to King of AHK#6823: dih;;;)
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#780) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+3
+5:23:21 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#780) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+2
+5:23:22 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#780) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+1
+5:23:25 PM
+
+#wd has restarted.
+5:23:32 PM
+(Replying to ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#780: 1)
+(chornos#3015) chornos
+
+right on time
+5:23:33 PM
+(King of AHK#6823) King of AHK
+
+gr
+5:23:37 PM
+
+#wf has restarted.
+5:23:44 PM
+
+Muted King of AHK for 30m (1800000 ms).
+5:23:46 PM
+(Replying to chornos#3015: right on time)
+(of tale#5256) of tale
+
+hey choli
+5:23:59 PM
+
+King of AHK is voting to mute guests. (1/6)
+5:24:00 PM
+(Replying to of tale#5256: hey choli)
+(chornos#3015) chornos
+
+;-;
+5:24:03 PM
+Chain length: 4
+(Replying to chornos#3015: ;-;)
+(of tale#5256) of tale
+
+when did you start playing arras
+5:24:04 PM
+(The Arras Noob YT#4123) The Arras Noob YT
+
+tf
+5:24:05 PM
+(The Arras Noob YT#4123) The Arras Noob YT
+
+lmfao
+5:24:07 PM
+
+Guests are now muted.
+5:24:07 PM
+(The Arras Noob YT#4123) The Arras Noob YT
+
+okay hi
+5:24:12 PM
+Chain length: 5
+(Replying to of tale#5256: when did you start playing arras)
+(chornos#3015) chornos
+
+2026
+5:24:16 PM
+(The Arras Noob YT#4123) The Arras Noob YT
+
+why are guests muted
+5:24:16 PM
+(The Arras Noob YT#4123) The Arras Noob YT
+
+tf
+5:24:26 PM
+Chain length: 6
+(Replying to chornos#3015: 2026)
+(of tale#5256) of tale
+
+oke
+5:24:45 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#780) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+.
+5:24:49 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif)#738) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif)
+
+.
+5:24:49 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif)#738) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif)
+
+.
+5:24:49 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif)#738) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif)
+
+a
+5:24:49 PM
+
+aurora is voting to unmute guests. (2/9)
+5:24:50 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#4124) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+.
+5:24:55 PM
+
+chornos is voting to unmute guests. (3/9)
+5:25:12 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+hm
+5:25:43 PM
+(chornos#3015) chornos
+
+I bathe pet @​aurora
+5:25:46 PM
+
+#wd has restarted.
+5:25:48 PM
+(chornos#3015) chornos
+
+i feed pet @​aurora
+5:25:53 PM
+(chornos#3015) chornos
+
+I play with pet @​aurora
+5:25:57 PM
+(chornos#3015) chornos
+
+I sleep with pet @​aurora
+5:25:57 PM
+(aurora#5922) aurora
+
+shut
+5:25:59 PM
+(aurora#5922) aurora
+
+up
+5:26:04 PM
+(Replying to aurora#5922: shut)
+(chornos#3015) chornos
+
+nosirsky
+5:26:11 PM
+(Replying to chornos#3015: I sleep with pet @aurora)
+(aceoals#9694) aceoals
+
+oh so you disowned pet aceoals
+5:26:14 PM
+(aceoals#9694) aceoals
+
+thank god
+5:26:25 PM
+(of tale#5256) of tale
+
+:3
+5:26:27 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#780) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+guys
+5:26:27 PM
+(chornos#3015) chornos
+
+I adopt pet aceoals
+5:26:32 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#780) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+do you know what time it is?
+5:26:43 PM
+(chornos#3015) chornos
+
+I feed both pet @​aurora and aceoals
+5:26:50 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#780) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+i t i s m u t e t i m e
+5:26:50 PM
+(chornos#3015) chornos
+
+I bathe both pet @​aurora and aceoals
+5:26:59 PM
+(of tale#5256) of tale
+
+i bathe pet @​chornos
+5:27:00 PM
+(![](https://iostatus.vercel.app/uitems/But_it_refused.gif))#780) ![](https://iostatus.vercel.app/uitems/But_it_refused.gif))
+
+i t i s t i m e
+5:27:00 PM
+(chornos#3015) chornos
+
+I play with both pet @​aurora and aceoals
+5:27:06 PM
+(of tale#5256) of tale
+
+i feed pet @​chornos
+5:27:09 PM
+(chornos#3015) chornos
+
+I sleep with both pet @​aurora and aceoals
+5:27:11 PM
+(of tale#5256) of tale
+
+i play with pet @​chornos
+5:27:18 PM
+(of tale#5256) of tale
+
+i sleep with pet @​chornos
+5:27:30 PM
+(KananRe#1836) KananRe
+
+@​unk2467
+5:27:34 PM
+
+ArrasDesmos is voting to unmute guests. (4/10)
+5:27:37 PM
+(of tale#5256) of tale
+
+i feed pet @​chornos
+5:27:42 PM
+(Replying to of tale#5256: i feed pet @chornos)
+(chornos#3015) chornos
+
+nya
+5:27:44 PM
+(of tale#5256) of tale
+
+i bathe pet @​chornos
+5:27:45 PM
+(KananRe#1836) KananRe
+
+how do i vote
+5:27:45 PM
+(Replying to chornos#3015: I adopt pet aceoals)
+(aurora#5922) aurora
+
+@​aceoals
+5:27:48 PM
+(Replying to of tale#5256: i bathe pet @chornos)
+(chornos#3015) chornos
+
+nya
+5:27:54 PM
+(of tale#5256) of tale
+
+i play with pet @​chornos
+5:27:57 PM
+(Replying to of tale#5256: i play with pet @chornos)
+(chornos#3015) chornos
+
+nya
+5:27:58 PM
+(of tale#5256) of tale
+
+i sleep with pet @​chornos
+5:28:02 PM
+(Replying to of tale#5256: i sleep with pet @chornos)
+(chornos#3015) chornos
+
+nya
+5:28:02 PM
+(KananRe#1836) KananRe
+
+guys how do I vote???
+5:28:05 PM
+(Replying to chornos#3015: nya)
+(of tale#5256) of tale
+
+nya
+5:28:10 PM
+
+#wd has restarted.
+5:28:14 PM
+(KananRe#1836) KananRe
+
+i fuc-
+5:28:25 PM
+(KananRe#1836) KananRe
+
+how do i vote grrrr
+5:28:30 PM
+(of tale#5256) of tale
+
+do /muteguests
+5:28:31 PM
+(Replying to of tale#5256: nya)
+(chornos#3015) chornos
+
+oftalesusartxvodahhhh~
+5:28:37 PM
+
+KananRe is voting to unmute guests. (5/10)
+5:28:42 PM
+Chain length: 4
+(Replying to chornos#3015: oftalesusartxvodahhhh~)
+(of tale#5256) of tale
+
+BAD
+5:28:51 PM
+Chain length: 4
+(Replying to chornos#3015: oftalesusartxvodahhhh~)
+(of tale#5256) of tale
+
+youre going to the cage
+5:28:56 PM
+Chain length: 5
+(Replying to of tale#5256: youre going to the cage)
+(chornos#3015) chornos
+
+nooooooooo
+5:28:58 PM
+
+#ee has restarted.
+5:28:59 PM
+(chornos#3015) chornos
+
+I didn't say that
+5:29:09 PM
+(Replying to chornos#3015: I didn't say that)
+(KananRe#1836) KananRe
+
+dont worry
+5:29:16 PM
+(Replying to chornos#3015: I didn't say that)
+(KananRe#1836) KananRe
+
+im a tesseract
+5:29:21 PM
+
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)) of tale
+5:29:26 PM
+(Replying to chornos#3015: I didn't say that)
+(KananRe#1836) KananRe
+
+i can pass through stuff
+5:29:26 PM
+(of tale#5256) of tale
+
+u hoh
+5:29:35 PM
+(KananRe#1836) KananRe
+
+frees chornos
+5:29:36 PM
+
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)) you are about to be muted.
+5:29:39 PM
+(Replying to KananRe#1836: *frees chornos*)
+(chornos#3015) chornos
+
+ty
+5:29:40 PM
+(of tale#5256) of tale
+
+im sorry
+5:29:40 PM
+(KananRe#1836) KananRe
+
+you're mine now :)
+5:29:42 PM
+(of tale#5256) of tale
+
+im fucking sorry
+5:29:52 PM
+(Replying to KananRe#1836: you're mine now :))
+(chornos#3015) chornos
+
+y
+5:29:53 PM
+(unk2467#545) unk2467
+
+"(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)) you are about to be muted." who gr
+5:29:55 PM
+
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)) sir sorry cant forgive what you said
+5:29:55 PM
+(unk2467#545) unk2467
+
+i cleared chat
+5:30:01 PM
+(unk2467#545) unk2467
+
+what
+5:30:04 PM
+(KananRe#1836) KananRe
+
+sonion what did he do
+5:30:06 PM
+(of tale#5256) of tale
+
+to quote chornos
+5:30:07 PM
+
+Muted of tale for 3h (10800000 ms).
+5:30:08 PM
+(Replying to unk2467#545: what)
+(KananRe#1836) KananRe
+
+@​unk2467
+5:30:09 PM
+(unk2467#545) unk2467
+
+what did of tale say gang
+5:30:10 PM
+(unk2467#545) unk2467
+
+WHAT!!!!
+5:30:12 PM
+(chornos#3015) chornos
+
+lol
+5:30:17 PM
+
+of tale is voting to unmute guests. (3/9)
+5:30:17 PM
+(KananRe#1836) KananRe
+
+WHAT DID OF TALE DO!!!
+5:30:17 PM
+(unk2467#545) unk2467
+
+of tale go to chatzy away from the jinn!
+5:30:24 PM
+
+unk2467 is voting to unmute guests. (4/9)
+5:30:30 PM
+(Replying to KananRe#1836: WHAT DID OF TALE DO!!!)
+(chornos#3015) chornos
+
+he did nothing
+5:30:31 PM
+(Replying to KananRe#1836: WHAT DID OF TALE DO!!!)
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+i wonder what..
+5:30:38 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+scroll up..
+5:30:41 PM
+(Replying to ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857: i wonder what..)
+(KananRe#1836) KananRe
+
+SONION JS TELL ME
+5:30:41 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+wait you cannot
+5:30:51 PM
+(Replying to KananRe#1836: SONION JS TELL ME)
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+its a combination of everything
+5:31:00 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+that i hadnt muted of tale for
+5:31:06 PM
+Chain length: 4
+(Replying to ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857: its a combination of everything)
+(KananRe#1836) KananRe
+
+Sonion he just said "nya"
+5:31:11 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+not now
+5:31:14 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+before this
+5:31:18 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+before this day
+5:31:19 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+etc
+5:31:28 PM
+(Replying to ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857: etc)
+(KananRe#1836) KananRe
+
+what thing did he do today
+5:31:28 PM
+
+#cc has restarted.
+5:31:29 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+that adds to 12h
+5:31:30 PM
+(aceoals#9694) aceoals
+
+is of tale THAT bad??
+5:31:33 PM
+(Replying to ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857: etc)
+(KananRe#1836) KananRe
+
+he just said nya
+5:31:38 PM
+(Replying to KananRe#1836: he just said nya)
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+u werent here
+5:31:40 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+before
+5:31:41 PM
+(Replying to ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857: that adds to 12h)
+(chornos#3015) chornos
+
+matri
+5:31:45 PM
+(༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857) ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)
+
+you cant see the messages
+5:31:53 PM
+(Replying to ༺ M a t r i C Y S - ⃟1𒆙 [-1] (MatriCYS)#6857: you cant see the messages)
+(chornos#3015) chornos
+
+can I have ao

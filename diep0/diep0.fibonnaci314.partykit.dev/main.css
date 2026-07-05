@@ -1,0 +1,116 @@
+input#chatInput {
+  background-color: #0008;
+  border: 2px solid #000;
+  border-radius: 6px;
+  width: max(200px, 15%);
+  height: 20px;
+  font-size: 15px;
+  z-index: 1;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: white;
+  font-family: sans-serif;
+}
+input#chatInput::placeholder {
+  color: white;
+  opacity: 0.6;
+}
+.editorBox, .editorButton, .editorContainer, #editor {
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 6px;
+  color: white;
+  font-family: sans-serif;
+  padding: 6px;
+  min-height: 1em;
+}
+.editorContainer, .editorBox {
+  min-width: 250px;
+}
+#editor, #editor input:hover, button:hover {
+  background-color: #0008;
+}
+#editor option {
+  color: #000;
+}
+.editorButton {
+  cursor: pointer;
+}
+.editorLabel {
+  padding-left: 8px;
+}
+.editorHeader {
+  margin: 6px;
+}
+h1 {
+  font-size: 1.8rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+#editor {
+  z-index: 2;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  color: white;
+  overflow: auto;
+  bottom: 8px;
+  scrollbar-color: black transparent;
+  scrollbar-width: thin;
+}
+#popupContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+#popup {
+  z-index: 4;
+  margin: auto;
+  scrollbar-color: black transparent;
+  scrollbar-width: thin;
+  background-color: #000b;
+  color: white;
+  overflow: auto;
+  transition: transform 0.6s ease-in-out;
+  position: relative;
+  border: 2px solid #000;
+  border-radius: 6px;
+  font-family: sans-serif;
+  width: max-content;
+  height: max-content;
+  max-width: 80vw;
+  max-height: 80vh;
+  padding: 8px;
+}
+#popup button {
+  width: 100%;
+}
+#popup p, #popup h2 {
+  margin: 6px;
+}
+.hidePopup {
+  transform: translateY(-100vh);
+}
+#popupDarken {
+  z-index: 3;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  opacity: 0.3;
+  transition: opacity 0.6s ease-in-out;
+  background-color: #000;
+}
+#popupDarken.hideDarken {
+  opacity: 0;
+}

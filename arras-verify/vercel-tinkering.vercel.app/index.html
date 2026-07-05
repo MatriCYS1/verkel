@@ -1,0 +1,937 @@
+<html lang="en" class="blue-theme">
+  
+<!-- Mirrored from vercel-tinkering.vercel.app/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 02 Jun 2026 13:38:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arras Verify</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../cdn.glitch.global/32303bfd-be9f-4f99-ad7b-e6ccf9a15601/public/favicon315d.png?v=1725868000963" type="image/x-icon">
+    <script src="../cdn.jsdelivr.net/gh/adamvleggett/drawdown%40latest/drawdown.js"></script>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="mainWrapper">
+        <h1>Arras Verify</h1>
+        <div id="serverStatus">Loading server status...</div>
+        <nav>
+          <button id="navVerification" disabled>
+            <i class="fas fa-check-circle" aria-hidden="true"></i> Verify
+          </button>
+          <button id="navUsers">
+            <i class="fas fa-users" aria-hidden="true"></i> Users
+          </button>
+          <button id="navChat">
+            <i class="fas fa-comments" aria-hidden="true"></i> Chat
+          </button>
+          <button id="navSettings">
+            <i class="fas fa-cog" aria-hidden="true"></i> Settings
+          </button>
+          <button id="navSuggestions" class="hidden">
+            <i class="fas fa-lightbulb" aria-hidden="true"></i> Suggestions
+          </button>
+          <button id="navSpecial" class="hidden">
+            <i class="fas fa-star" aria-hidden="true"></i> Special
+          </button>
+          <button id="navChangelog">
+            <i class="fas fa-history" aria-hidden="true"></i> Changelog
+          </button>
+          <button id="navDatabase" class="hidden">
+            <i class="fas fa-database" aria-hidden="true"></i> Database
+          </button>
+          <button id="navDeveloper" class="hidden">
+            <i class="fas fa-code" aria-hidden="true"></i> Developer
+          </button>
+        </nav>
+        <nav id="chatSubtabsNav" class="hidden">
+          <button data-block="main" id="navChatMain" disabled>
+            <i class="fas fa-comments" aria-hidden="true"></i> Chat
+          </button>
+          <button data-block="rules" id="navChatRules">
+            <i class="fas fa-book" aria-hidden="true"></i> Rules
+          </button>
+          <button data-block="commands" id="navChatCommands">
+            <i class="fas fa-star" aria-hidden="true"></i> Commands
+          </button>
+        </nav>
+        <nav id="specialSubtabsNav" class="hidden">
+          <button data-block="themes" id="navSpecialThemes" disabled>
+            <i class="fas fa-palette" aria-hidden="true"></i> Themes
+          </button>
+          <button data-block="users" id="navSpecialUsers">
+            <i class="fas fa-users" aria-hidden="true"></i> User List
+          </button>
+          <button data-block="achievements" id="navSpecialAchievements">
+            <i class="fas fa-star" aria-hidden="true"></i> Achievements
+          </button>
+          <button data-block="other" id="navSpecialOther">
+            <i class="fas fa-question-circle" aria-hidden="true"></i> Other
+          </button>
+        </nav>
+        <div id="navBuffering"></div>
+        <section id="verificationSection">
+          <h2>User Verification</h2>
+          <div id="verificationInputs">
+            <input id="codeInput" type="text" placeholder="enter code...">
+            <button id="verifyCode">verify</button>
+          </div>
+          <p id="verifyStatus">Enter your verification code to access the system.</p>
+          <textarea id="descriptionInput" maxlength="2000" hidden placeholder="Enter a description here..."></textarea>
+          <input id="pfpInput" maxlength="100" hidden placeholder="Enter the link to your profile picture here...">
+          <br><button hidden id="unverifyButton">Disable Verification</button>
+        </section>
+        <section id="usersSection" class="hidden">
+          <h2>Verified Users</h2>
+          <p id="verifiedCount"></p>
+          <div id="verified"></div>
+        </section>
+        <section id="chatSection" class="hidden">
+          <section id="chatMainSection">
+            <div id="chatHeader">
+              <h2>Chat</h2>
+            </div>
+            <div id="chatMessages"></div>
+            <div id="chatFooter">
+              <div id="usernameSection">
+                <input id="usernameInput" type="text" placeholder="Enter username...">
+                <br>
+                <br>
+              </div>
+              <div id="chatControls">
+                <input id="chatInput" type="text" placeholder="Enter message..." disabled>
+                <label for="uploadChat" class="disabled">
+                  <i class="fas fa-paperclip"></i>
+                </label>
+                <input id="uploadChat" name="uploadChat" accept="
+                  image/*
+                " type="file" disabled>
+                <button id="sendChat" disabled>
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
+              <div id="chatSecondaryControls">
+                <button id="muteGuestsToggle" disabled class="disabled">
+                  <i class="fas fa-comment-slash"></i>
+                  <span>Mute Guests: Off</span>
+                </button>
+                <button id="chatClear">
+                  <i class="fas fa-ban"></i>
+                  <span>Clear Chat</span>
+                </button>
+                <button id="jumpToggle">
+                  <i class="fas fa-arrow-down"></i>
+                  <span>Jump To Bottom: On</span>
+                </button>
+              </div>
+              <br>
+              <div id="replySection" hidden>
+                <div id="currentReply"></div>
+                <button id="cancelReply">Cancel</button>
+              </div>
+            </div>
+          </section>
+          <section id="chatRulesSection" class="hidden">
+            <h2>Chat: Rules</h2>
+            <p id="chatRulesNotice">Note: these rules are just guidelines and we reserve the right to take action if we believe the content you post violates community standards. The rules include but are not limited to:</p>
+            <ul id="rulesList">
+              <li>
+                <i class="fas fa-ban" aria-hidden="true"></i>
+                <strong>No NSFW Content:</strong> Images and media containing extreme blood, gore, violence and/or adult content are strictly prohibited and will result in an upload ban.
+              </li>
+              <li>
+                <i class="fas fa-comment-slash" aria-hidden="true"></i>
+                <strong>No Harmful Speech:</strong> Offensive text such as racial slurs and/or verbal harassment will result in a mute or a ban.
+              </li>
+              <li>
+                <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
+                <strong>No Spam:</strong> Sending many messages or pings in short periods of time and/or large text walls will result in a mute.
+              </li>
+              <li>
+                <i class="fas fa-ad" aria-hidden="true"></i>
+                <strong>No Advertising:</strong> Promoting irrelevant links and/or other media will result in a mute.
+              </li>
+              <li>
+                <i class="fas fa-user-slash" aria-hidden="true"></i>
+                <strong>No Exploiting:</strong> Circumventing punishments will result in more severe consequences, such as account suspension.
+              </li>
+            </ul>
+          </section>
+          <section id="chatCommandsSection" class="hidden">
+            <h2>Chat: Commands and Formatting</h2>
+            <div id="commandsContainer">
+              <div class="commandsBlock">
+                <h3>Markdown</h3>
+                <table id="markdownTable">
+                  <thead>
+                    <tr>
+                      <th>Input Text</th>
+                      <th>Output Text</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td># Text</td>
+                      <td><h1>Text</h1></td>
+                    </tr>
+                    <tr>
+                      <td>## Text</td>
+                      <td><h3>Text</h3></td>
+                    </tr>
+                    <tr>
+                      <td>*Text*</td>
+                      <td><i>Text</i></td>
+                    </tr>
+                    <tr>
+                      <td>**Text**</td>
+                      <td><b>Text</b></td>
+                    </tr>
+                    <tr>
+                      <td>***Text***</td>
+                      <td><i><b>Text</b></i></td>
+                    </tr>
+                    <tr>
+                      <td>`Text`</td>
+                      <td><code>Text</code></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="commandsBlock">
+                <h3>Public Commands</h3>
+                <div class="commandBlock">
+                  <div>/rlq</div>
+                  <div>get your account's rate limit info</div>
+                </div>
+                <div class="commandBlock">
+                  <div>/dm [user id] [message]</div>
+                  <div>send a private message to another user</div>
+                </div>
+                <div class="commandBlock">
+                  <div>/roll [side count]</div>
+                  <div>roll a dice with the given amount of sides</div>
+                </div>
+                <div class="commandBlock">
+                  <div>/emotelist</div>
+                  <div>get the list of every available emote</div>
+                </div>
+                <div class="commandBlock">
+                  <div>/servers [list of modifiers]</div>
+                  <div>get data for the current arras.io servers, more detailed information is available in the changelog (v1.14 and v1.14.3)</div>
+                </div>
+              </div>
+              <div class="commandsBlock">
+                <h3>Other Commands</h3>
+                <div class="commandBlock">
+                  <div>/cc</div>
+                  <div>clear the chat (requires Director rank or higher)</div>
+                </div>
+                <div class="commandBlock">
+                  <div>/clear</div>
+                  <div>alias for /cc (requires Director rank or higher)</div>
+                </div>
+                <div class="commandBlock">
+                  <div>/mute {{[username]}} [duration]</div>
+                  <div>mute a user; more examples are available below (requires Director rank or higher)</div>
+                </div>
+                <div class="commandBlock">
+                  <div>/mute {{Testing}} 2h</div>
+                  <div>mute user "Testing" for 2 hours (requires Director rank or higher)</div>
+                </div>
+                <div class="commandBlock">
+                  <div>/mute {{upload:Testing}} 2d</div>
+                  <div>ban user "Testing" from uploading media for 48 hours (requires Director rank or higher)</div>
+                </div>
+                <div class="commandBlock">
+                  <div>/muteguests</div>
+                  <div>mutes/unmutes all guests (requires Director rank or higher)</div>
+                </div>
+                <div class="commandBlock">
+                  <div>/restart</div>
+                  <div>refresh every user's client (requires Trial rank or higher)</div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+        <section id="settingsSection" class="hidden">
+          <h2>Settings</h2>
+          <div id="radioSection">
+            <input type="checkbox" id="inlineChat">
+            <label for="inlineChat">Use compact chat</label><br>
+            <input type="checkbox" id="pings">
+            <label for="pings">Allow ping sounds</label><br>
+            <input type="checkbox" id="trolls">
+            <label for="trolls">Allow troll commands</label><br>
+            <input type="checkbox" id="gExternal">
+            <label for="gExternal">/g plays while outside of Arras Verify</label>
+          </div>
+          <br>
+          <div id="themeSelectSection">
+            <div id="themeSelectFlex">
+              <div>
+                <label for="themeSelect" id="themeLabel">Theme</label>
+                <select name="themeSelect" id="themeSelect">
+                  <option value="blue">Blue</option>
+                  <option value="green">Green</option>
+                  <option value="lime">Lime</option>
+                  <option value="orange">Orange</option>
+                  <option value="pink">Pink</option>
+                  <option value="purple">Purple</option>
+                  <option value="red">Red</option>
+                  <option value="gray">Gray</option>
+                  <option value="abyss">Abyss</option>
+                  <option value="neon">Neon</option>
+                  <option value="arcane">Arcane</option>
+                  <option value="white">White</option>
+                  <option value="rainbow1">Rainbow (5s)</option>
+                  <option value="rainbow2">Rainbow (30s)</option>
+                  <option value="rainbow3">Rainbow (180s)</option>
+                  <option value="custom">Custom</option>
+                </select>
+              </div>
+              <input type="color" name="themeCustomColor" id="themeCustomColor" value="#fffffe">
+            </div>
+            <div id="themeSelectMessage">
+              <div class="chatMessage">
+                <span class="broadcast">(Your Name#8295)</span>
+                <b id="chatColorLabel">&lt;Your Name&gt;</b>
+                <br>
+                This is how your messages will look with these settings
+              </div>
+            </div>
+          </div>
+          <br>
+          <div id="fontSizeSelectSection">
+            <div id="fontSizeLabel">Font Size</div>
+            <button data-change="-1" class="fontSizeButton">⯆</button>
+            <span id="fontSize">16</span>
+            <button data-change="+1" class="fontSizeButton">⯅</button>
+          </div>
+          <br>
+          <div id="chatNameColorSection">
+            <div id="chatColorText">Chat color (0 - 360)</div>
+            <input type="text" name="chatColor" id="chatColor">
+          </div>
+          <br>
+          <div id="documentFilterSection">
+            <div id="documentFilterText">Filters</div>
+            <input type="text" name="documentFilter" id="documentFilter">
+          </div>
+          <br>
+          <button id="clearStorage">Clear Settings</button>
+        </section>
+        <section id="suggestionsSection" class="hidden">
+          <h2>Suggestions</h2>
+          <p>
+            Suggest your ideas for Arras Verify here!<br><br>
+            Suggestions are limited to 2,000 characters.<br>
+            Only one suggestion is allowed per account. If you create a new
+            suggestion, it will delete your previous suggestion.
+          </p>
+          <textarea name="suggestionInput" id="suggestionInput" maxlength="2000"></textarea>
+          <button id="suggestionSubmit">Submit</button>
+        </section>
+        <section id="specialSection" class="hidden">
+          <section id="specialThemesSection">
+            <h2>Special: Themes</h2>
+            <div id="themeGalleryContainer">
+              <table id="themeGalleryTable">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Color</th>
+                    <th>Group</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="themeGallery"></tbody>
+              </table>
+            </div>
+          </section>
+          <section id="specialUsersSection" class="hidden">
+            <h2>Special: User List</h2>
+            <input type="text" name="userlistSearch" id="userlistSearch" placeholder="Search users...">
+            <div id="userlistContainer">
+              <table id="userTableTable">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Last Joined</th>
+                    <th>Messages Sent</th>
+                  </tr>
+                </thead>
+                <tbody id="userTable"></tbody>
+              </table>
+            </div><br><br>
+            <button id="userlistSorting">Sort by: Last Joined</button>
+          </section>
+          <section id="specialAchievementsSection" class="hidden">
+            <h2>Special: Achievements</h2>
+            <div id="achievementContainer">
+
+            </div>
+          </section>
+          <section id="specialOtherSection" class="hidden">
+            <h2>Special: Other</h2>
+            <br>
+            <button id="uselessButton">Useless</button>
+            <p>
+              Total clicks: <b id="uselessButtonClicks">0</b>
+              <br><br>
+              Currently gaining <b id="uselessButtonMult">1</b> clicks per button press.
+              <br>
+              Next upgrade at: <b id="uselessButtonCost">0</b> clicks.
+              <br><br>
+              Reset all clicks for a bonus to the mult upgrade.
+              <br>
+              Next reset at: <b id="uselessButtonPrestigeReq">0</b> clicks.
+              <br>
+              Current upgrade strength: x<b id="uselessButtonPrestige">0</b>.
+              <br><br>
+              The Automator is clicking <b id="uselessButtonAuto">0</b> times a second.
+              <br>
+              Next Automator upgrade at: <b id="uselessButtonAutoReq">0</b> clicks.
+            </p>
+          </section>
+          <div hidden>
+            <h3>Userlist/Trust Voting</h3><br>
+            <!-- <div id="userlistContainer">
+              <table id="userTableTable">
+                <tbody id="userTable"></tbody>
+              </table>
+            </div> -->
+            <span id="trustButtons">
+              <p>Selected user: <span id="selectedUser">none</span></p>
+              <select name="trustLevelSelect" id="trustLevelSelect">
+                <option value="0">Abuser (0.0)</option>
+                <option value="1">Abuser (1.0)</option>
+                <option value="2">Not Trust (2.0)</option>
+                <option value="3">Not Trust (3.0)</option>
+                <option value="4">Not Trust (4.0)</option>
+                <option value="5" selected="selected">Neutral (5.0)</option>
+                <option value="6">Somewhat Trusted (6.0)</option>
+                <option value="7">Trusted (7.0)</option>
+                <option value="8">Very Trusted (8.0)</option>
+                <option value="9">Highly Trusted (9.0)</option>
+                <option value="10">Super Trusted (10.0)</option>
+              </select>
+              <button id="submitTrust" disabled>Update</button>
+            </span>
+          </div>
+        </section>
+        <section id="changelogSection" class="hidden">
+          <h2>Changelog</h2>
+          <div class="changelogBlock">
+            <h3>28th May 2026 - v1.16</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-image"></i> Image uploads no longer show automatically.</li>
+              <li><i class="fas fa-wrench"></i> Guests no longer recieve pings.</li>
+              <li><i class="fas fa-server"></i> Added a sidebar containing limited info about the current arras.io servers. More data will be added in future updates. /servers is still available.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>Unknown Date - v1.15.4</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-wrench"></i> Fixed descriptions not being scrollable on Firefox-based browsers.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>24th May 2026 - v1.15.3</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-wrench"></i> The player count now shows other servers even while #wpd is offline.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>17th May 2026 - v1.15.2</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-info-circle"></i> Direct messages can no longer be replied to.</li>
+              <li><i class="fas fa-wrench"></i> Broadcasts can no longer be replied to.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>16th May 2026 - v1.15.1</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-clock"></i> Added a ping display which shows when hovering over the top left of the screen.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>14th May 2026 - v1.15</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-palette"></i> Added a text glow effect to the Neon theme.</li>
+              <li><i class="fas fa-book"></i> Merged the chat and rules sections into one tab.</li>
+              <li><i class="fas fa-star"></i> Added a new chat subtab for commands and formatting.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>29th April 2026 - v1.14.3</h3>
+            <hr>
+            <ul>
+              <li>
+                <i class="fas fa-server"></i>
+                Added more features to /servers.
+                The newly added features are:
+                <ul>
+                  <li>
+                    <i class="fas fa-star"></i>
+                    The sorting modifier can now use aliases.
+                    <ul>
+                      <li>"clients" can be aliased as "c", "p", "cli" or "players".</li>
+                      <li>"uptime" can be aliased as "u", "t" or "time".</li>
+                      <li>"mspt" can be aliased as "m" or "ms".</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <i class="fas fa-up-down"></i>
+                    Sorting can be reversed by using two $ signs. For example, $c sorts by highest clients and $$c by lowest clients.
+                  </li>
+                  <li>
+                    <i class="fas fa-info-circle"></i>
+                    Inequalities can be created with the ~ sign. For example, ~clients&lt;50 filters by servers with less than 50 players.
+                    <ul>
+                      <li>Multiple inequalities can be used in one /servers call, and aliases can be used for the left hand side.</li>
+                      <li>The available operators are "&lt;", "&gt;", "=", "&lt;=" and "&gt;=".</li>
+                      <li>When creating an inequality with uptime, the numerical part is measured in seconds. For example, "~u&lt;3600" filters by servers with less than 1 hour of uptime.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>29th April 2026 - v1.14.2</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-info-circle"></i> Added the /g list command, which gets a list of all available sound files for /g.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>23rd April 2026 - v1.14.1</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-info-circle"></i> Added 6 new emotes.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>23rd April 2026 - v1.14</h3>
+            <hr>
+            <ul>
+              <li>
+                <i class="fas fa-star"></i> Added /g local, allowing any user to play /g on their client only.</i>
+              </li>
+              <li>
+                <i class="fas fa-cog"></i> Added 4 new toggleable settings.</i>
+              </li>
+              <li>
+                <i class="fas fa-server"></i> Readded /servers, using a new syntax system.<br>
+                The patterns able to be used are:
+                <ul>
+                  <li>"x" - show servers with at least 1 player only</li>
+                  <li>"s" - show sandboxes only</li>
+                  <li>"m" - show non-sandboxes only</li>
+                  <li>"(value1)^(value2)" or "(value1)~(value2)" - show servers in a given range, value1 and value2 can be integers, "x" or nothing. For example, "^5" gets the top 5 servers, "~10" the top 10, "5^10" the servers from 5th to 10th" and "~" gets every server result.</li>
+                  <li>"#wco" - filter by certain regions (for example #wco = us west, us central and oceania)</li>
+                  <li>"#!wpd" - filter by one server (for example #!wpd = show #wpd only)</li>
+                  <li>"$uptime" or "$mspt" - change sorting mode, defaults to $clients</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>10th April 2026 - v1.13.2</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-unlock"></i> (Suggested by Dragon King Gaming.) Added 3 new achievements.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>10th April 2026 - v1.13.2</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-unlock"></i> (Suggested by MLG.) Added 2 new achievements.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>9th April 2026 - v1.13.1</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-unlock"></i> (Suggested by Alvaro.) Added 5 new achievements.</li>
+              <li><i class="fas fa-comments"></i> Added a message count stat to the userlist.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>9th April 2026 - v1.13</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-unlock"></i> (Partially suggested by |1|.) Added 5 new achievements.</li>
+              <li><i class="fas fa-star"></i> Split the special tab into 3 subtabs.</li>
+              <li><i class="fas fa-info-circle"></i> (Suggested by janus.) Added an achievements subtab.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>8th April 2026 - v1.12.2</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-info-circle"></i> (Suggested by 101/Orbit.) Added 2 new emotes.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>5th April 2026 - v1.12.1</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-info-circle"></i> Added 3 new emotes.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>5th April 2026 - v1.12.0_1</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-star"></i> Added 1 new emote.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>4th April 2026 - v1.12</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-unlock"></i> Added 3 unlockable achievements.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>29th March 2026 - v1.11.1</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-star"></i> Added the /emotelist command, which shows a list of all usable emotes.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>28th March 2026 - v1.11</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-info-circle"></i> Added 40+ new emotes!</li>
+              <li><i class="fas fa-star"></i> Added badges.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>Unknown Date</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-ban"></i> (Suggested by d2, ions57 and probably a bunch of other people.) Removed the trust voting system.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>16th March 2026 - v1.10.1</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> (Suggested by Dragon King Gaming.) Added a display for the current code being used.</li>
+              <li><i class="fas fa-paper-plane"></i> Changed the formatting for direct messages. The new format is: /dm &lt;userid&gt; &lt;message&gt;</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>16th March 2026 - v1.10</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-history"></i> Changed the version numbering in the changelog (for example, 1.92_03 -> 1.9.2_03).</li>
+              <li><i class="fas fa-ban"></i> (Suggested by Sandbox Traveler.) Added a command to clear the chat.</li>
+              <li><i class="fas fa-star"></i> (Suggested by 101.) Added a new setting to update the document filter.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>15th March 2026 - v1.9.3</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-palette"></i> Neos can now be applied to a user's text with "/neo &lt;name&gt; text".</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>15th March 2026 - v1.9.2 to v1.9.2_03</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-palette"></i> Added 5 new neos.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>15th March 2026 - v1.9.1</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-wrench"></i> Fixed pings for some users being elongated.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>13th March 2026 - v1.9</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-exclamation-circle"></i> Added a way to ping users by typing @ followed by their name.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>13th March 2026 - v1.8</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-comments"></i> The last 50 chat messages are now automatically loaded when the site is opened.</li>
+              <li><i class="fas fa-wrench"></i> Audio no longer plays when the site is not focused.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>6th March 2026 - v1.7</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-users"></i> Completely reworked the visuals of the verified users list.</li>
+              <li><i class="fas fa-wrench"></i> Fixed the small and large font sizes being non-defined.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>6th March 2026 - v1.6</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-star"></i> Added markdown support to the chat.</li>
+              <li><i class="fas fa-palette"></i> (Suggested by screech.) Added custom text colors to the chat, usable with hex#(hex code). </li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>26th February 2026 - v1.5</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-database"></i> (Suggested by Eternal.) Increased the efficiency of the site's rate limit.</li>
+              <li><i class="fas fa-wrench"></i> Added a button to disable automatic verification.</li>
+              <li><i class="fas fa-star"></i> Increased the precision of all voted trust values to 3 decimal places.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>26th February 2026 - v1.4.2</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-palette"></i> (Suggested by Shiny Beta Cube.) Increased the brightness of the Arcane theme.</li>
+              <li><i class="fas fa-star"></i> (Suggested via #wpd.) The userlist can now be sorted by trust rank.</li>
+              <li><i class="fas fa-wrench"></i> Users will be automatically verified when loading the page if they have entered their code once.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>22nd February 2026 - v1.4.1</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-palette"></i> (Suggested by Shiny Beta Cube.) Added the Arcane theme.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>18th February 2026 - v1.4</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-star"></i> Added the special section.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>18th February 2026 - v1.3.1</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-palette"></i> (Suggested by Juan.) Added a neon theme.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>18th February 2026 - v1.3.0_1</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-wrench"></i> Fixed viewing descriptions from chat messages.</li>
+              <li><i class="fas fa-history"></i> Added a missing dot. You'll never know where it was. :)</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>18th February 2026 - v1.3</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-image"></i> (Suggested by many users.) Added profile images.</li>
+              <li><i class="fas fa-info-circle"></i> Descriptions are now scrollable.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>18th February 2026 - v1.2.0_1</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-wrench"></i> Descriptions are now scrollable.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>17th February 2026 - v1.2</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-info-circle"></i> (Suggested by d2.) Descriptions are now accessible from the verified users list.</li>
+              <li><i class="fas fa-cog"></i> (Suggested by Sandbox Traveler and Friendly Auto-Smasher.) Added a setting for custom name colors.</li>
+              <li><i class="fas fa-question"></i> (Suggested by Sandbox Traveler.) Added a "chat help" button.</li>
+              <li><i class="fas fa-comment-slash"></i> (Suggested by Sandbox Traveler.) Added a limit to mute durations.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>17th February 2026 - v1.1</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-lightbulb"></i> Added the suggestions section.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>16th February 2026 - v1.01_1</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-wrench"></i> Fixed the "mute guests" toggle.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>16th February 2026 - v1.0.1</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-check"></i> Added a new UI for moderators.</li>
+              <li><i class="fas fa-wrench"></i> Fixed replying to image uploads not working.</li>
+              <li><i class="fas fa-info-circle"></i> Changed the icon for sandboxes.</li>
+              <li><i class="fas fa-server"></i> Main servers now show at 80 players.</li>
+              <li><i class="fas fa-users"></i> Changed the threshold to show sandboxes from 5 to 8 players.</li>
+              <li><i class="fas fa-ban"></i> Added a list of banned words.</li>
+            </ul>
+          </div>
+          <div class="changelogBlock">
+            <h3>15th February 2026</h3>
+            <hr>
+            <ul>
+              <li><i class="fas fa-star"></i> Added icons to many sections of the UI.</li>
+              <li><i class="fas fa-comments"></i> Reworked the UI of the chat section.</li>
+              <li><i class="fas fa-history"></i> Added the changelog section.</li>
+            </ul>
+          </div>
+          <button id="secretAchievementUnlock">Unlock An Achievement For Me Please</button>
+        </section>
+        <section id="databaseSection" class="hidden">
+          <h2>Database</h2>
+          <h3>Add a code</h3>
+          <p>Managers may only delete or create codes with rank "user".</p>
+          <input id="newNameInput" type="text" placeholder="Enter name...">
+          <select id="newRankInput">
+            <option value="user">User</option>
+            <option value="youtuber">YouTuber (dev only)</option>
+            <option value="director">Director (dev only)</option>
+            <option value="trial">Trial (dev only)</option>
+            <option value="manager">Manager (dev only)</option>
+          </select>
+          <input id="newCodeInput" type="text" placeholder="Enter code...">
+          <button id="newCodeButton">Create Code</button>
+          <br><br>
+          <h3>Suspend an existing account</h3>
+          <input id="suspendCodeId" type="text" placeholder="Enter cID...">
+          <input id="suspendCodeDuration" type="text" placeholder="Enter duration (days)...">
+          <button id="suspendCodeButton">Suspend Account</button>
+          <br><br>
+          <h3>Database Contents</h3>
+          <div id="databaseContainer">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Code</th>
+                  <th>Role</th>
+                  <th>cID</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="database"></tbody>
+            </table>
+          </div>
+        </section>
+        <section id="developerSection" class="hidden">
+          <h2>Developer Tools</h2>
+          <h3>Change a rank</h3>
+          <input id="changeRankId" type="text" placeholder="Enter user ID... (eg. 2155)">
+          <select id="changeRankInput">
+            <option value="user">User</option>
+            <option value="youtuber">YouTuber</option>
+            <option value="director">Director</option>
+            <option value="trial">Trial</option>
+            <option value="manager">Manager</option>
+          </select>
+          <button id="changeRankButton">Update Rank</button>
+          <br><br>
+          <h3>Suggestions</h3>
+          <br>
+          <table>
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Name</th>
+                <th>Suggestion</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="suggestions"></tbody>
+          </table>
+        </section>
+      </div>
+      <div id="serverSidebarContainer" class="hide">
+        <div id="serverSidebarToggleContainer">
+          Show/Hide Sidebar
+        </div>
+        <div id="serverSidebarMainContainer">
+          <h2>Server Info</h2>
+          <div id="serverInfoGrid"></div>
+        </div>
+      </div>
+      <div id="descriptionOverlay" hidden>
+        <div id="descriptionDarken" class="minimize"></div>
+        <div id="descriptionFlex">
+          <div id="descriptionContainer" class="minimize">
+            <b id="descriptionUsername" class="neo subrainbow">Username</b>
+            <div hidden>Voted Trust Rank: <b id="descriptionTrust">???</b></div>
+            <div id="descriptionText">Description</div>
+            <br>
+            <button id="closeDescription">Close</button>
+          </div>
+        </div>
+      </div>
+      <div id="infoPopup" class="hide">
+        <i class="fas fa-bell"></i>
+        <span id="infoText"></span>
+      </div>
+      <div id="gPopup" class="hide">
+        <b id="gName">Unnamed</b>
+        <div id="gDuration">0.0 / 0.0</div>
+      </div>
+      <div id="gListFlex" class="hide">
+        <div id="gListPopup">
+          <h2>List of sound files for /g</h2>
+          <button id="gListClose">Close</button><br><br>
+          <h3>Music files</h3>
+          <div id="gListMusicFiles"></div>
+          <h3>Other files</h3>
+          <div id="gListSoundFiles"></div>
+        </div>
+      </div>
+      <div id="achievementOverlay" class="hide">
+        <b>New Achievement: <span id="achievementName">Name</span></b>
+        <div id="achievementText">Content</div>
+      </div>
+      <div id="moderationOverlay" hidden>
+        <div id="moderationControls">
+          <select name="moderationUsers" id="moderationUsers"></select><br>
+          <input type="text" id="muteTime" placeholder="Mute time">
+          <button id="muteSubmit"><i class="fas fa-comment-slash"></i> Mute User</button>
+          <hr>
+          <input type="text" id="bcText" placeholder="Enter broadcast...">
+          <button id="bcSubmit"><i class="fas fa-bell"></i> Broadcast</button><br>
+          <button id="muteGuestsSubmit">Toggle Guest Mute</button>
+          <hr>
+        </div>
+        <button id="moderationControlsToggle">Hide Controls</button>
+      </div>
+      <div id="latency"></div>
+      <footer>
+        Made by Testing.
+        <br>
+        Idea from the original Arras Verify, made by MLG, Flowey and Testing.
+      </footer>
+    </div>
+  </body>
+
+<!-- Mirrored from vercel-tinkering.vercel.app/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 02 Jun 2026 13:38:18 GMT -->
+</html>

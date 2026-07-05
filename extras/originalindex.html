@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arras Servers Status</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            color: #f8fafc;
+        }
+        .meta-info {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .card {
+            background-color: #1e293b;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+        }
+        .card-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: #94a3b8;
+            margin-bottom: 5px;
+        }
+        .card-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        /* Controls */
+        .controls {
+            background-color: #1e293b;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border: 1px solid #334155;
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        /* Table Styling */
+        .table-wrapper {
+            overflow-x: auto;
+            background-color: #1e293b;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            width: 100%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.9rem;
+            table-layout: auto;
+        }
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #334155;
+            white-space: nowrap;
+        }
+        th {
+            background-color: #0f172a;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+        tr:hover {
+            background-color: #24334d;
+        }
+        /* Status Badges */
+        .badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+        .badge-online { background-color: #065f46; color: #34d399; }
+        .badge-offline { background-color: #991b1b; color: #f87171; }
+        .error-msg {
+            color: #f87171;
+            background-color: #7f1d1d;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            display: none;
+        }
+        .server-type {
+            color: #38bdf8;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Arras Status</h1>
+        <div class="meta-info" id="update-timer">Connecting to stream...</div>
+
+        <div id="error-banner" class="error-msg"></div>
+
+        <div class="stats-grid">
+            <div class="card">
+                <div class="card-title">Active Clients</div>
+                <div id="stat-clients" class="card-value">0</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Servers Online</div>
+                <div id="stat-online" class="card-value" style="color: #34d399;">0</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Servers Offline</div>
+                <div id="stat-offline" class="card-value" style="color: #f87171;">0</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <label class="checkbox-container">
+                <input type="checkbox" id="hide-hidden"> Hide Hidden Nodes
+            </label>
+            <label class="checkbox-container">
+                <input type="checkbox" id="hide-offline"> Hide Offline Nodes
+            </label>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Node Name</th>
+                        <th style="min-width: 140px;">Server Type</th>
+                        <th>Status</th>
+                        <th>Clients</th>
+                        <th>MSPT</th>
+                        <th>Uptime (hrs)</th>
+                        <th>Host Code</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <tr>
+                        <td colspan="7" style="text-align: center; color: #94a3b8;">Waiting for initial data load...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const url = 'https://qrp6ujau11f36bnm-c.uvwx.xyz:8443/2222/status';
+        
+        // Base Server Map Config (fallback presets)
+        const serverTypeMap = {
+            "contabo-sgp-e0z": "Sandbox",
+            "contabo-sgp-e5nexus": "Nexus",
+            "contabo-sgp-f": "FFA",
+            "contabo-sgp-z": "Sandbox",
+            "extravm-sgp-%": "Offline/Unknown",
+            "hetzner-fsn-%": "Offline/Unknown",
+            "hetzner-fsn-a2b": "2 TDM Maze Assault",
+            "hetzner-fsn-af": "FFA Assault",
+            "hetzner-fsn-am2c": "2 TDM Maze Assault",
+            "hetzner-fsn-am2m": "2 TDM Maze Assault",
+            "hetzner-fsn-e0z": "Sandbox",
+            "hetzner-fsn-e5forge": "FFA Forge",
+            "hetzner-fsn-e5limbo": "Limbo",
+            "hetzner-fsn-e5nexus": "Nexus",
+            "hetzner-fsn-e7manhuntmf": "FFA Assault Tag Manhunt",
+            "hetzner-fsn-e8tartarus": "Assault Tartarus",
+            "hetzner-fsn-e9labyrinth": "Assault Tag Labyrinth",
+            "hetzner-fsn-f": "FFA",
+            "hetzner-fsn-gam2": "Growth 2 TDM Maze Assault",
+            "hetzner-fsn-gao2": "Growth 2 TDM Maze Assault",
+            "hetzner-fsn-gf": "Growth FFA",
+            "hetzner-fsn-gmf": "Growth Maze FFA",
+            "hetzner-fsn-m2ax14line": "2 TDM Maze Assault Line",
+            "hetzner-fsn-m2ax16bunker": "2 TDM Maze Assault Bunker",
+            "hetzner-fsn-w33olds5forge": "FFA Old Forge",
+            "hetzner-fsn-w33olds9labyrinth": "Assault 3 Team Tag Old Labyrinth",
+            "hetzner-fsn-w33oldscdreadnoughts": "Assault 3 Team Tag Old Dreadnoughts",
+            "hetzner-fsn-z": "Sandbox",
+            "incubatec-sgp-%": "Offline/Unknown",
+            "ovh-hil-%": "Offline/Unknown",
+            "ovh-syd-af": "FFA Assault",
+            "ovh-syd-am2ax1astronghold": "2 TDM Maze Assault Stronghold",
+            "ovh-syd-am2ax19acropolis": "2 TDM Maze Acropolis",
+            "ovh-syd-am2ax18trenches": "2 TDM Maze Assault Trenches",
+            "ovh-syd-e0z": "Sandbox",
+            "ovh-syd-e5nexus": "Nexus",
+            "ovh-syd-f": "FFA",
+            "ovh-syd-gae7manhuntmf": "Growth FFA Assault Tag Manhunt",
+            "ovh-syd-gom3t": "Growth 3 TDM Maze 3 Team Tag",
+            "ovh-syd-gom4e": "Growth 4 TDM Maze Event",
+            "ovh-syd-m4": "4 TDM Maze",
+            "ovh-syd-mf": "Maze FFA",
+            "ovh-syd-w33olds5forge": "FFA Old Forge",
+            "ovh-syd-w33olds9labyrinth": "Assault 3 Team Tag Old Labyrinth",
+            "ovh-syd-w33oldscdreadnoughts": "Assault 3 Team Tag Old Dreadnoughts",
+            "ovh-syd-z": "Sandbox",
+            "wsi-kci-%": "Offline/Unknown",
+            "wsi-kci-e0z": "Sandbox",
+            "wsi-kci-e5forge": "FFA Forge",
+            "wsi-kci-e5nexus": "Nexus",
+            "wsi-kci-e7manhuntmf": "FFA Assault Tag Manhunt",
+            "wsi-kci-e9labyrinth": "Assault Tag Labyrinth",
+            "wsi-kci-f": "FFA",
+            "wsi-kci-gamf": "Growth Maze FFA Assault",
+            "wsi-kci-gm2ax16bunker": "Growth 2 TDM Maze Assault Bunker",
+            "wsi-kci-gm2ax19acropolis": "Growth 2 TDM Maze Acropolis",
+            "wsi-kci-gm2ax33yins4yang": "Growth 2 TDM Maze Assault Yin & Yang",
+            "wsi-kci-z": "Sandbox"
+        };
+
+        // Resolved server description type with automated token parsing rules
+        function getServerType(nodeKey, nodeCode, displayName) {
+            const nameToCheck = (displayName || nodeKey || "").trim();
+            
+            // Rule 1: #eux is always Limbo
+            if (nameToCheck === "#eux") {
+                return "Limbo";
+            }
+
+            let baseType = "";
+
+            // Rule 2: Check if name length is exactly 3 characters (Sandbox rule)
+            if (nameToCheck.length === 3) {
+                baseType = "Sandbox";
+            } else {
+                const targetStr = nodeCode || nodeKey;
+                
+                // Explicit dictionary check first
+                if (serverTypeMap[targetStr]) {
+                    baseType = serverTypeMap[targetStr];
+                } else {
+                    // Extract the precise mode suffix string (last group after hyphens)
+                    const parts = targetStr.split('-');
+                    const lastPart = parts[parts.length - 1];
+
+                    // Standard suffix dictionary map
+                    const suffixMap = {
+                        "z": "Sandbox", "e0z": "Sandbox", "f": "FFA",
+                        "gf": "Growth FFA", "mf": "Maze FFA", "gmf": "Growth Maze FFA",
+                        "af": "FFA Assault", "gamf": "Growth Maze FFA Assault",
+                        "m4": "4 TDM Maze", "e5nexus": "Nexus", "e5limbo": "Limbo", "e5forge": "FFA Forge",
+                        "e7manhuntmf": "FFA Assault Tag Manhunt", "gae7manhuntmf": "Growth FFA Assault Tag Manhunt",
+                        "e8tartarus": "Assault Tartarus", "e9labyrinth": "Assault Tag Labyrinth",
+                        "w33olds5forge": "FFA Old Forge", "w33olds9labyrinth": "Assault 3 Team Tag Old Labyrinth",
+                        "w33oldscdreadnoughts": "Assault 3 Team Tag Old Dreadnoughts",
+                        "gom3t": "Growth 3 TDM Maze 3 Team Tag", "gom4e": "Growth 4 TDM Maze Event",
+                        "a2b": "2 TDM Maze Assault", "am2m": "2 TDM Maze Assault", "am2c": "2 TDM Maze Assault",
+                        "gam2": "Growth 2 TDM Maze Assault", "gao2": "Growth 2 TDM Maze Assault"
+                    };
+
+                    if (suffixMap[lastPart]) {
+                        baseType = suffixMap[lastPart];
+                    } else {
+                        // Regex Parsing Engine for complex map strings (e.g., m2ax14line, am2ax1astronghold)
+                        const dynamicMatch = lastPart.match(/^(g)?a?m(2|3|4)ax(?:[0-9a-f]+)?(.+)$/);
+                        if (dynamicMatch) {
+                            const isGrowth = !!dynamicMatch[1];
+                            const teams = dynamicMatch[2];
+                            const rawMap = dynamicMatch[3];
+                            
+                            const mapNamesConfig = {
+                                "bunker": "Bunker",
+                                "trenches": "Trenches",
+                                "acropolis": "Acropolis",
+                                "stronghold": "Stronghold",
+                                "line": "Line",
+                                "yins4yang": "Yin & Yang"
+                            };
+
+                            const cleanMapName = mapNamesConfig[rawMap] || (rawMap.charAt(0).toUpperCase() + rawMap.slice(1));
+                            const growthPrefix = isGrowth ? "Growth " : "";
+                            
+                            if (rawMap === "acropolis") {
+                                baseType = `${growthPrefix}${teams} TDM Maze Acropolis`;
+                            } else {
+                                baseType = `${growthPrefix}${teams} TDM Maze Assault ${cleanMapName}`;
+                            }
+                        } else {
+                            // Keyword fallbacks (safeguards)
+                            if (lastPart.endsWith("-gmf")) {
+                                baseType = "Growth Maze FFA";
+                            } else if (lastPart.includes("bunker")) {
+                                baseType = (lastPart.includes("gm") || lastPart.includes("ga")) ? "Growth 2 TDM Maze Assault Bunker" : "2 TDM Maze Assault Bunker";
+                            } else if (lastPart.includes("trenches")) {
+                                baseType = (lastPart.includes("gm") || lastPart.includes("ga")) ? "Growth 2 TDM Maze Assault Trenches" : "2 TDM Maze Assault Trenches";
+                            } else if (lastPart.includes("acropolis")) {
+                                baseType = (lastPart.includes("gm") || lastPart.includes("ga")) ? "Growth 2 TDM Maze Acropolis" : "2 TDM Maze Acropolis";
+                            } else if (lastPart.includes("stronghold")) {
+                                baseType = (lastPart.includes("gm") || lastPart.includes("ga")) ? "Growth 2 TDM Maze Assault Stronghold" : "2 TDM Maze Assault Stronghold";
+                            } else if (lastPart.includes("line")) {
+                                baseType = (lastPart.includes("gm") || lastPart.includes("ga")) ? "Growth 2 TDM Maze Assault Line" : "2 TDM Maze Assault Line";
+                            } else {
+                                // Wildcard proxy hub rule processing loop
+                                for (const key in serverTypeMap) {
+                                    if (key.includes('%')) {
+                                        const prefix = key.split('%')[0];
+                                        if (targetStr.startsWith(prefix)) {
+                                            baseType = serverTypeMap[key];
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (!baseType) baseType = 'Unknown Mode';
+
+            // Rule 3: Append (shiny) if the node name matches special holiday nodes
+            if (["#wv", "#cv", "#ev", "#av"].includes(nameToCheck)) {
+                return `${baseType} (shiny)`;
+            }
+
+            return baseType;
+        }
+
+        const tableBody = document.getElementById('table-body');
+        const updateTimer = document.getElementById('update-timer');
+        const errorBanner = document.getElementById('error-banner');
+        const hideHiddenCheck = document.getElementById('hide-hidden');
+        const hideOfflineCheck = document.getElementById('hide-offline');
+        
+        const statClients = document.getElementById('stat-clients');
+        const statOnline = document.getElementById('stat-online');
+        const statOffline = document.getElementById('stat-offline');
+
+        let cachedStatusData = {};
+
+        async function updateDashboard() {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`Server returned HTTP ${response.status}`);
+                
+                const data = await response.json();
+                if (!data.ok || !data.status) throw new Error("Invalid JSON data structure received.");
+                
+                cachedStatusData = data.status;
+                errorBanner.style.display = 'none';
+                renderData();
+            } catch (err) {
+                errorBanner.textContent = `Stream Error: ${err.message}. Ensure endpoint CORS headers allow connections.`;
+                errorBanner.style.display = 'block';
+            }
+            updateTimer.textContent = `Last refreshed: ${new Date().toLocaleTimeString()}`;
+        }
+
+        function renderData() {
+            let htmlRows = '';
+            let totalClients = 0;
+            let onlineCount = 0;
+            let offlineCount = 0;
+
+            Object.keys(cachedStatusData).forEach(key => {
+                const node = cachedStatusData[key];
+                
+                if (node.online) {
+                    onlineCount++;
+                    totalClients += node.clients || 0;
+                } else {
+                    offlineCount++;
+                }
+
+                if (hideHiddenCheck.checked && node.hidden) return;
+                if (hideOfflineCheck.checked && !node.online) return;
+
+                const uptimeHours = node.uptime ? (node.uptime / 3600).toFixed(2) : '0.00';
+                const statusBadge = node.online 
+                    ? `<span class="badge badge-online">ONLINE</span>` 
+                    : `<span class="badge badge-offline">OFFLINE</span>`;
+                
+                const nodeName = node.name || key;
+                const serverType = getServerType(key, node.code, nodeName);
+
+                htmlRows += `
+                    <tr>
+                        <td><strong>${nodeName}</strong></td>
+                        <td class="server-type">${serverType}</td>
+                        <td>${statusBadge}</td>
+                        <td>${node.clients !== undefined ? node.clients : '-'}</td>
+                        <td>${node.mspt !== undefined ? node.mspt + 'ms' : '-'}</td>
+                        <td>${node.online ? uptimeHours : '-'}</td>
+                        <td style="color: #94a3b8; font-family: monospace;">${node.code || '-'}</td>
+                    </tr>
+                `;
+            });
+
+            statClients.textContent = totalClients;
+            statOnline.textContent = onlineCount;
+            statOffline.textContent = offlineCount;
+
+            tableBody.innerHTML = htmlRows || `<tr><td colspan="7" style="text-align: center; color: #94a3b8;">No nodes match current filter options.</td></tr>`;
+        }
+
+        hideHiddenCheck.addEventListener('change', renderData);
+        hideOfflineCheck.addEventListener('change', renderData);
+
+        updateDashboard();
+        setInterval(updateDashboard, 2000);
+    </script>
+</body>
+</html>
