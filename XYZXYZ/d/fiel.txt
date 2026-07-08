@@ -1,0 +1,242 @@
+#Persistent
+SetBatchLines, -1
+Sleep, 2000
+WinActivate, ahk_exe chrome.exe
+Sleep, 5000
+Click, 500, 500
+Sleep, 300
+Send, {F11}
+Sleep, 1500
+Click, 500, 500
+Sleep, 300
+Send, {Enter}
+Sleep, 7500
+Send {Enter}
+Sleep, 300
+SendRaw Hello everyone! I am PBBV. I can play anything.
+Sleep, 300
+Send {Enter}
+Sleep, 1000
+Send {h}{y}{y}
+Sleep, 500
+Send {Enter}
+Sleep, 300
+SendRaw Please wait. We are getting ready and booting.
+Sleep, 300
+Send {Enter}
+Sleep, 300
+Send {Enter}
+Sleep, 300
+SendRaw I'm just a small .ahk file, You can call me PBBV or Test bot.
+Sleep, 300
+Send {Enter}
+Sleep, 1000
+CoordMode, Mouse, Screen
+X_Ort := A_ScreenWidth / 2
+Y_Ort := A_ScreenHeight / 2
+Click, %X_Ort%, %Y_Ort%
+Sleep, 500
+Send {k}
+Sleep,10
+Send {i}
+Sleep,10
+Send {i}
+Sleep,10
+Send {e}
+Sleep,10
+Sleep, 500
+Send {Space down}
+Sleep, 200
+Send {Space up}
+Sleep, 1000
+SetTimer, MoveCharacter, 900
+SetTimer, AutoUpgrade, 800
+SetTimer, ChatLogic, 4000
+return
+ChatLogic:
+Random, command_choice, 1, 10
+if (command_choice = 1)
+{
+SetTimer, MoveCharacter, Off
+SetTimer, AutoUpgrade, Off
+Send {" down}
+Sleep, 50
+Send {k}
+Sleep, 50
+Send {" up}
+Sleep, 100
+Send {Enter}
+Sleep, 300
+SendRaw Woah! How did you do that?
+Sleep, 300
+Send {Enter}
+SetTimer, MoveCharacter, On
+SetTimer, AutoUpgrade, On
+}
+else if (command_choice = 2)
+{
+SetTimer, MoveCharacter, Off
+SetTimer, AutoUpgrade, Off
+Send {" down}
+Sleep, 50
+Send {x}
+Sleep, 50
+Send {" up}
+Sleep, 100
+Send {Enter}
+Sleep, 300
+SendRaw Sorry, I don't have ai to answer that. I am a .ahk file.
+Send {Enter}
+SetTimer, MoveCharacter, On
+SetTimer, AutoUpgrade, On
+}
+return
+MoveCharacter:
+X_Ort := A_ScreenWidth / 2
+Y_Ort := A_ScreenHeight / 2
+Click, Down
+Random, choice, 1, 8
+if (choice = 1)
+{
+Key1 := "w", Key2 := ""
+MouseMove, %X_Ort%, % Y_Ort - 300, 2
+}
+else if (choice = 2)
+{
+Key1 := "a", Key2 := ""
+MouseMove, % X_Ort - 300, %Y_Ort%, 2
+}
+else if (choice = 3)
+{
+Key1 := "s", Key2 := ""
+MouseMove, %X_Ort%, % Y_Ort + 300, 2
+}
+else if (choice = 4)
+{
+Key1 := "d", Key2 := ""
+MouseMove, % X_Ort + 300, %Y_Ort%, 2
+}
+else if (choice = 5)
+{
+Key1 := "w", Key2 := "a"
+MouseMove, % X_Ort - 212, % Y_Ort - 212, 2
+}
+else if (choice = 6)
+{
+Key1 := "w", Key2 := "d"
+MouseMove, % X_Ort + 212, % Y_Ort - 212, 2
+}
+else if (choice = 7)
+{
+Key1 := "s", Key2 := "a"
+MouseMove, % X_Ort - 212, % Y_Ort + 212, 2
+}
+else if (choice = 8)
+{
+Key1 := "s", Key2 := "d"
+MouseMove, % X_Ort + 212, % Y_Ort + 212, 2
+}
+Send {%Key1% down}
+if (Key2 != "")
+Send {%Key2% down}
+Random, move_time, 1000, 2000
+Sleep, %move_time%
+Send {%Key1% up}
+if (Key2 != "")
+Send {%Key2% up}
+Click, Up
+return
+AutoUpgrade:
+Random, upgrade_choice, 0, 9
+Send {%upgrade_choice%}
+return
+^p::
+SetTimer, MoveCharacter, Off
+SetTimer, AutoUpgrade, Off
+Send {Enter}
+Sleep, 300
+SendRaw Sorry, I dont know and i cant answer that right now.
+Sleep, 300
+Send {Enter}
+SetTimer, MoveCharacter, On
+SetTimer, AutoUpgrade, On
+return
+^m::
+SetTimer, MoveCharacter, Off
+SetTimer, AutoUpgrade, Off
+Send {Enter}
+Sleep, 300
+SendRaw Hello, Nice to meet you. How your day is going?
+Sleep, 300
+Send {Enter}
+SetTimer, MoveCharacter, On
+SetTimer, AutoUpgrade, On
+return
+^k::
+SetTimer, MoveCharacter, Off
+SetTimer, AutoUpgrade, Off
+Send {" down}
+Sleep, 50
+Send {k}
+Sleep, 50
+Send {" up}
+Sleep, 100
+Send {Enter}
+Sleep, 300
+SendRaw Woah! How did you do that?
+Sleep, 300
+Send {Enter}
+SetTimer, MoveCharacter, On
+SetTimer, AutoUpgrade, On
+return
+^x::
+SetTimer, MoveCharacter, Off
+SetTimer, AutoUpgrade, Off
+Send {" down}
+Sleep, 50
+Send {x}
+Sleep, 50
+Send {" up}
+Sleep, 100
+Send {Enter}
+Sleep, 300
+SendRaw Sorry, I dont have an ai and i cant see Anything.
+Sleep, 300
+Send {Enter}
+SetTimer, MoveCharacter, On
+SetTimer, AutoUpgrade, On
+return
+^j::
+Loop, 30
+SetTimer, MoveCharacter, Off
+Send {Enter}
+Sleep, 300
+SendRaw MoveCharacter Status: Off.
+Sleep, 300
+Send {Enter}
+return
+^h::
+SetTimer, MoveCharacter, On
+Send {Enter}
+Sleep, 300
+SendRaw MoveCharacter Status: On.
+Sleep, 300
+Send {Enter}
+return
+End::
+Click, Up
+SetTimer, MoveCharacter, Off
+SetTimer, AutoUpgrade, Off
+SetTimer, ChatLogic, Off
+Send {Enter}
+Sleep, 300
+SendRaw Bot has trying to stop. ("End" Pressed by HereH in Computer)
+Sleep, 300
+Send {Enter}
+Sleep, 2000
+Send {Enter}
+Sleep, 300
+SendRaw See you later when i open back :)
+Send {Enter}
+Sleep, 2000
+ExitAppPAD
