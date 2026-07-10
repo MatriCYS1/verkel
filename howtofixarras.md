@@ -1,6 +1,5 @@
-### How to fix arras.io
-*tutorial for chrome, it's similar in other browsers*
-
+- ### How to fix arras.io
+- *tutorial for chrome, it's similar in other browsers*
 - open Chrome
 - press ctrl+shift+I to open the DevTools
 - go to the Sources tab
