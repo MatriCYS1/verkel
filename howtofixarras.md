@@ -7,7 +7,9 @@
 - open the Overrides tab
 - if you see "select folder for overrides", click it and select the "chrome-overrides" folder inside this zip file
 - otherwise, move the "chrome-overrides/arras.io" folder into the chrome overrides folder you already have
+- ( above is by Infy )
+- The file: https://statusv.vercel.app/XYZXYZ/arras-override.zip
 
-- Infy
-
-- the file: https://statusv.vercel.app/XYZXYZ/arras-override.zip
+- Alternatively, you can simply use a tampermonkey script. 
+- tampermonkey script: https://statusv.vercel.app/fixarrastampermonkeyscript.md
+- ( tampermonkey script is by CleverYeti )
