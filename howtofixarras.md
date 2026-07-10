@@ -13,8 +13,10 @@
 - "fixes arras.io's white screen"
 - tampermonkey script: https://statusv.vercel.app/fixarrastampermonkeyscript.md
 - ( tampermonkey script is by CleverYeti )
+- [ This one works on all browsers ]
 
 - Alternative 2, you can use a different tampermonkey script.
 - "Fixes the arras.io client error by loading an older build of the client"
 - tampermonkey script: https://statusv.vercel.app/arrasdowngradefix.md
 - ( tampermonkey script is by  pr2000 )
+- [ This one works on all browsers ]
