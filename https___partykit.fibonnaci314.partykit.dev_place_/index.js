@@ -164,7 +164,7 @@ function frame() {
   renderMap();
 
   canvas.oncontextmenu = e => e.preventDefault();
-  const cooldownText = cooldown < Date.now() ? "You may place or remove a wall now." : "You may place or remove a wall in " + ((cooldown - Date.now()) / 1000).toFixed(0) + " seconds.";
+  const cooldownText = cooldown < Date.now() ? "You may place or remove a wall now." : "You may place or remove a wall in " + ((cooldown - Date.now()) / 1000).toFixed(0);
   document.querySelector("#cooldown").innerText = cooldownText;
 }
 requestAnimationFrame(frame);
