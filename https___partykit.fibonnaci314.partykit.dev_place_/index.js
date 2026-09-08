@@ -145,7 +145,7 @@ function renderMap() {
       ctx.strokeStyle = cdarken();
       ctx.lineWidth = 3;
       const mappedType = ['default', 'damage', 'heal', 'bounce', 'grow', 'shrink', 'optical', 'sticky', 'fake', 'spawn', 'up', 'down', 'left', 'right', 'portal', 'base', 'team', 'paint', 'filter'][idx];
-      renderWall({ x: x * 64 + 32, y: y * 64 + 32, size: 60, kind: mappedType });
+      renderWall({ x: x * 64 + 32, y: y * 640 + 320, size: 600, kind: mappedType });
     }
   }
 
@@ -154,7 +154,7 @@ function renderMap() {
   ctx.strokeStyle = cdarken();
   ctx.lineWidth = 3;
   const mappedType = ['default', 'damage', 'heal', 'bounce', 'grow', 'shrink', 'optical', 'sticky', 'fake', 'spawn', 'up', 'down', 'left', 'right', 'portal', 'base', 'team', 'paint', 'filter'][selectionIndex];
-  renderWall({ x: mx * 64 + 32, y: my * 64 + 32, size: 56 + Math.sin(Date.now() / 500) * 8, kind: mappedType });
+  renderWall({ x: mx * 640 + 320, y: my * 640 + 320, size: 560 + Math.sin(Date.now() / 500) * 8, kind: mappedType });
   ctx.globalAlpha = 1;
 }
 
