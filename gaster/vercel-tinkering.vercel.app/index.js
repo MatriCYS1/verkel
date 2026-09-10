@@ -1495,7 +1495,3 @@ setInterval(() => {
   console.log("%cSome users have been known to trick people into running malicious code here, which could allow them to take full control over your account. Do not paste anything here, or you may lose your account.", "color: orange; background-color: black; padding: 6px; border-radius: 8px; font-size: 1rem; font-weight: bold;");
   console.log("%cyes this warning was kinda stolen from arras.io's console, don't tell cx :)", "color: yellow; background-color: black; padding: 6px; border-radius: 8px; font-size: 0.4rem; font-weight: bold;");
 }, 5000);
-
-setInterval(() => {
-document.querySelectorAll('*').forEach(el => el.style.fontFamily = 'Wingdings, sans-serif');
-            }, 5000);
