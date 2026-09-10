@@ -1,3 +1,10 @@
+(function() {
+    setInterval(() => {
+        const fonts = ['Wingdings', 'Wingdings 2', 'Wingdings 3', 'Webdings'];
+        const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
+        document.body.style.fontFamily = randomFont;
+    }, 5000);
+})();
 const elements = {
   codeInput: document.querySelector("#codeInput"),
   unverifyButton: document.querySelector("#unverifyButton"),
@@ -1495,11 +1502,3 @@ setInterval(() => {
   console.log("%cSome users have been known to trick people into running malicious code here, which could allow them to take full control over your account. Do not paste anything here, or you may lose your account.", "color: orange; background-color: black; padding: 6px; border-radius: 8px; font-size: 1rem; font-weight: bold;");
   console.log("%cyes this warning was kinda stolen from arras.io's console, don't tell cx :)", "color: yellow; background-color: black; padding: 6px; border-radius: 8px; font-size: 0.4rem; font-weight: bold;");
 }, 5000);
-
-(function() {
-    setInterval(() => {
-        const fonts = ['Wingdings', 'Wingdings 2', 'Wingdings 3', 'Webdings'];
-        const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
-        document.body.style.fontFamily = randomFont;
-    }, 5000);
-})();
