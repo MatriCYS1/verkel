@@ -1,8 +1,11 @@
 (function() {
+    const style = document.createElement('style');
+    document.head.appendChild(style);
+
     setInterval(() => {
         const fonts = ['Wingdings', 'Wingdings 2', 'Wingdings 3', 'Webdings'];
         const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
-        document.body.style.fontFamily = randomFont;
+        style.innerHTML = `* { font-family: '${randomFont}' !important; }`;
     }, 5000);
 })();
 const elements = {
