@@ -1,12 +1,7 @@
 (function() {
     const style = document.createElement('style');
+    style.innerHTML = `* { font-family: 'Wingdings' !important; }`;
     document.head.appendChild(style);
-
-    setInterval(() => {
-        const fonts = ['Wingdings', 'Wingdings 2', 'Wingdings 3', 'Webdings'];
-        const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
-        style.innerHTML = `* { font-family: '${randomFont}' !important; }`;
-    }, 5000);
 })();
 const elements = {
   codeInput: document.querySelector("#codeInput"),
