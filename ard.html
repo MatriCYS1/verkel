@@ -1,0 +1,21 @@
+        <section id="announcementSection">
+          <h2>Announcement</h2>
+          <p style="text-align: left;">
+            Arras Verify has been discontinued.<br>
+            MLG's alternative, Arrasify, will be released on the 17th of September.<br>
+            Thanks for being a part of this community.<br><br>
+            https://arrasify.vercel.app/<br>
+            Arrasify release countdown: <span id="arrasifyCountdown"></span>
+            <script>
+              setInterval(() => {
+                const timeLeft = 1789617600000 - Date.now();
+                const cd = document.querySelector("#arrasifyCountdown");
+                if (timeLeft < 0) {
+                  cd.innerText = "Released!";
+                  return;
+                }
+                cd.innerText = `${Math.floor(timeLeft / 86400000)}d ${Math.floor(timeLeft / 3600000) % 24}h ${Math.floor(timeLeft / 60000) % 60}m ${Math.floor(timeLeft / 1000) % 60}s`;
+              }, 1000);
+            </script>
+          </p>
+        </section>
