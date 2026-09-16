@@ -69,6 +69,24 @@
                             <p>This is a comment!</p>
                         </div>
                     </div> -->
+                    <script>
+  // Globally intercept attempts to set innerHTML on elements
+  const originalSetInnerHTML = Object.getOwnPropertyDescriptor(Element.prototype, 'innerHTML').set;
+
+  Object.defineProperty(Element.prototype, 'innerHTML', {
+    set: function(value) {
+      // If someone tries to pass a string containing '<style>' or '<script>',
+      // we strip out dangerous tags before letting the browser render it.
+      if (typeof value === 'string' && (value.includes('<style') || value.includes('<script'))) {
+        console.warn("Blocked an injection attempt.");
+        // Safely convert the string to text characters
+        value = value.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      }
+      return originalSetInnerHTML.call(this, value);
+    }
+  });
+</script>
+
                 </div>
             </div>
             <div id="chatReply" class="hidden">
