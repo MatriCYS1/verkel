@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from arrasify.vercel.app/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Sep 2026 13:21:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrasify</title>
+    <link rel="stylesheet" href="../cdn.jsdelivr.net/npm/bootstrap-icons%401.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="theme-dark">
+    <header>
+        <h1>Arrasify</h1>
+        <div class="header-tools">
+            <i class="bi bi-moon-stars-fill header-icons" id="toggleDark"></i>
+            <i class="bi bi-bell header-icons" id="togglePings"></i>
+            <i class="bi bi-book header-icons" id="helper"></i>
+            <i class="bi bi-envelope header-icons hidden"></i>
+            <i class="bi bi-gear header-icons hidden"></i>
+            <i id="backToAuth" class="bi bi-box-arrow-in-right header-icons hidden"></i>
+        </div>
+    </header>
+    <main class="hidden">
+        <div id="users" class="hidden">
+            <h2 style="text-align: center; color: white; user-select: none;">Online Friends</h2>
+            <p style="text-align: center; color: white; user-select: none;">Nobody here!</p>
+            <hr>
+            <h2 style="text-align: center; color: white; user-select: none;">Online People</h2>
+            <p style="text-align: center; color: white; user-select: none;">Nobody here!</p>
+            <hr>
+            <h2 style="text-align: center; color: white; user-select: none;">Guests</h2>
+            <p style="text-align: center; color: white; user-select: none;">Nobody here!</p>
+            <!-- <div class="users-user">
+                <img src="ralsei_pfp.png" class="user-pfp">
+                <p class="user-name message-rainbow">MLG</p>
+                <i class="bi bi-check-circle user-verified"></i>
+            </div>
+            <div class="users-user">
+                <img src="ralsei.gif" class="user-pfp">
+                <p class="user-name">User Test</p>
+            </div> -->
+        </div>
+        <div id="viewport" class="hidden">
+            <div id="chat">
+                <div class="chat-top">
+                    <h2 id="chatChannel">Channel: General</h2>
+                    <h2 id="chatInfo">Slowmode: Please wait 4s...</h2>
+                </div>
+                <div id="chatHistory">
+                    <!-- <div class="message">
+                        <div class="chat-user">
+                            <div class="user-info">
+                                <img src="ralsei_pfp.png" alt="" class="user-pfp">
+                                <p class="user-name message-rainbow">MLG</p>
+                                <i class="bi bi-check-circle user-verified"></i>
+                            </div>
+                            <p>12:08 AM</p>
+                            <div class="message-actions">
+                                <i class="bi bi-reply-fill"></i>
+                                <i class="bi bi-trash"></i>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="chat-message message-white">
+                            <p>This is a comment!</p>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div id="chatReply" class="hidden">
+                <div class="reply-message">
+                    <p id="replyUser"></p>
+                    <p id="replyContent"></p>
+                </div>
+                <i class="bi bi-x-octagon" id="cancelReply"></i>
+            </div>
+            <div class="chat-bar">
+                <input type="text" id="barMessage" autocomplete="off" autocorrect="off" autocapitalize="off"
+                    placeholder="Enter your message to send here." maxlength="1000">
+                <button id="barSend"><i class="bi bi-send"></i></button>
+                <button id="barClip"><i class="bi bi-paperclip"></i></button>
+                <button id="barEmote"><i class="bi bi-emoji-smile"></i></button>
+                <button id="barMod" class="hidden"><i class="bi bi-hammer"></i></button>
+                <input type="file" id="barImage" class="hidden">
+            </div>
+        </div>
+        <div id="auth">
+            <h1>Authentication</h1>
+            <p>Enter your token given to you, so you can authenticate.<br>Alternatively, <a id="visitAsGuest">visit as a
+                    guest?</a></p>
+            <p id="authError" class="message-red hidden">Errors will appear here.</p>
+            <div class="auth-bar">
+                <input type="text" id="barToken" placeholder="Enter your token." required>
+                <button id="barAuth"><i class="bi bi-caret-right"></i></button>
+            </div>
+            <p>
+                By using a token, or using our service as a guest, you agree to our <a id="openTosPp">Terms of Service
+                    and Privacy Policy</a>.
+            </p>
+            <p>This site was made solo, from the ground up by <a href="https://mlg-inc.vercel.app/">MLG.</a><br>Original
+                idea taken from Arras Verify, by MLG,
+                Flowey, and Testing.
+            </p>
+        </div>
+    </main>
+    <div id="scrollButton" class="invisible">
+        <i class="bi bi-arrow-down"></i>
+    </div>
+    <div id="emoteList" class="hidden">
+        <h2>Emojis</h2>
+        <p>Credit to Bootstrap</p>
+        <div class="emoteEmojis">
+            <i id="emojiSmile" class="emoji bi bi-emoji-smile-fill"></i>
+            <i id="emojiNeutral" class="emoji bi bi-emoji-neutral-fill"></i>
+            <i id="emojiFrown" class="emoji bi bi-emoji-frown-fill"></i>
+            <i id="emojiAngry" class="emoji bi bi-emoji-angry-fill"></i>
+            <i id="emojiLaughing" class="emoji bi bi-emoji-laughing-fill"></i>
+            <i id="emojiSurprise" class="emoji bi bi-emoji-surprise-fill"></i>
+            <i id="emojiSunglasses" class="emoji bi bi-emoji-sunglasses-fill"></i>
+            <i id="emojiHeartEyes" class="emoji bi bi-emoji-heart-eyes-fill"></i>
+            <i id="emojiKiss" class="emoji bi bi-emoji-kiss-fill"></i>
+            <i id="emojiTear" class="emoji bi bi-emoji-tear-fill"></i>
+            <i id="emojiWink" class="emoji bi bi-emoji-wink-fill"></i>
+            <i id="emojiAstonished" class="emoji bi bi-emoji-astonished-fill"></i>
+            <i id="emojiDizzy" class="emoji bi bi-emoji-dizzy-fill"></i>
+            <i id="emojiExpressionless" class="emoji bi bi-emoji-expressionless-fill"></i>
+        </div>
+        <hr>
+        <h2>Emotes</h2>
+        <h3>Diep.io & Arras.io</h3>
+        <p>Credit to 3AM Experiences, Neph, Damocles & XX</p>
+        <p>Some drawn by MLG</p>
+        <div class="emotes">
+            <img id="emoteSpectator" class="emote" src="emotes/spectator.png">
+            <img id="emoteBasic" class="emote" src="emotes/basic.png">
+            <img id="emoteBooster" class="emote" src="emotes/booster.png">
+            <img id="emoteRanger" class="emote" src="emotes/ranger.png">
+            <img id="emoteValrayvn" class="emote" src="emotes/valrayvn.jpg">
+        </div>
+        <h3>Verify</h3>
+        <p>Credit to Testing</p>
+        <p>Some drawn by MLG</p>
+        <div class="emotes">
+            <img id="emoteVerifyGuest" class="emote" src="emotes/verifyguest.png">
+            <img id="emoteVerifyAlt" class="emote" src="emotes/verifyalt.png">
+            <img id="emoteVerifyDirector" class="emote" src="emotes/verifydirector.png">
+            <img id="emoteVerifyTrial" class="emote" src="emotes/verifytrial.png">
+            <img id="emoteVerifyManager" class="emote" src="emotes/verifymanager.png">
+            <img id="emoteVerifyDev" class="emote" src="emotes/verifydev.png">
+            <img id="emoteVerifyTrash" class="emote" src="emotes/verifytrash.png">
+            <img id="emoteVerifyYoutuber" class="emote" src="emotes/verifyyoutuber.png">
+            <img id="emoteVerifyMusician" class="emote" src="emotes/verifymusician.png">
+            <img id="emoteVerifyArtist" class="emote" src="emotes/verifyartist.png">
+            <img id="emoteVerifyBongis" class="emote" src="emotes/verifybongis.png">
+            <img id="emoteVerifyOldDev" class="emote" src="emotes/verifyolddev.png">
+        </div>
+        <h3>Trust</h3>
+        <p>Credit to d2 & Testing</p>
+        <div class="emotes">
+            <img id="emoteExtremelyNotTrust" class="emote" src="emotes/extremelynottrust.png">
+            <img id="emoteNotTrust" class="emote" src="emotes/nottrust.png">
+            <img id="emoteMaybeTrust" class="emote" src="emotes/maybetrust.png">
+            <img id="emoteYesTrust" class="emote" src="emotes/yestrust.png">
+            <img id="emoteProbablyTrust" class="emote" src="emotes/probablytrust.png">
+            <img id="emoteSuperTrust" class="emote" src="emotes/supertrust.png">
+        </div>
+        <h3>Deltarune</h3>
+        <p>Credit to Toby Fox</p>
+        <p>Some drawn by MLG</p>
+        <div class="emotes">
+            <img id="emoteMlg" class="emote" src="emotes/mlg.png">
+            <img id="emoteRalsei" class="emote" src="emotes/ralsei.png">
+        </div>
+        <h3>TTF</h3>
+        <p>Credit to Dragon King Gaming (DKG)</p>
+        <div class="emotes">
+            <img id="emoteTtfIdle" class="emote" src="emotes/ttfidle.gif">
+            <img id="emoteTtfSeizure" class="emote" src="emotes/ttfseizure.gif">
+            <img id="emoteTtfSpin" class="emote" src="emotes/ttfspin.gif">
+        </div>
+        <h3>Ripoffs / Bad</h3>
+        <p>Some drawn by MLG</p>
+        <div class="emotes">
+            <img id="emoteBadSkull" class="emote" src="emotes/badskull.png">
+            <img id="emoteBadPepe" class="emote" src="emotes/badpepe.png">
+        </div>
+        <h3>Memes</h3>
+        <p>Credit to original material</p>
+        <div class="emotes">
+            <img id="emoteSmart" class="emote" src="emotes/smart.gif">
+            <img id="emoteClips" class="emote" src="emotes/clips.gif">
+        </div>
+    </div>
+    <div id="screen" class="hidden"></div>
+    <div id="imageConfirm" class="hidden">
+        <h2>Upload Confirmation</h2>
+        <p>Is the below image correct?</p>
+        <img src="#" alt="No image." id="imageConfirmImage">
+        <div class="image-confirm-btns">
+            <button class="confirm-btn" id="imageConfirmY">Confirm</button>
+            <button class="cancel-btn" id="imageConfirmN">Cancel</button>
+        </div>
+    </div>
+    <div id="imageEnlarger" class="hidden">
+        <h2>Image Viewer</h2>
+        <img id="imageEnlargerFocus" src="books.html" alt="No image.">
+        <button class="cancel-btn" id="imageEnlargerClose">Close</button>
+    </div>
+    <div id="tosPp" class="hidden">
+        <div class="tos-pp-header">
+            <i id="closeTosPp" class="bi bi-caret-left-square icon-button"></i>
+        </div>
+        <h1>Terms of Service</h1>
+        <p>
+            By using our service, you automatically accept the terms of use listed below. If at any point you do not
+            wish to participate with our service, or disagree with the terms, you can ask an administator to
+            terminate your account. If you do not have an account, you can discontinue use of the service. Any
+            catalogued information will be removed from our service, and you no longer bound to this agreement.
+        </p>
+        <p>
+            Any changes made to the Terms of Service will be made apparent to pre-established accounts. Changes will
+            take effect immediately, provided the consumer continues using the service. If you disagree with any
+            changes, you can request account termination by an administrator.
+        </p>
+        <h2>License</h2>
+        <p>
+            The media presented by this service, which includes but is not limited to; media, texts, concepts,
+            banners, badges, and titles, are reserved for use with this service only, and as such are licensed under
+            'All Rights Reserved'. You cannot create, monetize or redistribute materials and content as-is.
+        </p>
+        <h2>Tokens</h2>
+        <p>
+            Tokens, or 'accounts', can be viewed by other accounts. Administators reserve the right to edit,
+            delete, or modify your account. Changes made to your account will be made apparent either before or
+            after they've been instated.
+        </p>
+        <p>
+            Misuse of accounts is strictly prohibited. Misuse includes but is not limited to; using VPNs and
+            alternative accounts to bypass punishments, requesting a new account to be created for the purpose of
+            exploitation, botting user accounts, posting inappropriate materials, and the sharing of your or other's
+            critical information.
+        </p>
+        <p>
+            If under any circumstances administrators believe you to breach these aforementioned terms, we reserve
+            the right to punish your account. Punishments may include but are not limited to; mutes, upload bans,
+            blacklisting, suspension, or account deletion. Any data associated with your account upon account
+            deletion will be erased.
+        </p>
+        <h2>Limitations & Liability</h2>
+        <p>
+            IF INFORMATION REGARDING YOUR TOKEN OR ACCOUNT IS LEAKED OR PUBLICLY VIEWABLE, WE DO NOT HOLD ANY
+            ACCOUNTABILITY OR LIABILITY FOR SUCH SITUATIONS, AND AS SUCH ANY ISSUE CAUSED IS OF THE CONSUMER'S
+            EXPENSE.
+        </p>
+        <p>
+            IF YOUR TOKEN IS NOT RECOVERABLE, AN ADMINISTRATOR CAN CHANGE, OR CREATE, A NEW ONE IN REPLACEMENT,
+            PROVIDED THAT THE SITUATION SHOULD MAKE IT A NECESSARY ACTION. WE TAKE NO RESPONSIBILITY FOR
+            UNRECOVERABLE ACCOUNTS; THE CONSEQUENCES OF WHICH ARE ENTIRELY AT THE CONSUMER'S EXPENSE.
+        </p>
+        <h1>Privacy Policy</h1>
+        <p>
+            We use cookies and WebSocket trafficking to collect certain data about you. This data is associated
+            exclusively with the token you use with our service; if you do not have a token, we may temporarily
+            store certain information, but it will not be catalogued, and will remain anonymous.
+        </p>
+        <p>
+            Any changes to the data we collect or how we use it will be made apparent to every account whom uses our
+            service. If you disagree with any changes made, you can request account termination by an administrator.
+        </p>
+        <h2>Collected Data</h2>
+        <p>
+            We collect data such as IP Addresses, data about the usage of our service, user-defined
+            configurations, as well as potential web browser and device information. This information remains
+            limited to the service and is not shared with any third-party applications.
+        </p>
+        <p>
+            If you would like to remove your data, consult an admin to remove your token, and all data,
+            configurations, and preferences will be removed from the catalogue.
+        </p>
+        <h2>Data Usage</h2>
+        <p>
+            We use a variety of data to identify our clients (see section 'Collected Data'). This data is used to
+            associate you with your account linked to our service. Other information may include temporary access to
+            files uploaded by the user and settings saved in LocalStorage or cookies.
+        </p>
+        <p>
+            User configurations and data associated with your token may be viewed by administators if need be, and
+            changes to this data also made. You will be notified of any changes made to your token, either before or
+            after they take effect. If you wish to revert these changes, you can consult an administator to revert
+            them.
+        </p>
+        <p>
+            If you are not using a token, temporary information may still be viewable for the duration of your
+            visit.
+        </p>
+    </div>
+    <div id="book" class="hidden">
+        <div class="book-top">
+            <h1>The Book</h1>
+            <i class="bi bi-x-octagon" id="closeBook"></i>
+        </div>
+        <div class="book-main">
+            <div class="book-side">
+                <h1>Getting Started</h1>
+                <p id="bookRules" class="book-side-option-h"><i class="bi bi-shield-fill-exclamation"></i> Rules</p>
+                <p id="bookAdmins" class="book-side-option"><i class="bi bi-key"></i> Admins</p>
+                <p id="bookSupport" class="book-side-option"><i class="bi bi-info-circle"></i> Support</p>
+                <hr>
+                <h1>Advanced</h1>
+                <p id="bookCommands" class="book-side-option"><i class="bi bi-journal-text"></i> Commands</p>
+            </div>
+            <div class="book-content">
+                <div id="bookRulesContent">
+                    <h1>Getting Started - Rules</h1>
+                    <h2>What Isn't Allowed</h2>
+                    <h3>Spamming</h3>
+                    <p>
+                        Pretty obvious. If multiple users deem you to be spamming, either through messages or commands,
+                        stop
+                        immediately. If continued, you will receive punishment.
+                    </p>
+                    <h3>Advertising</h3>
+                    <p>
+                        Anything promotional that is irrelevent to the conversation currently being held should not be
+                        promoted. This rule also oftenly interlaces into spam, and is treated as such.
+                    </p>
+                    <h3>Language</h3>
+                    <p>
+                        Most of us speak English, but other languages are allowed. However, refrain from using extreme
+                        slurs and hateful words. One or two are fine, but if you send too many, you will likely be
+                        punished. This rule ties into hate & prejudice.
+                    </p>
+                    <p>
+                        This rule is lenient, so read the audience before you post.
+                    </p>
+                    <h3>Media</h3>
+                    <p>
+                        Refrain from posting graphic imagery, implied innuendos, NSFW content, and anything that you
+                        think
+                        people would likely get uncomfortable with. Punishment is usually immediate, so think before you
+                        post.
+                    </p>
+                    <h3>Hate & Prejudice</h3>
+                    <p>
+                        Any kind of prejudice or hate towards anyone, especially catered to specific groups, will
+                        usually be
+                        warned. If continued, expect exponential punishment.
+                    </p>
+                    <p>
+                        This rule includes, but is not limited to racism, homophobia, transphobia, anti-religion, and
+                        health
+                        conditions. Make sure your message comes across the right way before posting.
+                    </p>
+                    <h3>Evasion</h3>
+                    <p>
+                        Evading punishment, whether it be using a guest account, a vpn, an alternate account, a role, or
+                        any
+                        other number of methods will result in exponential severe punishment.
+                    </p>
+                    <p>
+                        VPNs are allowed, but only if used not for the purpose of punishment evasion.
+                    </p>
+                    <h3>Direct Messages</h3>
+                    <p>
+                        Don't send anything inappropriate in DMs. Yes, it's an unmonitored area, but if the user is
+                        uncomfortable, depending on what is said, you can and will probably get punished.
+                    </p>
+                    <h3>Shady People</h3>
+                    <p>
+                        Anyone already confirmed to be suspicious, proven to broken any aforementioned rules, or done
+                        something not appropriate, will be removed without hesitation.
+                    </p>
+                    <hr>
+                    <p>
+                        Any attempts at trying to evade punishments will result in exponentially worse
+                        punishment.
+                    </p>
+                    <hr>
+                    <h2>Punishments</h2>
+                    <h3>Block</h3>
+                    <p>
+                        You will be unable to send direct messages to specific users. The users that block you will also
+                        have the option to hide your global messages. This is decided by accounts of Arrasify, and not
+                        explicitly chosen by admins.
+                    </p>
+                    <h3>Mute</h3>
+                    <p>
+                        You won't be able to send messages for a duration of time. Until that time is over, you cannot
+                        communicate to anyone, including DMs. You can be muted in either text, uploads, or both. Mutes
+                        are given to people who advertise, spam, or send inappropriate language.
+                    </p>
+                    <h3>Temp-Ban</h3>
+                    <p>
+                        You will temporarily be unable to access your account, until the specified duration has passed.
+                        You can still see the chat as a guest, but cannot interact with anyone. This is given to people
+                        if rules are broken continuously.
+                    </p>
+                    <h3>Suspension</h3>
+                    <p>
+                        You will be unable to access your account for an undisclosed amount of time. This is used when
+                        admins aren't sure how long you should wait to be forgiven.
+                    </p>
+                    <h3>Termination</h3>
+                    <p>
+                        Your account will be completely deleted from the database. Your token will no longer function,
+                        and you will need to ask for a new one. This is reserved for extreme rule infraction, often
+                        accompanied by shunning or blacklisting.
+                    </p>
+                    <h3>Shunning</h3>
+                    <p>
+                        You will not be able to access the site, or any utilities, until the specified duration has
+                        passed. All routes and services will be blocked. This is reserved for extreme rule infraction.
+                    </p>
+                    <h3>Blacklist</h3>
+                    <p>
+                        You are permanently unable to use our site or our services. This is used if you evade
+                        punishments too much, have a bad history of chat infraction, or done other activities that
+                        prompt this action.
+                    </p>
+                    <h2>Moderation Tips for Admins</h2>
+                    <p>
+                        Moderation from admin-to-admin varies. Because of this, some users may think admins are biased
+                        for letting some users get away with breaking the rules. We have no proper standard to follow
+                        aside the rules and the appropriate punishments, so if you're accused of being biased, try see
+                        what other admins are doing to get a better idea on what should be done.
+                    </p>
+                    <p>
+                        Inaccurate punishments given to users are fine if they are mistakes, but if it's a continous or
+                        conscious choice, you will be demoted. Not everyone is meant to be an admin, and that may not
+                        necessarily be your fault, so please don't take it personally. We've seen a few prior admins in
+                        old verify tend to have this reaction.
+                    </p>
+                    <p>
+                        Also, don't feel pressured to be chronically online 24/7. This community might be expanding, but
+                        you do not have to sacrifice your own time stressing about the state of this service. It is not
+                        a job, and being an admin should be purely based on genuinely wanting to help out, and not for
+                        status or obligation.
+                    </p>
+                </div>
+                <div id="bookAdminsContent" class="hidden">
+                    <h1>Getting Started - Admins</h1>
+                    <p>This section may contain out-of-date information.</p>
+                    <h2>Different Admin Types</h2>
+                    <h3>Helper</h3>
+                    <h4>Synopsis</h4>
+                    <p>
+                        Helpers are the first type of administrator, or moderator. Their purpose is to help lightly
+                        moderate the chat, either by muting people who break the basic rules, or directing users to
+                        other admins who can help.
+                    </p>
+                    <h4>Permissions</h4>
+                    <h5>Mute</h5>
+                    <p>
+                        Can mute guests and users, for a specific duration of time. The range can be from one
+                        minute to four hours.
+                    </p>
+                    <hr>
+                    <h3>Underseer</h3>
+                    <h4>Synopsis</h4>
+                    <p>
+                        Underseers can do everything helpers can, and also create, edit, and delete accounts. They can
+                        promote and demote specific users to and from helper, and can dish out temp-bans.
+                    </p>
+                    <h4>Permissions</h4>
+                    <h5>Mute</h5>
+                    <p>
+                        Mute time range is increased to eight hours.
+                    </p>
+                    <h5>Temp-Ban</h5>
+                    <p>
+                        Able to temporarily ban access from accounts of users.
+                    </p>
+                    <h5>Account Manipulation</h5>
+                    <p>
+                        Can create, edit, and delete entries from the database of accounts. Can only access the specific
+                        codes they themselves added, and as such can also only modify or delete those codes.
+                    </p>
+                    <p>
+                        Can promote and demote users to and from helpers.
+                    </p>
+                    <hr>
+                    <h3>Overseer</h3>
+                    <h4>Synopsis</h4>
+                    <p>
+                        Overseers can do everything underseers do, and can modify all accounts without restriction,
+                        except for roles higher above itself. Promotion permissions are still the same.
+                    </p>
+                    <h4>Permissions</h4>
+                    <h5>Mute</h5>
+                    <p>
+                        Mute time range is increased to twelve hours.
+                    </p>
+                    <h5>Slowmode</h5>
+                    <p>
+                        Able to add a slowmode, in between zero seconds to one minute.
+                    </p>
+                    <h5>Suspension</h5>
+                    <p>
+                        Can permanently stop users from logging into accounts, for an undisclosed time.
+                    </p>
+                    <h5>Account Manipulation</h5>
+                    <p>
+                        Can edit every account except for authentication higher than itself.
+                    </p>
+                    <hr>
+                    <h3>Admin</h3>
+                    <h4>Synopsis</h4>
+                    <p>
+                        (Not to be confused with all authenticated accounts also called 'admins').
+                    </p>
+                    <p>
+                        Admins can do everything overseers do, and can change dynamically-configured settings of the
+                        server, save entire chat channel history by downloading it, make announcements in the inbox, and
+                        restart the server at will.
+                    </p>
+                    <h4>Permissions</h4>
+                    <h5>Mute</h5>
+                    <p>
+                        Mute time range increased to two days.
+                    </p>
+                    <h5>Slowmode</h5>
+                    <p>
+                        Increase of maximum slowmode interval to an hour.
+                    </p>
+                    <h5>Shunning</h5>
+                    <p>
+                        Able to temporarily make accounts unable to access the site entirely. Has a range of one day to
+                        seven days.
+                    </p>
+                    <h5>Account Manipulation</h5>
+                    <p>
+                        Able to promote users to overseers.
+                    </p>
+                    <h5>Dynamics</h5>
+                    <p>
+                        Can change dynamic statistics about the server, such as message recall, being able to download
+                        the current chat history since server uptime, and a few other things.
+                    </p>
+                    <h5>Mail Privileges</h5>
+                    <p>
+                        Can send news posts regarding updates to all users, via the inbox.
+                    </p>
+                    <h5>Restart</h5>
+                    <p>
+                        Can restart the server, forcing users to re-authenticate. Has a cooldown of five minutes.
+                    </p>
+                    <hr>
+                    <h3>Developer</h3>
+                    <h4>Synopsis</h4>
+                    <p>
+                        Can do everything, without restriction, domain, cooldown, or specific circumstances.
+                    </p>
+                    <h4>Permissions</h4>
+                    <p>Could probably delete Arrasify entirely if they wanted.</p>
+                </div>
+                <div id="bookSupportContent" class="hidden">
+                    <h1>Getting Started - Support</h1>
+                    <h2>Contact Us!</h2>
+                    <p>
+                        If any issue is present, like a vulnerability or you need help, don't hesitate to get the
+                        admins' attention. If you want to contact the developer, you can either talk to them when
+                        they're online, or in the future we'll have a contact form here.
+                    </p>
+                </div>
+                <div id="bookCommandsContent" class="hidden">
+                    <h1>Advanced - Commands</h1>
+                    <p>This section may contain out-of-date information.</p>
+                    <h2>/id</h2>
+                    <h3>
+                        Returns the data of the account the user is logged into.<br>
+                        Access Level: Guest<br>
+                        Parameters: None<br>
+                        Output: "Name: [name] | ID: [id] | Auth: [auth]"
+                    </h3>
+                    <hr>
+                    <h2>/test</h2>
+                    <h3>
+                        Use this to test if the server commands are working.<br>
+                        Access Level: Guest<br>
+                        Parameters: None<br>
+                        Output: "Test received."
+                    </h3>
+                    <hr>
+                    <h2>/ignoreguests</h2>
+                    <h3>
+                        Don't show any guest users on the client side.<br>
+                        Access Level: User<br>
+                        Parameters: None<br>
+                        Output: "Guest messages are/aren't filtered."
+                    </h3>
+                    <hr>
+                    <h2>/title</h2>
+                    <h3>
+                        Toggle whether your title, if you have one, should be shown.<br>
+                        Access Level: User<br>
+                        Parameters: None<br>
+                        Output: "Badge is shown/not shown."
+                    </h3>
+                    <hr>
+                    <h2>/muteguests</h2>
+                    <h3>
+                        Don't show any guest users on the client side.<br>
+                        Access Level: Helper<br>
+                        Parameters: None<br>
+                        Output: "Muted/unmuted guests."
+                    </h3>
+                    <hr>
+                    <h2>/server</h2>
+                    <h3>
+                        Edit specific statistics related to the server.<br>
+                        Access Level: Admin<br>
+                        Parameters: action: [sudo], args: [any]<br>
+                        Output: "[args]"
+                    </h3>
+                    <hr>
+                    <h2>/data</h2>
+                    <h3>
+                        Edit database.<br>
+                        Access Level: Admin<br>
+                        Parameters: action: [list | get | edit], args / type: [any / name | token | auth ], args:
+                        [any]<br>
+                        Output: "[varying data]"
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="disconnect" class="hidden">
+        <h1>Disconnected</h1>
+        <p>It appears your connection to our services has closed.</p>
+        <h2 id="disconnectReason">Reason: No reason.</h2>
+        <h3 id="disconnectCode">Close code: 1001</h3>
+        <p>Tip: if you received a close code of 1000 or 1001, there's probably no issue. You can reconnect by reloading
+            the page.</p>
+    </div>
+    <div id="loading">
+        <h1>Loading...</h1>
+        <p>We're trying to connect to the web server.</p>
+        <p>If you're stuck here for a while, the servers are probably down.</p>
+    </div>
+    <div id="toasts">
+        <!-- <div class="toast">
+            <p>Toast Description</p>
+        </div> -->
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+
+
+<!-- Mirrored from arrasify.vercel.app/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Sep 2026 13:22:06 GMT -->
+</html>
