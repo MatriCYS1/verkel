@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat Thing</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 20px auto; padding: 20px; background: #121212; color: #e0e0e0; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        #status { font-size: 14px; display: flex; align-items: center; gap: 6px; }
+        .dot { height: 10px; width: 10px; background-color: #ff4444; border-radius: 50%; display: inline-block; }
+        .dot.connected { background-color: #00C851; }
+        #chat-box { height: 260px; border: 1px solid #333; background: #1e1e1e; overflow-y: scroll; padding: 10px; margin-bottom: 10px; border-radius: 4px; }
+        .message { margin-bottom: 8px; border-bottom: 1px solid #2a2a2a; padding-bottom: 4px; font-size: 15px; }
+        .dm-message { color: #ffeb3b; }
+        .e2ee-tag { color: #00e676; font-weight: bold; margin-right: 4px; }
+        .timestamp { color: #888; font-size: 12px; margin-right: 6px; }
+        .controls { display: flex; gap: 8px; margin-bottom: 8px; align-items: center; }
+        input, button { padding: 8px; font-size: 15px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff; }
+        #name-input { width: 30%; }
+        #msg-input { width: 70%; }
+        #target-id-input { width: 25%; }
+        #dm-msg-input { width: 45%; }
+        #e2ee-secret { width: 20%; }
+        .e2ee-label { font-size: 13px; display: flex; align-items: center; gap: 4px; cursor: pointer; white-space: nowrap; }
+        button { cursor: pointer; background: #333; }
+        button:disabled { background: #1a1a1a; color: #555; border-color: #222; cursor: not-allowed; }
+        button#clear-btn { background: #5a2a2a; border-color: #7a3a3a; width: 100%; margin-top: 5px; }
+        .section-label { font-size: 12px; color: #888; margin-bottom: 3px; }
+    </style>
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+</head>
+<body>
+
+    <div class="header">
+        <h2>Chat Thing</h2>
+        <div id="status"><span class="dot" id="status-dot"></span><span id="status-text">Connecting...</span></div>
+    </div>
+
+    <div id="chat-box"></div>
+
+    <!-- Public Chat Section -->
+    <div class="section-label">Public Broadcast</div>
+    <div class="controls">
+        <input type="text" id="name-input" placeholder="Name (max 8)" maxlength="8">
+        <input type="text" id="msg-input" placeholder="Message (max 128)" maxlength="128">
+    </div>
+    <div class="controls">
+        <button id="pub-send-btn" style="width:100%" onclick="sendPublicMessage()">Send</button>
+    </div>
+
+    <!-- Direct Message Section -->
+    <div class="section-label" style="margin-top: 10px;">DM</div>
+    <div class="controls">
+        <input type="text" id="target-id-input" placeholder="ID" maxlength="9">
+        <input type="text" id="dm-msg-input" placeholder="DM (max 128)" maxlength="128">
+        <input type="text" id="e2ee-secret" placeholder="Secret Key" maxlength="20">
+        <label class="e2ee-label"><input type="checkbox" id="e2ee-checkbox"> E2EE</label>
+    </div>
+    <div class="controls">
+        <button id="dm-send-btn" style="width:100%" onclick="sendDirectMessage()">Send DM</button>
+    </div>
+
+    <button id="clear-btn" onclick="clearChat()">Clear Messages</button>
+
+    <script>
+        const client = mqtt.connect('wss://test.mosquitto.org:8081/mqtt');
+        const baseTopic = 'my-unique-bounce-room-xyz-987';
+
+        const myClientId = 'client_' + Math.random().toString(36).substring(2, 9);
+
+        let myUserId = localStorage.getItem('mqtt_bounce_userid');
+        if (!myUserId) {
+            myUserId = Math.floor(100000000 + Math.random() * 900000000).toString();
+            localStorage.setItem('mqtt_bounce_userid', myUserId);
+        }
+
+        window.addEventListener('load', loadMessagesFromStorage);
+
+        const statusDot = document.getElementById('status-dot');
+        const statusText = document.getElementById('status-text');
+
+        client.on('connect', () => {
+            statusDot.classList.add('connected');
+            statusText.textContent = 'Connected';
+            client.subscribe(baseTopic);
+            client.subscribe(`${baseTopic}/dm/${myUserId}`);
+        });
+
+        client.on('offline', () => {
+            statusDot.classList.remove('connected');
+            statusText.textContent = 'Disconnected';
+        });
+
+        document.getElementById('msg-input').addEventListener('keypress', (e) => { if (e.key === 'Enter') sendPublicMessage(); });
+        document.getElementById('dm-msg-input').addEventListener('keypress', (e) => { if (e.key === 'Enter') sendDirectMessage(); });
+
+        // Comprehensive Swear Filter Regex
+        const swearList = [
+            'nigga', 'nigger', 'hell', 'crap', 'bastard', 'ass', 'asshole', 'bitch', 'cunt', 
+            'fuck', 'shit', 'dick', 'piss', 'cock', 'pussy', 'slut', 'whore', 'douche'
+        ];
+        const swearRegex = new RegExp(`\\b(${swearList.join('|')})\\b`, 'gi');
+
+        function filterText(text) {
+            return text.replace(swearRegex, (match) => '*'.repeat(match.length));
+        }
+
+        // Slowmode Cooldown Handler
+        let isSlowed = false;
+        function triggerSlowmode() {
+            isSlowed = true;
+            const pubBtn = document.getElementById('pub-send-btn');
+            const dmBtn = document.getElementById('dm-send-btn');
+            pubBtn.disabled = true;
+            dmBtn.disabled = true;
+            
+            setTimeout(() => {
+                isSlowed = false;
+                pubBtn.disabled = false;
+                dmBtn.disabled = false;
+            }, 2000);
+        }
+
+        async function encryptText(secret, text) {
+            const enc = new TextEncoder();
+            const keyMaterial = await window.crypto.subtle.importKey("raw", enc.encode(secret), { name: "PBKDF2" }, false, ["deriveKey"]);
+            const salt = window.crypto.getRandomValues(new Uint8Array(16));
+            const iv = window.crypto.getRandomValues(new Uint8Array(12));
+            const key = await window.crypto.subtle.deriveKey(
+                { name: "PBKDF2", salt: salt, iterations: 100000, hash: "SHA-256" },
+                keyMaterial, { name: "AES-GCM", length: 256 }, false, ["encrypt"]
+            );
+            const encrypted = await window.crypto.subtle.encrypt({ name: "AES-GCM", iv: iv }, key, enc.encode(text));
+            return {
+                salt: Array.from(salt),
+                iv: Array.from(iv),
+                data: Array.from(new Uint8Array(encrypted))
+            };
+        }
+
+        async function decryptText(secret, packet) {
+            try {
+                const enc = new TextEncoder();
+                const keyMaterial = await window.crypto.subtle.importKey("raw", enc.encode(secret), { name: "PBKDF2" }, false, ["deriveKey"]);
+                const key = await window.crypto.subtle.deriveKey(
+                    { name: "PBKDF2", salt: new Uint8Array(packet.salt), iterations: 100000, hash: "SHA-256" },
+                    keyMaterial, { name: "AES-GCM", length: 256 }, false, ["decrypt"]
+                );
+                const decrypted = await window.crypto.subtle.decrypt(
+                    { name: "AES-GCM", iv: new Uint8Array(packet.iv) }, key, new Uint8Array(packet.data)
+                );
+                return new TextDecoder().decode(decrypted);
+            } catch (e) {
+                return "[Decryption Failed: Incorrect Secret Key]";
+            }
+        }
+
+        function loadMessagesFromStorage() {
+            const chatBox = document.getElementById('chat-box');
+            chatBox.innerHTML = '';
+            const savedMessages = JSON.parse(localStorage.getItem('mqtt_bounce_msgs')) || [];
+            
+            savedMessages.forEach(msg => {
+                const div = document.createElement('div');
+                div.className = msg.startsWith('<b>[DM') ? 'message dm-message' : 'message';
+                div.innerHTML = msg;
+                chatBox.appendChild(div);
+            });
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function saveAndDisplay(formattedMessage) {
+            let savedMessages = JSON.parse(localStorage.getItem('mqtt_bounce_msgs')) || [];
+            savedMessages.push(formattedMessage);
+            
+            if (savedMessages.length > 128) {
+                savedMessages = savedMessages.slice(savedMessages.length - 128);
+            }
+
+            localStorage.setItem('mqtt_bounce_msgs', JSON.stringify(savedMessages));
+            loadMessagesFromStorage();
+        }
+
+        function sendPublicMessage() {
+            if (isSlowed) return;
+
+            const nameInput = document.getElementById('name-input');
+            const msgInput = document.getElementById('msg-input');
+            
+            const rawName = nameInput.value.trim().slice(0, 8);
+            const displayName = rawName ? `${filterText(rawName)}#${myUserId}` : `Anon#${myUserId}`;
+            const text = filterText(msgInput.value.trim().slice(0, 128));
+            
+            if (!text) return;
+
+            triggerSlowmode();
+
+            const timeString = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            const payload = JSON.stringify({ 
+                type: 'public',
+                sender: myClientId, 
+                name: displayName, 
+                text: text, 
+                time: timeString 
+            });
+            
+            client.publish(baseTopic, payload);
+            saveAndDisplay(`<span class="timestamp">[${timeString}]</span><strong>${displayName}</strong>: ${text}`);
+            msgInput.value = '';
+        }
+
+        async function sendDirectMessage() {
+            if (isSlowed) return;
+
+            const targetInput = document.getElementById('target-id-input');
+            const msgInput = document.getElementById('dm-msg-input');
+            const e2eeChecked = document.getElementById('e2ee-checkbox').checked;
+            const secretInput = document.getElementById('e2ee-secret').value.trim();
+            
+            const targetId = targetInput.value.trim();
+            const rawText = msgInput.value.trim().slice(0, 128);
+            
+            if (!targetId || targetId.length !== 9 || !rawText) {
+                alert("Please enter a valid 9-digit target ID and a message.");
+                return;
+            }
+            if (e2eeChecked && !secretInput) {
+                alert("Please enter a secret key for E2EE encryption.");
+                return;
+            }
+
+            triggerSlowmode();
+
+            // Apply swear filter only if it's not encrypted (encrypted messages are secret anyway)
+            const text = e2eeChecked ? rawText : filterText(rawText);
+
+            const timeString = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            let payloadData = { type: 'dm', senderId: myUserId, time: timeString, encrypted: false };
+
+            if (e2eeChecked) {
+                const encryptedPacket = await encryptText(secretInput, text);
+                payloadData.encrypted = true;
+                payloadData.packet = encryptedPacket;
+            } else {
+                payloadData.text = text;
+            }
+
+            client.publish(`${baseTopic}/dm/${targetId}`, JSON.stringify(payloadData));
+
+            const tagHtml = e2eeChecked ? '<span class="e2ee-tag">[E2EE]</span>' : '';
+            const displayHtml = `<span class="timestamp">[${timeString}]</span><b>[DM to ${targetId}]</b> ${tagHtml}: ${text}`;
+            saveAndDisplay(displayHtml);
+            msgInput.value = '';
+        }
+
+        client.on('message', async (incomingTopic, payload) => {
+            try {
+                const data = JSON.parse(payload.toString());
+                
+                if (incomingTopic === baseTopic && data.type === 'public') {
+                    if (data.sender !== myClientId) {
+                        saveAndDisplay(`<span class="timestamp">[${data.time}]</span><strong>${data.name}</strong>: ${filterText(data.text)}`);
+                    }
+                } else if (incomingTopic.includes('/dm/')) {
+                    let messageText = data.text;
+                    let isEncrypted = data.encrypted;
+                    
+                    if (isEncrypted) {
+                        const secretInput = document.getElementById('e2ee-secret').value.trim();
+                        if (secretInput) {
+                            messageText = await decryptText(secretInput, data.packet);
+                        } else {
+                            messageText = "[Encrypted Message - Enter Secret Key to Decrypt]";
+                        }
+                    } else {
+                        messageText = filterText(messageText);
+                    }
+
+                    const tagHtml = isEncrypted ? '<span class="e2ee-tag">[E2EE]</span>' : '';
+                    const displayHtml = `<span class="timestamp">[${data.time}]</span><b>[DM from ${data.senderId}]</b> ${tagHtml}: ${messageText}`;
+                    saveAndDisplay(displayHtml);
+                }
+            } catch (e) {
+                // Ignore malformed packets
+            }
+        });
+
+        function clearChat() {
+            localStorage.removeItem('mqtt_bounce_msgs');
+            loadMessagesFromStorage();
+        }
+    </script>
+</body>
+</html>
